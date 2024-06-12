@@ -6,7 +6,6 @@ export default {
   ],
   theme: {
     extend: {
-
       fontFamily:{
         tekInter: ['Inter', 'sans-serif'],
       },
@@ -21,7 +20,9 @@ export default {
         productBg: '#f9f9f9',
         storesBg: '#E0E0E0',
       },
-
+      boxShadow: {
+        'custom-blue': '6px 7px 12px 0px rgba(24, 67, 226, 0.05)',
+      },
     },
   },
   plugins: [],
