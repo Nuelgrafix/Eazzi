@@ -1,8 +1,12 @@
-
+import React from "react"
 
 const Hero = () => {
   return (
-    <div>hero</div>
+    <div>
+      <div className="flex">
+
+      </div>
+    </div>
   )
 }
 
