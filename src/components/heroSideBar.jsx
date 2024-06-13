@@ -135,7 +135,7 @@ const HeroSideBar = () => {
           </div>
         </div>
 
-        <div className="ml-[58px] flex flex-col w-[319px] shadow-custom-blue items-start gap-[16px] py-[16px] px-[19px] z-50 bg-white">
+        <div className="ml-[58px] flex flex-col w-[319px] shadow-custom-blue items-start gap-[16px] py-[16px] border px-[19px] z-50 bg-white">
           <div className="flex items-center gap-[12px] self-stretch text-[#181818] hover:text-[#1843E2] transition duration-300">
             <div className="flex items-center justify-center w-[30px] h-[30px] p-[6px] rounded-[83.333px] border-[0.833px] border-[#3157E1] bg-[#e1b16433]">
               <img src={group} className="w-[18px] h-[18px]" alt="" />

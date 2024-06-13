@@ -1,9 +1,13 @@
 import React from "react";
 import HeroSideBar from "./heroSideBar";
+import HeroSwiper from "./heroSwiper";
 const Hero = () => {
   return (
     <>
-      <HeroSideBar />
+      <div className="flex gap-[14px]">
+        <HeroSideBar />
+        <HeroSwiper />
+      </div>
     </>
   );
 };
