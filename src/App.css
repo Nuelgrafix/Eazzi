@@ -7,3 +7,19 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.popup-accordion {
+  animation: slideInRight 0.3s ease-in-out forwards;
+  /* Adjust animation duration and easing as needed */
+}
