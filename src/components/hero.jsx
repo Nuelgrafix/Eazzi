@@ -4,12 +4,12 @@ import HeroSwiper from "./heroSwiper";
 const Hero = () => {
   return (
     <>
-      <div className="flex gap-[14px]">
+      <div className="flex gap-[17px] w-full">
         <HeroSideBar />
         <HeroSwiper />
       </div>
     </>
   );
-};
+}
 
 export default Hero;

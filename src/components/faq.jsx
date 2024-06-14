@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const Faq = () => {
   return (
-    <section className="mb-[7rem]">
+    <section className="mb-[5rem] md:mb-[7rem] relative">
       {/* heading */}
       <div className="max-w-[100%] h-[73px] bg-mainBlue border-b-4 border-secondOrange"></div>
 
@@ -36,14 +36,16 @@ const FaqItem = ({ info, title, number }) => {
   return (
     <div className="flex-col  mt-[2rem] mb-[2rem] w-[90%]   mx-[auto]  relative items-center justify-center">
       <div
-        className="flex justify-between items-center cursor-pointer rounded-[8px] bg-[#F9F9F9] p-2 px-[4rem]"
+        className="flex justify-between items-center cursor-pointer  w-[100%] rounded-[8px] bg-[#F9F9F9] p-2 px-[4rem]"
         onClick={handleFaqClick}
       >
         <div
           className="rounded-[50%] text-mainOrange w-[61px] h-[61px]
-                 bg-[#ffffff] flex items-center justify-center"
+                 bg-[#ffffff] items-center justify-center hidden md:flex"
         >
-          <h1 className="font-[700] text-thirdOrange text-[20px]">{number}</h1>
+          <h1 className="font-[700] text-thirdOrange text-[20px]  ">
+            {number}
+          </h1>
         </div>
         {title}
       </div>
@@ -53,10 +55,12 @@ const FaqItem = ({ info, title, number }) => {
                  ${
                    faqClick
                      ? "max-h-0 opacity-0"
-                     : "max-h-[51px] opacity-100 mb-[4rem]"
+                     : "md:max-h-[51px] max-h-[300px] opacity-100 mb-[4rem]"
                  }`}
       >
-        <div className="transition-opacity duration-500">{info}</div>
+        <div className="transition-opacity duration-500  text-[16px">
+          {info}
+        </div>
       </div>
     </div>
   );

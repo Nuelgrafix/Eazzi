@@ -1,6 +1,5 @@
-/* Ensure fonts and swiper CSS imports are correctly setup */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-/* Reset styles */
 * {
   padding: 0;
   margin: 0;
@@ -24,18 +23,8 @@
   animation: slideInRight 0.3s ease-in-out forwards;
 }
 
-/* Styles for each swiper slide */
-.swiper-slide-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
 /* Pagination styles */
 .custom-pagination {
-  /* position: absolute; */
   bottom: 20px; /* Adjust the position as needed */
   width: 100%;
   display: flex;
@@ -75,9 +64,3 @@
   opacity: 0;
 }
 
-/* Image styles for swiper slides */
-.image-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Maintain aspect ratio and cover the entire space */
-}

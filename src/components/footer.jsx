@@ -7,9 +7,9 @@ import linkdin from "../../public/Image/bi_linkedin.svg";
 const Footer = () => {
   return (
     <section className="flex-col w-[100%]">
-      <div className="flex md:flex-row flex-col justify-between bg-mainBlue md:p-[2rem]">
+      <div className="flex md:flex-row flex-col justify-between bg-mainBlue md:p-[2rem] pl-[1rem] p-[1rem]">
         {/* logo */}
-        <div className="flex-col">
+        <div className="flex-col pt-[2rem]">
           <img src={logo} alt="logo_image" />
 
           <ul className="flex bottom-0 pt-[7rem] gap-2">
@@ -36,7 +36,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="flex-col items-start justify-start">
+        <div className="flex-col items-start justify-start pt-[2rem]">
           <h1 className="text-[#fff] text-[26px] font-[700] leaing-[20px]">
             Company
           </h1>
@@ -59,7 +59,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="flex-col items-start justify-start">
+        <div className="flex-col items-start justify-start pt-[2rem]">
           <h1 className="text-[#fff] text-[20px] font-[700] leaing-[20px]">
             Resources
           </h1>
@@ -77,7 +77,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="flex-col items-start justify-start">
+        <div className="flex-col items-start justify-start pt-[2rem]">
           <h1 className="text-[#fff] text-[20px] font-[700] leaing-[20px]">
             Resources
           </h1>
