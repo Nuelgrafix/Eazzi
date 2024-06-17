@@ -2,7 +2,7 @@ const SecondAds = () => {
   return (
     <section
       className="mb-[2rem] mt-[2rem] max-w-[100%]  md:h-[410px] h-[207px] 
-  relative  bg-cover bg-right  bg-[url('../../public/Image/artboard.png')] items-center justify-start flex"
+  relative  bg-cover bg-right  bg-[url('/Image/artboard.png')] items-center justify-start flex"
     >
       <div
         className=" p-[1rem] flex flex-col  relative  text-start  justify-start  md:pl-[3rem]
@@ -15,7 +15,7 @@ const SecondAds = () => {
           Create account today and enjoy a pleasant shopping eperience
         </p>
 
-        <button className="bg-[#F9F5FF] w-[113px] h-[36px] flex justify-center  rounded-[8px]  text-mainBlue shadow-locationShad">
+        <button className="bg-[#F9F5FF] w-[113px] h-[36px] flex justify-center  text-center items-center rounded-[8px]  text-mainBlue shadow-locationShad">
           Sign up Now
         </button>
       </div>
