@@ -8,7 +8,6 @@ import Faq from "./components/faq";
 
 import Location from "./components/location";
 import ProductLayout from "./components/productLayout";
-import ProductLocation from "./components/productLocation";
 import Accessories from "./components/accessories";
 
 function App() {
@@ -17,9 +16,8 @@ function App() {
       <div className="relative overflow-hidden">
         <Header />
         <Hero />
-        <ProductLocation />
-        <Accessories />
         <Location />
+        <Accessories />
         <ProductLayout />
         <SecondAds />
         <Faq />
