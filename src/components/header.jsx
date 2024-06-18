@@ -78,7 +78,7 @@ const Header = () => {
           <h1 className="text-[16px] font-[400] font-tekInter text-white transition-all ease-in-out hover:text-[#FFB164]">
             Menu
           </h1>
-          <i className={`ri-arrow-down-s-line transition-all ease-in-out hover:text-[#FFB164] w-[10px] h-[5px] text-[#fff] transition-transform duration-300 ${isDropdownOpen ? "ri-arrow-up-s-line" : ""}`}></i>
+          <i className={`ri-arrow-down-s-line transition-all ease-in-out hover:text-[#FFB164] w-[10px] h-[5px] text-[#fff] duration-300 ${isDropdownOpen ? "ri-arrow-up-s-line" : ""}`}></i>
         </div>
 
         {isDropdownOpen && (
