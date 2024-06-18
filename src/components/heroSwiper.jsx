@@ -30,7 +30,7 @@ const HeroSwiper = () => {
           effect="fade"
           fadeEffect={{ crossFade: true }}
           autoplay={{
-            delay: 300, // Adjust delay as needed
+            delay: 2000, // Adjust delay as needed
             disableOnInteraction: false,
           }}
           loop={true}

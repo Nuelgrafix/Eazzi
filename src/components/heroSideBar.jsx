@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import icon from "../assets/ic.png";
 import iconBlue from "../assets/icBlue.png";
 import speaker from "../assets/speaker.png";
@@ -14,16 +14,36 @@ import group from "../assets/Group.png";
 
 const HeroSideBar = () => {
   const [activePopup, setActivePopup] = useState(null);
+  const popupRef = useRef(null);
 
   // Function to handle popup visibility toggle
   const togglePopup = (index) => {
     setActivePopup((prev) => (prev === index ? null : index));
   };
 
+  // Close the popup if clicked outside
+  const handleClickOutside = (event) => {
+    if (popupRef.current && !popupRef.current.contains(event.target)) {
+      setActivePopup(null);
+    }
+  };
+
+  useEffect(() => {
+    if (activePopup !== null) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [activePopup]);
+
   return (
     <div className="relative mb-16 hidden md:block">
       <div className="flex flex-col gap-[22px]">
-        <div className="flex w-[319px] ml-[58px] mt-[27px] py-[23px] flex-col items-start gap-[15px] bg-white shadow-loctionShad relative z-50">
+        <div className="flex w-[319px] ml-[25px] mt-[27px] py-[23px] flex-col items-start gap-[15px] bg-white shadow-loctionShad relative z-50">
           <div
             className="flex items-center gap-[12px] self-stretch text-[#181818] hover:text-[#1843E2] transition duration-100 px-[24px] group"
             onClick={() => togglePopup(1)}
@@ -135,7 +155,7 @@ const HeroSideBar = () => {
           </div>
         </div>
 
-        <div className="ml-[58px] flex flex-col w-[319px] shadow-loctionShad items-start gap-[16px] py-[16px] px-[19px] z-50 bg-white">
+        <div className="ml-[25px] flex flex-col w-[319px] shadow-loctionShad items-start gap-[16px] py-[16px] px-[19px] z-50 bg-white">
           <div className="flex items-center gap-[12px] self-stretch text-[#181818] hover:text-[#1843E2] transition duration-300">
             <div className="flex items-center justify-center w-[30px] h-[30px] p-[6px] rounded-[83.333px] border-[0.833px] border-[#3157E1] bg-[#e1b16433]">
               <img src={group} className="w-[18px] h-[18px]" alt="" />
@@ -163,7 +183,7 @@ const HeroSideBar = () => {
 
         {/* Popup Accordion for each item */}
         {activePopup === 1 && (
-          <div className="absolute top-[2rem] left-[22rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion">
+          <div ref={popupRef} className="absolute top-[2rem] left-[22rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion">
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
@@ -258,7 +278,7 @@ const HeroSideBar = () => {
           </div>
         )}
         {activePopup === 2 && (
-          <div className="absolute top-[2rem] left-[23rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
+          <div ref={popupRef} className="absolute top-[2rem] left-[22rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
@@ -354,7 +374,7 @@ const HeroSideBar = () => {
         )}
 
         {activePopup === 3 && (
-          <div className="absolute top-[2rem] left-[23rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
+          <div ref={popupRef} className="absolute top-[2rem] left-[22rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
@@ -450,7 +470,7 @@ const HeroSideBar = () => {
         )}
 
         {activePopup === 4 && (
-          <div className="absolute top-[2rem] left-[23rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
+          <div ref={popupRef} className="absolute top-[2rem] left-[22rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
@@ -546,7 +566,7 @@ const HeroSideBar = () => {
         )}
 
         {activePopup === 5 && (
-          <div className="absolute top-[2rem] left-[23rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
+          <div ref={popupRef} className="absolute top-[2rem] left-[22rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">

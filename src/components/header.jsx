@@ -1,17 +1,43 @@
+import React, { useState, useEffect, useRef } from "react";
 import logo from "../../public/Image/logo.png";
 import profile from "../../public/Image/Profile.png";
 import carticon from "../../public/Image/Icon.png";
 const Header = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isDropdownOpen]);
+
   return (
     <section>
-      <div className="flex justify-between items-center  bg-mainBlue h-[71px]  px-3">
+      <div className="flex justify-between items-center  bg-mainBlue h-[71px]  px-12">
         {/* logo */}
         <div>
           <img src={logo} alt="logo_image" />
         </div>
 
         <div></div>
-        <div className="flex gap-3">
+        <div className="flex gap-1">
           {/* search input */}
           <div className="bg-white rounded-[10px] outline-none border-0 gap-2 px-2  ">
             <i className="ri-search-2-line  w-[15px] h-[15px] pr-2"></i>
@@ -32,10 +58,10 @@ const Header = () => {
         </div>
 
         {/* sign up , Menu and cart */}
-        <div className="flex gap-3  items-center">
+        <div className="flex gap-7 items-center">
           {/*sign up */}
           <div>
-            <button className="w-[91px] h-[44px] rounded-[8px] items-center  px-1  text-[#fff] bg-mainOrange flex gap-3">
+            <button className="px-5 h-[40px] rounded-[8px] items-center   text-[#fff] bg-mainOrange flex gap-3">
               <img
                 src={profile}
                 alt="profile_icon"
@@ -46,14 +72,28 @@ const Header = () => {
           </div>
 
           {/* Menu */}
-          <div className="flex gap-1">
-            <h1 className="text-[16px] font-[400]  text-[#fff]">Menu</h1>
-            <ul>
-              <li>
-                <i className="ri-arrow-down-s-line  w-[10px] h-[5px]  text-[#fff]"></i>
-              </li>
-            </ul>
-          </div>
+          <div className="relative" ref={dropdownRef}>
+      <div className="flex flex-col">
+        <div className="flex gap-1 cursor-pointer" onClick={toggleDropdown}>
+          <h1 className="text-[16px] font-[400] font-tekInter text-white transition-all ease-in-out hover:text-[#FFB164]">
+            Menu
+          </h1>
+          <i className={`ri-arrow-down-s-line transition-all ease-in-out hover:text-[#FFB164] w-[10px] h-[5px] text-[#fff] transition-transform duration-300 ${isDropdownOpen ? "ri-arrow-up-s-line" : ""}`}></i>
+        </div>
+
+        {isDropdownOpen && (
+          <ul className="bg-white absolute top-8 -left-14 rounded-[8px] p-4 flex flex-col gap-1 text-nowrap shadow-lg z-50">
+            <li className="text-[17px] font-light">My Orders</li>
+            <li className="text-[17px] font-light">Place order</li>
+            <li className="text-[17px] font-light">Track order</li>
+            <li className="text-[17px] font-light">Cancel order</li>
+            <li className="text-[17px] font-light">Payment options</li>
+            <li className="text-[17px] font-light">Help center</li>
+            <li className="text-[17px] font-light">Saved items</li>
+          </ul>
+        )}
+      </div>
+    </div>
 
           {/* cart */}
           <div className="flex  items-center gap-1">
