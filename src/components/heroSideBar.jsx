@@ -41,9 +41,9 @@ const HeroSideBar = () => {
   }, [activePopup]);
 
   return (
-    <div className="relative mb-16 hidden md:block">
+    <div className="relative mb-16 hidden lg:block">
       <div className="flex flex-col gap-[22px]">
-        <div className="flex w-[319px] ml-[25px] mt-[27px] py-[23px] flex-col items-start gap-[15px] bg-white shadow-loctionShad relative z-50">
+        <div className="flex w-[319px] ml-[25px] mt-[27px] py-[23px] flex-col items-start gap-[15px] bg-white shadow-loctionShad relative">
           <div
             className="flex items-center gap-[12px] self-stretch text-[#181818] hover:text-[#1843E2] transition duration-100 px-[24px] group"
             onClick={() => togglePopup(1)}
@@ -155,7 +155,7 @@ const HeroSideBar = () => {
           </div>
         </div>
 
-        <div className="ml-[25px] flex flex-col w-[319px] shadow-loctionShad items-start gap-[16px] py-[16px] px-[19px] z-50 bg-white">
+        <div className="ml-[25px] flex flex-col w-[319px] shadow-loctionShad items-start gap-[16px] py-[16px] px-[19px] bg-white">
           <div className="flex items-center gap-[12px] self-stretch text-[#181818] hover:text-[#1843E2] transition duration-300">
             <div className="flex items-center justify-center w-[30px] h-[30px] p-[6px] rounded-[83.333px] border-[0.833px] border-[#3157E1] bg-[#e1b16433]">
               <img src={group} className="w-[18px] h-[18px]" alt="" />
