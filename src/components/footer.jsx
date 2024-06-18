@@ -1,8 +1,8 @@
-import logo from "../../public/Image/logo.png";
-import facebook from "../../public/Image/bi_facebook.svg";
-import twitter from "../../public/Image/Vector.svg";
-import instagram from "../../public/Image/bi_instagram.svg";
-import linkdin from "../../public/Image/bi_linkedin.svg";
+import logo from "/Image/logo.png";
+import facebook from "/Image/bi_facebook.svg";
+import twitter from "/Image/Vector.svg";
+import instagram from "/Image/bi_instagram.svg";
+import linkdin from "/Image/bi_linkedin.svg";
 
 const Footer = () => {
   return (

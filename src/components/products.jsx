@@ -24,18 +24,18 @@ const Products = () => {
       {/* first component with slider */}
 
       {/* mapping through */}
-      <div className="md:hidden relative   mx-auto gap-4 py-[3rem] ">
-        <Slider {...settings}>
+      <div className="md:hidden relative   mx-auto gap-4 py-[3rem]  b ">
+        <Slider {...settings} >
           {productdata.map((item) => (
             <div
               key={item.id}
-              className="gap-3   px-2 top-0 rounded-[5px] w-[223px]  items-center justify-center"
+              className=" gap-4 top-0 rounded-[5px]     items-center justify-center mx-[2rem] border-2  border-transparent"
             >
-              <div className="bg-[#fff] px-2 h-[403px] mx-[2rem]  md:w-[220px] w-[200px] rounded-[8px]">
+              <div className="bg-[#fff] px-2 h-[403px] mx-[2rem]  md:w-[220px] w-[100%] rounded-[8px]">
                 <img
                   src={item.pics}
                   alt="trending_pics"
-                  className="w-[200px] h-[220px] "
+                  className="w-[200px] md:w-[300px] h-[220px] "
                 />
                 <h1 className=" font-[700] text-[20px] leading-[24px]  font-tekInter pt-1">
                   {item.title}
@@ -53,6 +53,7 @@ const Products = () => {
                   Add to cart
                 </button>
               </div>
+
             </div>
           ))}
         </Slider>
@@ -64,7 +65,7 @@ const Products = () => {
         {productdata.map((item) => (
           <div
             key={item.id}
-            className="gap-3   px-2 top-0 rounded-[5px] w-[223px]  items-center justify-center"
+            className="gap-3   mx-2 top-0 rounded-[5px] w-[223px]  items-center justify-center"
           >
             <div className="bg-[#fff] px-2 h-[403px] mr-[2rem]  md:w-[220px] w-[200px] rounded-[8px]">
               <img
@@ -74,6 +75,7 @@ const Products = () => {
               />
               <h1 className=" font-[700] text-[20px] leading-[24px]  font-tekInter pt-1">
                 {item.title}
+             
               </h1>
               <p className="text-[#282828] font-[400] text-[20px] leading-[24px] pb-[1rem] pt-[1rem] font-tekInter">
                 {item.price}

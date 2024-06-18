@@ -5,7 +5,7 @@ import bag2 from "../../public/Image/bag3.svg";
 const Accessories = () => {
   return (
     <section className="mb-[2rem]">
-      <div className="bg-mainBlue relative">
+      <div className="bg-mainBlue  md:bg-[#FFB164] relative p-[0.5rem]">
         {/* desktop view */}
         <div className="md:flex md:flex-wrap hidden gap-2 justify-between items-center  p-2 h-[580px] md:h-[100%]">
           {/* first box */}
