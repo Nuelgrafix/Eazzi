@@ -15,7 +15,7 @@ import image5 from "../assets/swip5.png";
 const HeroSwiper = () => {
   return (
     <>
-      <div className="w-[830px] flex flex-col items-start flex-shrink-0 pt-[27px] -z-50">
+      <div className="w-full lg:w-[830px] flex flex-col items-start flex-shrink-0 pt-[27px] -z-50 mt-10 lg:mt-0">
         <Swiper
           modules={[EffectFade, Pagination, Autoplay]}
           spaceBetween={30}
@@ -34,7 +34,7 @@ const HeroSwiper = () => {
             disableOnInteraction: false,
           }}
           loop={true}
-          className="mySwiper h-[425px] w-full"
+          className="mySwiper lg:h-[425px] w-full"
         >
           <SwiperSlide>
             <div className="swiper-slide-content">
