@@ -39,6 +39,7 @@ const FaqItem = ({ info, title, number }) => {
         className="flex justify-between items-center cursor-pointer  w-[100%] rounded-[8px] bg-[#F9F9F9] p-2 px-[4rem]"
         onClick={handleFaqClick}
       >
+
         <div
           className="rounded-[50%] text-mainOrange w-[61px] h-[61px]
                  bg-[#ffffff] items-center justify-center hidden md:flex"
@@ -47,7 +48,12 @@ const FaqItem = ({ info, title, number }) => {
             {number}
           </h1>
         </div>
+
         {title}
+
+        <div>
+{faqClick? (<i className="ri-arrow-down-s-line"></i>) : (<i className="ri-arrow-up-s-line"></i>)}
+        </div>
       </div>
 
       <div

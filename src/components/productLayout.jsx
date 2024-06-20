@@ -2,7 +2,7 @@ import Products from "./products";
 
 const ProductLayout = () => {
   return (
-    <section className="md:p-2">
+    <section className="md:p-2 overflow-x-hidden">
       {/* trending products */}
       <div className="mt-[2rem]">
         {/* heading */}

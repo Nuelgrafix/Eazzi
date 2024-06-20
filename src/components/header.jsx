@@ -1,6 +1,6 @@
 import logo from "../../public/Image/logo.png";
 import profile from "../../public/Image/Profile.png";
-import carticon from "../../public/Image/Icon.png";
+// import carticon from "../../public/Image/Icon.png";
 const Header = () => {
   return (
     <section>
@@ -60,7 +60,7 @@ const Header = () => {
             <h1 className="text-[16px] font-[400]  text-[#fff]">My cart</h1>
             <ul>
               <li>
-                <img src={carticon} className="w-[16px] h-[15px]" />
+              <i className="ri-arrow-down-s-line  w-[10px] h-[5px]  text-[#fff]"></i>
               </li>
             </ul>
           </div>
