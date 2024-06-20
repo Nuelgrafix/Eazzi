@@ -2,7 +2,7 @@ const SecondAds = () => {
   return (
     <section
       className="mb-[2rem] mt-[2rem] max-w-[100%]  md:h-[410px] h-[207px] 
-  relative  bg-cover bg-right  bg-[url('/Image/artboard.png')] items-center justify-start flex"
+  relative  bg-cover bg-right  bg-[url('/Image/artboard.png')] items-center justify-start flex  overflow-x-hidden"
     >
       <div
         className=" p-[1rem] flex flex-col  relative  text-start  justify-start  md:pl-[3rem]

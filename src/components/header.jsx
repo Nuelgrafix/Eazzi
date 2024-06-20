@@ -1,6 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "../../public/Image/logo.png";
 import profile from "../../public/Image/Profile.png";
+
+// import carticon from "../../public/Image/Icon.png";
+
 import carticon from "../../public/Image/Icon.png";
 import callingw from "../assets/Callingw.png";
 import calling from "../assets/Calling.png";
@@ -12,6 +15,7 @@ import icon from "../assets/ic.png";
 import speaker from "../assets/speaker.png";
 import broom from "../assets/broom.png";
 import game from "../assets/game.png";
+
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
