@@ -1,3 +1,4 @@
+import Accessories from "../components/accessories"
 import Faq from "../components/faq"
 import Hero from "../components/hero"
 import Newsletter from "../components/newsletter"
@@ -13,6 +14,7 @@ const Home = () => {
 <div  className="overflow-x-hidden relative w-[100%]">
 <Hero />
 <ProductLocation />
+<Accessories/>
 <ProductLayout />
 <SecondAds />
 <Faq />
