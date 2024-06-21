@@ -15,6 +15,7 @@ import icon from "../assets/ic.png";
 import speaker from "../assets/speaker.png";
 import broom from "../assets/broom.png";
 import game from "../assets/game.png";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -266,7 +267,7 @@ const Header = () => {
         {/* sign up, Menu, and cart */}
         <div className="hidden lg:flex gap-5 items-center">
           {/* sign up */}
-          <div>
+          <Link to={"signup"}>
             <button className="px-5 h-[42px] text-nowrap rounded-[8px] items-center text-[#fff] bg-mainOrange flex gap-3">
               <img
                 src={profile}
@@ -275,7 +276,7 @@ const Header = () => {
               />
               Sign Up
             </button>
-          </div>
+          </Link>
 
           {/* Menu */}
           <div className="relative" ref={dropdownRef}>
