@@ -167,6 +167,8 @@ const Header = () => {
                     Become a seller on Eazzi
                   </p>
                 </div>
+
+                <Link to="/signup" className="bg-[#1843E2] text-white rounded-[8px] py-[8px] px-[14px] w-[130px] whitespace-nowrap text-center font-tekInter font-[500] shadow-btn mt-4">Sign up today</Link>
               </ul>
             )}
           </div>
