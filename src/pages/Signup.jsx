@@ -1,7 +1,7 @@
 import React from "react";
 import sign from "../assets/sign.png";
 import mail from "../assets/mail.png";
-import google from "../assets/google.png"
+import SignupWithGoogleorLogin from "../components/SignupWithGoogleorLogin";
 
 const Signup = () => {
   return (
@@ -50,11 +50,7 @@ const Signup = () => {
             <button type="button" className="bg-[#1843E2] rounded-[8px] shadow-btn text-white text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[38px] py-[10px] px-[18px]">Continue</button>
           </form>
 
-          <p className="text-[#828282] text-center text-[16px] font-[400] font-tekInter mt-[24px]">or</p>
-
-          <button type="button" className="bg-[#F9F5FF] rounded-[8px] text-[#1843E2] shadow-btn text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[24px] py-[10px] px-[18px] w-full flex gap-[8px] items-center justify-center"><img src={google} className="" alt="" /> Sign up with Google</button>
-
-          <p className="text-[#828282] text-center text-[16px] font-[400] font-tekInter mt-[24px]">Already have account? <span className="text-[#1843E2]">Log in</span></p>
+          <SignupWithGoogleorLogin />
         </div>
       </div>
     </div>
