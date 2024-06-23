@@ -21,6 +21,7 @@ const Signup = () => {
               className="text-[#828282] h-[53px] py-[26px] px-[16px] border-[1px] border-[#969696] outline-none w-full rounded-[8px]"
               name="first name"
               placeholder="First Name"
+              required
             />
 
             <input
@@ -28,6 +29,7 @@ const Signup = () => {
               className="text-[#828282] h-[53px] py-[26px] px-[16px] border-[1px] border-[#969696] outline-none w-full rounded-[8px]"
               name="Last name"
               placeholder="Last Name"
+              required
             />
 
             <div className="w-full relative">
@@ -36,6 +38,7 @@ const Signup = () => {
                 className="text-[#828282] h-[53px] py-[26px] px-[16px] pl-10 border-[1px] border-[#969696] outline-none w-full rounded-[8px] relative"
                 name="Last name"
                 placeholder="Email address"
+                required
               />
               <img src={mail} className="absolute top-[13px] left-[10.3px]" alt="" />
             </div>
@@ -45,9 +48,10 @@ const Signup = () => {
               className="text-[#828282] h-[53px] py-[26px] px-[16px] border-[1px] border-[#969696] outline-none w-full rounded-[8px]"
               name="phone"
               placeholder="Phone No."
+              required
             />
 
-            <button type="button" className="bg-[#1843E2] rounded-[8px] shadow-btn text-white text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[38px] py-[10px] px-[18px]">Continue</button>
+            <button type="submit" className="bg-[#1843E2] rounded-[8px] shadow-btn text-white text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[38px] py-[10px] px-[18px]">Continue</button>
           </form>
 
           <SignupWithGoogleorLogin />
