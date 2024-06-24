@@ -153,24 +153,26 @@ const Header = () => {
             </div>
 
             {isMenuDropdownOpen && (
-              <ul className="bg-white absolute top-12 right-0 rounded-[8px] p-6 flex flex-col gap-3 text-nowrap shadow-lg z-50">
-                <li className="text-[17px]">My Orders</li>
-                <li className="text-[17px]">Place order</li>
-                <li className="text-[17px]">Track order</li>
-                <li className="text-[17px]">Cancel order</li>
-                <li className="text-[17px]">Payment options</li>
-                <li className="text-[17px]">Help center</li>
-                <li className="text-[17px]">Saved items</li>
+              <ul className="bg-white absolute top-12 right-0 rounded-[8px] p-6 flex flex-col gap-3 shadow-lg z-50">
+                <li className="text-[17px] whitespace-nowrap">My Orders</li>
+                <li className="text-[17px] whitespace-nowrap">Place order</li>
+                <li className="text-[17px] whitespace-nowrap">Track order</li>
+                <li className="text-[17px] whitespace-nowrap">Cancel order</li>
+                <li className="text-[17px] whitespace-nowrap">Payment options</li>
+                <li className="text-[17px] whitespace-nowrap">Help center</li>
+                <li className="text-[17px] whitespace-nowrap">Saved items</li>
 
                 <div className="flex items-center gap-[12px] self-stretch text-[#1843E2] mt-2">
                   <div className="flex items-center justify-center w-[35px] h-[35px] rounded-[83.333px] border-[0.833px] border-[#3157E1] bg-[#e1b16433]">
                     <img src={group} className="w-[18px] h-[18px]" alt="" />
                   </div>
 
-                  <p className="text-[16px] font-[500] leading-normal font-tekInter">
+                  <p className="text-[16px] font-[500] leading-normal whitespace-nowrap font-tekInter">
                     Become a seller on Eazzi
                   </p>
                 </div>
+
+                <Link to="/signup" className="bg-[#1843E2] text-white rounded-[8px] py-[8px] px-[14px] w-[130px] whitespace-nowrap text-center font-tekInter font-[500] shadow-btn mt-4">Sign up today</Link>
               </ul>
             )}
           </div>
@@ -198,7 +200,7 @@ const Header = () => {
               </div>
 
               {isCatDropdownOpen && (
-                <ul className="flex absolute top-14 right-0 rounded-[10px] text-nowrap py-[23px] flex-col items-start gap-[20px] bg-white shadow-loctionShad z-50">
+                <ul className="flex absolute top-14 right-0 rounded-[10px] whitespace-nowrap py-[23px] flex-col items-start gap-[20px] bg-white shadow-loctionShad z-50">
                   <h2 className="text-[#333333] text-[20px] font-tekInter font-[700] px-[24px] leading-[30px]">Categories</h2>
                   <div className="flex items-center gap-[12px] self-stretch text-[#181818] px-[24px]">
                     <div className="flex items-center justify-center w-[30px] h-[30px] p-[6px] rounded-[83.333px] border-[0.833px] border-[#E0E0E0]">
@@ -271,7 +273,7 @@ const Header = () => {
         {/* sign up, Menu, and cart */}
         <div className="hidden lg:flex gap-5 items-center">
           {/* sign up */}
-          <div>
+          <Link to={"signup"}>
             <button className="px-5 h-[42px] text-nowrap rounded-[8px] items-center text-[#fff] bg-mainOrange flex gap-3">
               <img
                 src={profile}
@@ -280,7 +282,7 @@ const Header = () => {
               />
               Sign Up
             </button>
-          </div>
+          </Link>
 
           {/* Menu */}
           <div className="relative" ref={dropdownRef}>

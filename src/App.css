@@ -30,12 +30,27 @@
   display: flex;
   justify-content: center;
 }
+.custom-paginationg {
+  bottom: 20px; /* Adjust the position as needed */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
 /* Custom bullet styles for pagination */
-.swiper-pagination-bullet.custom-bullet {
+.swiper-pagination-bullet.custom-bullet, .swiper-pagination-bullet.custom-bulletg {
   border-radius: 50%;
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
+  margin: 0 5px;
+  display: inline-block;
+  transition: background 0.3s;
+  background-color: #ccc; /* Default color */
+}
+.swiper-pagination-bullet.custom-bulletf {
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
   margin: 0 5px;
   display: inline-block;
   transition: background 0.3s;
@@ -43,10 +58,16 @@
 }
 
 /* Active bullet styles for pagination */
-.custom-bullet.swiper-pagination-bullet-active {
+.custom-bullet.swiper-pagination-bullet-active, .custom-bulletg.swiper-pagination-bullet-active {
   background-color: #1843e2; /* Active color */
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
+}
+
+.custom-bulletf.swiper-pagination-bullet-active {
+  background-color: #1843e2; /* Active color */
+  width: 14px;
+  height: 14px;
 }
 
 /* Optional: Fade effect for swiper slides */

@@ -5,6 +5,7 @@ export default {
     extend: {
       boxShadow: {
         loctionShad: "6px 7px 12px 0px #1843E20D",
+        btn: "0px 1px 2px 0px #1018280d"
 
 
       },
