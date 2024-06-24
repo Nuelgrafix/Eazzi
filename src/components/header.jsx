@@ -4,7 +4,7 @@ import profile from "../../public/Image/Profile.png";
 
 // import carticon from "../../public/Image/Icon.png";
 
-import carticon from "../../public/Image/Icon.png";
+import carticon from "../../public/Image/shopping-cart.svg";
 import callingw from "../assets/Callingw.png";
 import calling from "../assets/Calling.png";
 import cat from "../assets/Category.png";
@@ -15,6 +15,7 @@ import icon from "../assets/ic.png";
 import speaker from "../assets/speaker.png";
 import broom from "../assets/broom.png";
 import game from "../assets/game.png";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -98,11 +99,15 @@ const Header = () => {
       <div className="flex justify-between items-center fixed w-full z-50 bg-mainBlue h-[71px] px-5 md:px-12">
         {/* logo */}
         <div>
+
+          <Link to="/">
           <img
             src={logo}
             className="h-[33px] w-[100px] md:h-[36px] md:w-[117px]"
             alt="logo_image"
           />
+          </Link>
+   
         </div>
 
         <div className="flex gap-2 lg:hidden">

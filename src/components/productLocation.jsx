@@ -37,7 +37,7 @@ const ProductLocation = () => {
         <div className="max-w-[100%] flex justify-between items-center h-[73px] bg-[#F9F9F9]  md:bg-mainBlue md:border-b-4 md:border-secondOrange md:px-[1rem] p-[0.5rem]">
           <div className="flex  md:flex-row flex-col md:items-center items-start gap-3">
             <h1 className="md:text-[#fff] text-[#181818] font-[400] md:text-[20px] text-[16px] leading-[36px]  font-tekInter">
-              Trending Products
+            Newest product here
             </h1>
             <p className="font-[400] text-[12px] leading-[14px] text-secondOrange md:text-[#E0E0E0] font-tekInter">
               Available in these stores
@@ -60,6 +60,7 @@ const ProductLocation = () => {
       <div>
          {/* heading */}
          <div className="max-w-[100%] flex justify-between items-center h-[73px] bg-mainBlue border-b-4 border-secondOrange px-[0.5rem]">
+
         <div className="flex items-center gap-3">
           <h1 className="text-[#fff] font-[400] text-[18px] leading-[19px]  font-tekInter">
          Top selling stores 
@@ -68,9 +69,9 @@ const ProductLocation = () => {
 
 
 <Link to="/otherstores">
-<h1 className=" md:text-[#fff] text-mainBlue font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
+<h1 className="text-[#fff]  font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
           View all  stores
-            <i className="ri-arrow-right-s-line text-mainBlue md:text-[#fff] text-[16px]"></i>
+            <i className="ri-arrow-right-s-line text-[#fff] text-[16px]"></i>
           </h1>
 </Link>
       
@@ -187,7 +188,7 @@ const ProductLocation = () => {
           >
             <img src={store} alt="stores-pics" className="w-[90%] h-[274px]" />
             <h1 className="text-[#181818] font-[700] text-[24px] leading-[36px]  font-tekInter pt-[1rem]">
-              Top selling stores
+              Top selling stores 
             </h1>
             <p className="text-[#181818] font-[400] text-[20px] leading-[36px]  font-tekInter">
               No 10 Lekki phase 1

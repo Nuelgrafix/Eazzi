@@ -6,6 +6,10 @@ import ProductLayout from "../components/productLayout"
 import Accessories from "../components/accessories"
 import SecondAds from "../components/secondAds"
 
+
+
+// import MapLayout from "../googlemap/mapLayout"
+
 const Otherstores = () => {
   return (
 <>
