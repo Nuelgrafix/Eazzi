@@ -1,6 +1,6 @@
-import bag from "../../public/Image/bag1.svg";
-import bag1 from "../../public/Image/bag2.svg";
-import bag2 from "../../public/Image/bag3.svg";
+import bag from "/Image/bag1.svg";
+import bag1 from "/Image/bag2.svg";
+import bag2 from "/Image/bag3.svg";
 
 const Accessories = () => {
   return (
