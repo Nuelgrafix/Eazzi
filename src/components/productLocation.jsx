@@ -179,7 +179,7 @@ const ProductLocation = () => {
 
 
             {/* body with slider which when in sm is displayed */}
-            <div className="md:hidden w-[100%] p-2">
+            <div className="md:hidden block w-[100%] p-2">
         <Slider {...settings} className="gap-3 flex p-[1rem]  rounded-[5px]">
           {/* first box */}
           <div

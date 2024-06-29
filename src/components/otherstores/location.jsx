@@ -47,6 +47,7 @@ const Location = () => {
   };
 
   return (
+    
     <section>
  
          {/* Full-screen Map */}
@@ -87,7 +88,7 @@ const Location = () => {
 
       {/* body */}
       <h1  className="font-[400] bg-[#A9BCFF] md:bg-transparent md:text-[32px] text-[18px] md:text-[#FF7F00] 
-      text-[#FFFFFF] md:leading-[48px] leading-[19px] font-tekInter md:px-[1rem] pt-[1rem] px-1">5 - 10km Awawy from your current Location</h1>
+      text-[#FFFFFF] md:leading-[48px] leading-[19px] font-tekInter  md:px-[1rem] pt-[1rem] px-1">5 - 10km Away from your current Location</h1>
 
       {/* first column */}
       <div className="md:flex  justify-center gap-5 pb-[3rem] p-[2rem]  hidden">
