@@ -1,0 +1,17 @@
+/* map contaainer style */
+
+.map-container{
+    width: 1035px;
+    height: 320px;
+  
+  };
+  
+  @media (max-width: 668px) {
+    .map-container {
+      width: 100%;
+      height: 220px; 
+      border-radius: 30px;
+    }
+
+}
+

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import logo from "../../public/Image/logo.png";
-import profile from "../../public/Image/Profile.png";
+import logo from "/Image/logo.png";
+import profile from "/Image/Profile.png";
 
 // import carticon from "../../public/Image/Icon.png";
 
