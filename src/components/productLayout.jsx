@@ -33,7 +33,7 @@ const ProductLayout = () => {
         <div className="max-w-[100%] flex justify-between items-center h-[73px] bg-[#F9F9F9]  md:bg-mainBlue md:border-b-4 md:border-secondOrange md:px-[1rem] p-[0.5rem]">
           <div className="flex  md:flex-row flex-col md:items-center items-start gap-3">
             <h1 className="md:text-[#fff] text-[#181818] font-[400] md:text-[20px] text-[16px] leading-[36px]  font-tekInter">
-              Best seller in groceries
+              Best seller in Accessories
             </h1>
             <p className="font-[400] text-[12px] leading-[14px] text-secondOrange md:text-[#E0E0E0] font-tekInter">
               Available in these stores

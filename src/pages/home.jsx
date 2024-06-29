@@ -1,20 +1,25 @@
 import Accessories from "../components/accessories"
 import Faq from "../components/faq"
 import Hero from "../components/hero"
+import HeroSwiper from "../components/heroSwiper"
 import Newsletter from "../components/newsletter"
 import ProductLayout from "../components/productLayout"
 import ProductLocation from "../components/productLocation"
 import SecondAds from "../components/secondAds"
+import SellingStores from "../components/sellingStores"
 
 
 const Home = () => {
   return (
 <>
 
-<div  className="overflow-x-hidden relative w-[100%]">
+<div  className="overflow-x-hidden relative w-[100%] flex flex-col items-center">
 <Hero />
 <ProductLocation />
 <Accessories/>
+<HeroSwiper />
+<SellingStores />
+<ProductLocation />
 <ProductLayout />
 <SecondAds />
 <Faq />
