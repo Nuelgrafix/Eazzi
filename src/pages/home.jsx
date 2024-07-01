@@ -13,7 +13,7 @@ const Home = () => {
   return (
 <>
 
-<div  className="overflow-x-hidden relative w-[100%] flex flex-col =-">
+<div  className="overflow-x-hidden relative w-[100%] flex flex-col ">
 <Hero />
 <ProductLocation />
 <Accessories/>

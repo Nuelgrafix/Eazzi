@@ -31,7 +31,7 @@ const Products = () => {
               key={item.id}
               className=" gap-4 top-0 rounded-[5px]     items-center justify-center mx-[2rem] border-2  border-transparent"
             >
-              <div className="bg-[#fff] px-2 h-[403px] mx-[2rem]  md:w-[220px] w-[100%] rounded-[8px]">
+              <div className="bg-[#fff] px-2 h-[403px] mx-[2rem]  md:w-[220px] w-[100%] rounded-[8px]   p-1">
                 <img
                   src={item.pics}
                   alt="trending_pics"
@@ -47,7 +47,7 @@ const Products = () => {
                   {item.stock}
                 </span>
                 <button
-                  className="w-[125px] h-[44px] bg-[#F9F5FF] rounded-[8px] 
+                  className="w-[125px] h-[44px] bg-[#F9F5FF] rounded-[8px] hover:bg-mainBlue hover:text-[#fff] hover:translate-x-1
     items-center text-center text-mainBlue text-[16px] mt-[1rem]"
                 >
                   Add to cart
@@ -67,7 +67,7 @@ const Products = () => {
             key={item.id}
             className="gap-3   mx-2 top-0 rounded-[5px] w-[223px]  items-center justify-center"
           >
-            <div className="bg-[#fff] px-2 h-[403px] mr-[2rem]  md:w-[220px] w-[200px] rounded-[8px]">
+            <div className="bg-[#fff] px-2 h-[403px] mr-[2rem]  md:w-[220px] w-[200px] rounded-[8px] ">
               <img
                 src={item.pics}
                 alt="trending_pics"
@@ -84,7 +84,7 @@ const Products = () => {
                 {item.stock}
               </span>
               <button
-                className="w-[125px] h-[44px] bg-[#F9F5FF] rounded-[8px] 
+                className="w-[125px] h-[44px] bg-[#F9F5FF] rounded-[8px] hover:bg-mainBlue hover:text-[#fff] hover:transform-x-[10px]
     items-center text-center text-mainBlue text-[16px] mt-[1rem]"
               >
                 Add to cart

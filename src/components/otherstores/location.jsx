@@ -14,21 +14,7 @@ import { Link } from "react-router-dom";
 
 const Location = () => {
 
-
-  const [mapClick, setMapCLick] = useState(false)
-  const handleMap  = () => {
-
-      setMapCLick(!mapClick)
-
-  }
-
-  
-  
-
-
-
-
-
+  // slider settings
   var settings = {
     dots: false,
     infinite: true,
@@ -46,22 +32,40 @@ const Location = () => {
     ],
   };
 
+
+
+  const [mapClick, setMapClick] = useState(false)
+
+
+
+  const handleMap = () => {
+    setMapClick(!mapClick);
+  };
+
+
+
+
+
+
+
+
+
   return (
     
-    <section>
+    <section >
  
          {/* Full-screen Map */}
-         {mapClick &&  
-<div>
-<div className="rounded-[50%] bg-red-500  w-[24px] h-[24px] flex justify-center items-center ">
-        <button className="text-black text-[20px] items-center justify-center"><i className="ri-close-line"></i></button>
-      </div>
+         {mapClick && 
+<div className="flex flex-col  ">
+
     <Map />
 
 </div>
 
 
    }
+
+   
 
 
       {/* heading */}

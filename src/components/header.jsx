@@ -86,8 +86,7 @@ const Header = () => {
   }, [
     isDropdownOpen,
     isCallDropdownOpen,
-    isMenuDropdownOpen,
-    isCatDropdownOpen,
+    isMenuDropdownOpen,    isCatDropdownOpen,
   ]);
 
   return (
