@@ -12,7 +12,7 @@ const ForgetPasswordCreatePassword = () => {
   } = PasswordVisibility();
 
   return (
-    <div className="absolute z-50 bg-white w-full pb-[15rem] md:pb-0">
+    <div className="absolute z-50 bg-white w-full pb-[25rem] md:pb-0">
       <div className="w-full flex flex-col md:flex-row items-center justify-between md:px-0">
         <div className="hidden md:flex w-full h-[800px] flex-grow">
           <img src={img} className="w-full h-full object-cover" alt="Signup" />
