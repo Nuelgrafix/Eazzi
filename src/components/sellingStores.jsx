@@ -1,7 +1,7 @@
 
 
-import store from "../../public/Image/store.png";
-import stores from "../../public/Image/stores.png";
+import store from "/Image/store.png";
+import stores from "/Image/stores.png";
 
 import Slider from "react-slick";
 import { Link } from "react-router-dom";

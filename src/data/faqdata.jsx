@@ -2,40 +2,49 @@ export const faqdata = [
   {
     id: "1",
     title:
-      "Wouldn’t it be great if you are a part of this goodnews? Join our satisfied customers to share highlight of our great service",
+      "How do we search for products?",
     number: "1",
-    info: "Lorem ipsum dolor sit amet consectetur. Fringilla aliquam purus proin est pulvinar egestas lectus est. Nec vitae aliquam molestie faucibus mattis sed. Ut viverra ut tristique nulla nibh auctor urna ut. Sit nulla sollicitudin ac dictum eget massa integer. Commodo nibh quisque mauris eget. Integer quisque scelerisque molestie. Pharetra lorem orci sed enim tortor malesuada. Nulla massa nec facilisi diam tempor tortor amet ultricies aliquam.",
+    info: "You can search for products using the search bar at the top of our website or mobile app. Simply type in the product name, category, or description, and we'll show you relevant results.",
   },
 
   {
     id: "2",
     title:
-      "Wouldn’t it be great if you are a part of this goodnews? Join our satisfied customers to share highlight of our great service",
+      "How do I place orders?",
     number: "2",
-    info: "Lorem ipsum dolor sit amet consectetur. Fringilla aliquam purus proin est pulvinar egestas lectus est. Nec vitae aliquam molestie faucibus mattis sed. Ut viverra ut tristique nulla nibh auctor urna ut. Sit nulla sollicitudin ac dictum eget massa integer. Commodo nibh quisque mauris eget. Integer quisque scelerisque molestie. Pharetra lorem orci sed enim tortor malesuada. Nulla massa nec facilisi diam tempor tortor amet ultricies aliquam.",
+    info: "To place an order, simply browse to the product you want, click 'Add to Cart', review your cart, and click Checkout. Follow the payment instructions, and we'll take care of the rest.",
   },
 
   {
     id: "3",
     title:
-      "Wouldn’t it be great if you are a part of this goodnews? Join our satisfied customers to share highlight of our great service",
+      "How do I register?",
     number: "3",
-    info: "Lorem ipsum dolor sit amet consectetur. Fringilla aliquam purus proin est pulvinar egestas lectus est. Nec vitae aliquam molestie faucibus mattis sed. Ut viverra ut tristique nulla nibh auctor urna ut. Sit nulla sollicitudin ac dictum eget massa integer. Commodo nibh quisque mauris eget. Integer quisque scelerisque molestie. Pharetra lorem orci sed enim tortor malesuada. Nulla massa nec facilisi diam tempor tortor amet ultricies aliquam.",
+    info: "To register, click on the 'Sign Up' button at the top right corner of our website or mobile app. Fill in your details, and we'll send you a verification email to confirm your account.",
   },
 
   {
     id: "4",
     title:
-      "Wouldn’t it be great if you are a part of this goodnews? Join our satisfied customers to share highlight of our great service",
+      "When will I get the product after I have placed an order?",
     number: "4",
-    info: "Lorem ipsum dolor sit amet consectetur. Fringilla aliquam purus proin est pulvinar egestas lectus est. Nec vitae aliquam molestie faucibus mattis sed. Ut viverra ut tristique nulla nibh auctor urna ut. Sit nulla sollicitudin ac dictum eget massa integer. Commodo nibh quisque mauris eget. Integer quisque scelerisque molestie. Pharetra lorem orci sed enim tortor malesuada. Nulla massa nec facilisi diam tempor tortor amet ultricies aliquam.",
+    info: " We aim to deliver products within 24-48 hours after payment confirmation, depending on your location.",
   },
 
   {
     id: "5",
     title:
-      "Wouldn’t it be great if you are a part of this goodnews? Join our satisfied customers to share highlight of our great service",
+      "What if I'm not at home at the time of delivery?",
     number: "5",
-    info: "Lorem ipsum dolor sit amet consectetur. Fringilla aliquam purus proin est pulvinar egestas lectus est. Nec vitae aliquam molestie faucibus mattis sed. Ut viverra ut tristique nulla nibh auctor urna ut. Sit nulla sollicitudin ac dictum eget massa integer. Commodo nibh quisque mauris eget. Integer quisque scelerisque molestie. Pharetra lorem orci sed enim tortor malesuada. Nulla massa nec facilisi diam tempor tortor amet ultricies aliquam.",
+    info: "If you're not available at the time of delivery, our courier will try to contact you to arrange a convenient time. You can also contact us to arrange a redelivery or pickup from a nearby location.",
   },
+
+  {
+    id: "6",
+    title:
+      "My items haven't arrived yet, what can I do?",
+    number: "4",
+    info: "If your items haven't arrived within the expected timeframe, please contact our customer support team, and we'll investigate and resolve the issue promptly.",
+  },
+
 ];

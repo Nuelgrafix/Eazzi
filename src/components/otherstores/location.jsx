@@ -14,21 +14,7 @@ import { Link } from "react-router-dom";
 
 const Location = () => {
 
-
-  const [mapClick, setMapCLick] = useState(false)
-  const handleMap  = () => {
-
-      setMapCLick(!mapClick)
-
-  }
-
-  
-  
-
-
-
-
-
+  // slider settings
   var settings = {
     dots: false,
     infinite: true,
@@ -46,21 +32,40 @@ const Location = () => {
     ],
   };
 
+
+
+  const [mapClick, setMapClick] = useState(false)
+
+
+
+  const handleMap = () => {
+    setMapClick(!mapClick);
+  };
+
+
+
+
+
+
+
+
+
   return (
-    <section>
+    
+    <section >
  
          {/* Full-screen Map */}
-         {mapClick &&  
-<div>
-<div className="rounded-[50%] bg-red-500  w-[24px] h-[24px] flex justify-center items-center ">
-        <button className="text-black text-[20px] items-center justify-center"><i className="ri-close-line"></i></button>
-      </div>
+         {mapClick && 
+<div className="flex flex-col  ">
+
     <Map />
 
 </div>
 
 
    }
+
+   
 
 
       {/* heading */}
@@ -87,7 +92,7 @@ const Location = () => {
 
       {/* body */}
       <h1  className="font-[400] bg-[#A9BCFF] md:bg-transparent md:text-[32px] text-[18px] md:text-[#FF7F00] 
-      text-[#FFFFFF] md:leading-[48px] leading-[19px] font-tekInter md:px-[1rem] pt-[1rem] px-1">5 - 10km Awawy from your current Location</h1>
+      text-[#FFFFFF] md:leading-[48px] leading-[19px] font-tekInter  md:px-[1rem] pt-[1rem] px-1">5 - 10km Away from your current Location</h1>
 
       {/* first column */}
       <div className="md:flex  justify-center gap-5 pb-[3rem] p-[2rem]  hidden">
