@@ -28,7 +28,7 @@ function GoogleComponent2() {
       if (window.innerWidth <= 668) {
         setMapContainerStyle({ width: '100%', height: '250px', borderRadius: '20px' });
       } else {
-        setMapContainerStyle({ width: '100%', height: '320px' });
+        setMapContainerStyle({ width: '100%', height: '320px',  borderRadius: '30px' });
       }
     };
 

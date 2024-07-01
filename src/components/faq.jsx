@@ -49,7 +49,7 @@ const FaqItem = ({ info, title, number }) => {
           </h1>
         </div>
 
-        {title}
+        <h1  className="font-[400] text-[#181818] text-[16px] leading-[19px]">{title}</h1>
 
         <div>
 {faqClick? (<i className="ri-arrow-down-s-line"></i>) : (<i className="ri-arrow-up-s-line"></i>)}

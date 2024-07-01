@@ -67,7 +67,7 @@ const StoresHero = () => {
 {/* about stores  and text */}
       <div  >
         <h1 className="font-[700] md:text-[24px] text-[20px] leading-[24px] md:leading-[38px] font-tekInter"> About this Store</h1>
-    <p className="font-[400] md:text-[16px] text-[14px] leading-[16px] md:leading-[19px] font-tekInter text-[#4F4F4F]">Welcome to Ahmed Store, your one-stop destination for quality and affordability. Founded with a passion for providing the best products and services to our customers, Ahmed Store has grown into 
+    <p className="font-[400] pt-[1rem] md:text-[16px] text-[14px] leading-[16px] md:leading-[19px] font-tekInter text-[#4F4F4F]">Welcome to Ahmed Store, your one-stop destination for quality and affordability. Founded with a passion for providing the best products and services to our customers, Ahmed Store has grown into 
         a beloved shopping destination for families and individuals alike.</p>
 
 <p className="pt-[2rem] font-[400] md:text-[16px] text-[14px] leading-[16px] md:leading-[19px] font-tekInter text-[#4F4F4F]">At Ahmed Store, we believe in the power of choice and convenience. Our extensive range of products spans across various categories including electronics, home appliances, fashion, beauty, and groceries. We carefully select each item to ensure it meets our high standards of quality, durability, and value for money.</p>

@@ -4,7 +4,7 @@ import profile from "/Image/Profile.png";
 
 // import carticon from "../../public/Image/Icon.png";
 
-import carticon from "../../public/Image/shopping-cart.svg";
+import carticon from "/Image/shopping-cart.svg";
 import callingw from "../assets/Callingw.png";
 import calling from "../assets/Calling.png";
 import cat from "../assets/Category.png";
@@ -86,8 +86,7 @@ const Header = () => {
   }, [
     isDropdownOpen,
     isCallDropdownOpen,
-    isMenuDropdownOpen,
-    isCatDropdownOpen,
+    isMenuDropdownOpen,    isCatDropdownOpen,
   ]);
 
   return (
