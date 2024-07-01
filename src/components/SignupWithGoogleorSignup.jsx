@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
+import { Link } from 'react-router-dom'
 import google from "../assets/google.png"
-import { Link } from "react-router-dom";
 
-const SignupWithGoogleorLogin = () => {
+const SignupWithGoogleorSignup = () => {
   return (
     <div>
       <p className="text-[#828282] text-center text-[16px] font-[400] font-tekInter mt-[24px]">
@@ -17,10 +17,10 @@ const SignupWithGoogleorLogin = () => {
       </button>
 
       <p className="text-[#828282] text-center text-[16px] font-[400] font-tekInter mt-[24px]">
-        Already have account? <Link to="/login" className="text-[#1843E2]">Log in</Link>
+        Don't have account? <Link to="/signup" className="text-[#1843E2]">Sign up</Link>
       </p>
     </div>
-  );
-};
+  )
+}
 
-export default SignupWithGoogleorLogin;
+export default SignupWithGoogleorSignup

@@ -1,11 +1,9 @@
-import React, {useState} from "react";
 import img from "../assets/crpass.png";
 import logo from "../assets/eazzi_logo.svg";
 import eye from "../assets/Show.png";
-import SignupWithGoogleorLogin from "../components/SignupWithGoogleorLogin";
 import PasswordVisibility from "../hooks/PasswordVisibility";
 
-const CreatePassword = () => {
+const ForgetPasswordCreatePassword = () => {
   const {
     isShow,
     isShowb,
@@ -36,7 +34,12 @@ const CreatePassword = () => {
                 placeholder="Create Password"
                 required
               />
-              <img src={eye} className="absolute top-3 right-3" alt="" onClick={togglePasswordVisibility} />
+              <img
+                src={eye}
+                className="absolute top-3 right-3"
+                alt=""
+                onClick={togglePasswordVisibility}
+              />
             </div>
 
             <div className="relative">
@@ -47,7 +50,12 @@ const CreatePassword = () => {
                 placeholder="Confirm Password"
                 required
               />
-              <img src={eye} className="absolute top-3 right-3" alt="" onClick={togglePasswordVisibilityb}/>
+              <img
+                src={eye}
+                className="absolute top-3 right-3"
+                alt=""
+                onClick={togglePasswordVisibilityb}
+              />
             </div>
 
             <button
@@ -57,14 +65,10 @@ const CreatePassword = () => {
               Sign Up
             </button>
           </form>
-
-          <div className="px-3">
-            <SignupWithGoogleorLogin />
-          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default CreatePassword;
+export default ForgetPasswordCreatePassword;

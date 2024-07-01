@@ -5,6 +5,10 @@ import Signup from "../pages/Signup";
 import VerifyEmail from "../pages/VerifyEmail";
 import StoresDetails from "../pages/storesdetails";
 import CreatePassword from "../pages/CreatePassword";
+import Login from "../pages/Login";
+import ForgetPassword from "../pages/ForgetPassword";
+import ForgetPasswordVerifyEmail from "../pages/ForgetPasswordVerifyEmail";
+import ForgetPasswordCreatePassword from "../pages/ForgetPasswordCreatePassword";
 
 const Routs = () => {
   return (
@@ -15,6 +19,10 @@ const Routs = () => {
       <Route path="/signup" element={<Signup />} />
       <Route path="/verify_email" element={<VerifyEmail />} />
       <Route path="/create_password" element={<CreatePassword />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/forget_password" element={<ForgetPassword />} />
+      <Route path="/forget_passwordVerify_email" element={<ForgetPasswordVerifyEmail />} />
+      <Route path="/forget_passwordCreate_password" element={<ForgetPasswordCreatePassword />} />
     </Routes>
   );
 };
