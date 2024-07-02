@@ -1,16 +1,21 @@
-
-import sign from "../assets/sign.png";
+import sign from "../assets/ver.png";
+import logo from "../assets/eazzi_logo.svg";
 import SignupWithGoogleorLogin from '../components/SignupWithGoogleorLogin';
 
 const VerifyEmail = () => {
   return (
-    <div className="absolute z-50 bg-white w-full pb-[21rem]">
-      <div className="w-full flex flex-col md:flex-row items-center justify-between px-3 md:px-10 lg:px-28">
-        <div className="w-full h-full hidden md:flex">
+    <div className="absolute z-50 bg-white w-full pb-56 md:pb-0">
+      <div className="w-full flex flex-col md:flex-row items-center justify-between md:px-0">
+        <div className="hidden md:flex w-full h-[800px] flex-grow">
           <img src={sign} className="" alt="" />
         </div>
 
-        <div className="w-full mt-[65px] md:mt-[100px]">
+        <div className="w-full mt-[65px] md:mt-[100px] md:px-10 lg:px-20">
+          <div className="w-full h-[100px] bg-[#1843E2] md:hidden mt-[-70px] px-3">
+            <img src={logo} className="pb-8 pt-[29px] h-[104px]" alt="" />
+          </div>
+
+          <div className="px-3 mt-10">
           <h2 className="text-[24px] font-tekInter text-[#4F4F4F] leading-[30px] font-[700]">
             Verify Email
           </h2>
@@ -26,6 +31,7 @@ const VerifyEmail = () => {
           </form>
 
           <SignupWithGoogleorLogin />
+          </div>
         </div>
       </div>
     </div>
