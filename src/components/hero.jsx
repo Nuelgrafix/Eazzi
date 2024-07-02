@@ -1,4 +1,3 @@
-
 import HeroSideBar from "./heroSideBar";
 import HeroSwiper from "./heroSwiper";
 const Hero = () => {
@@ -10,6 +9,6 @@ const Hero = () => {
       </div>
     </>
   );
-}
+};
 
 export default Hero;
