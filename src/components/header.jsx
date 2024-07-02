@@ -17,7 +17,6 @@ import broom from "../assets/broom.png";
 import game from "../assets/game.png";
 import { Link } from "react-router-dom";
 
-
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isCallDropdownOpen, setIsCallDropdownOpen] = useState(false);
@@ -86,27 +85,29 @@ const Header = () => {
   }, [
     isDropdownOpen,
     isCallDropdownOpen,
-    isMenuDropdownOpen,    isCatDropdownOpen,
+    isMenuDropdownOpen,
+    isCatDropdownOpen,
   ]);
 
   return (
     <section>
       {/* Overlay to dim the background */}
-      {(isDropdownOpen || isCallDropdownOpen || isMenuDropdownOpen || isCatDropdownOpen) && (
+      {(isDropdownOpen ||
+        isCallDropdownOpen ||
+        isMenuDropdownOpen ||
+        isCatDropdownOpen) && (
         <div className="fixed inset-0 bg-black opacity-50 z-40"></div>
       )}
       <div className="flex justify-between items-center fixed w-full z-50 bg-mainBlue h-[71px] px-5 md:px-12">
         {/* logo */}
         <div>
-
           <Link to="/">
-          <img
-            src={logo}
-            className="h-[33px] w-[100px] md:h-[36px] md:w-[117px]"
-            alt="logo_image"
-          />
+            <img
+              src={logo}
+              className="h-[33px] w-[100px] md:h-[36px] md:w-[117px]"
+              alt="logo_image"
+            />
           </Link>
-   
         </div>
 
         <div className="flex gap-2 lg:hidden">
@@ -157,7 +158,9 @@ const Header = () => {
                 <li className="text-[17px] whitespace-nowrap">Place order</li>
                 <li className="text-[17px] whitespace-nowrap">Track order</li>
                 <li className="text-[17px] whitespace-nowrap">Cancel order</li>
-                <li className="text-[17px] whitespace-nowrap">Payment options</li>
+                <li className="text-[17px] whitespace-nowrap">
+                  Payment options
+                </li>
                 <li className="text-[17px] whitespace-nowrap">Help center</li>
                 <li className="text-[17px] whitespace-nowrap">Saved items</li>
 
@@ -171,7 +174,12 @@ const Header = () => {
                   </p>
                 </div>
 
-                <Link to="/signup" className="bg-[#1843E2] text-white rounded-[8px] py-[8px] px-[14px] w-[130px] whitespace-nowrap text-center font-tekInter font-[500] shadow-btn mt-4">Sign up today</Link>
+                <Link
+                  to="/signup"
+                  className="bg-[#1843E2] text-white rounded-[8px] py-[8px] px-[14px] w-[130px] whitespace-nowrap text-center font-tekInter font-[500] shadow-btn mt-4"
+                >
+                  Sign up today
+                </Link>
               </ul>
             )}
           </div>
@@ -200,7 +208,9 @@ const Header = () => {
 
               {isCatDropdownOpen && (
                 <ul className="flex absolute top-14 right-0 rounded-[10px] whitespace-nowrap py-[23px] flex-col items-start gap-[20px] bg-white shadow-loctionShad z-50">
-                  <h2 className="text-[#333333] text-[20px] font-tekInter font-[700] px-[24px] leading-[30px]">Categories</h2>
+                  <h2 className="text-[#333333] text-[20px] font-tekInter font-[700] px-[24px] leading-[30px]">
+                    Categories
+                  </h2>
                   <div className="flex items-center gap-[12px] self-stretch text-[#181818] px-[24px]">
                     <div className="flex items-center justify-center w-[30px] h-[30px] p-[6px] rounded-[83.333px] border-[0.833px] border-[#E0E0E0]">
                       <img
@@ -316,7 +326,9 @@ const Header = () => {
 
           {/* cart */}
           <div className="flex items-center gap-1">
-            <h1 className="text-[16px] font-[400] text-[#fff] text-nowrap">My cart</h1>
+            <h1 className="text-[16px] font-[400] text-[#fff] text-nowrap">
+              My cart
+            </h1>
             <ul>
               <li>
                 <img src={carticon} className="w-[16px] h-[15px]" alt="" />

@@ -2,7 +2,6 @@ import bag from "/Image/bag1.svg";
 import bag1 from "/Image/bag2.svg";
 import bag2 from "/Image/bag3.svg";
 
-
 const StoresAccessories = () => {
   return (
     <section className="mb-[2rem]">
@@ -457,7 +456,7 @@ items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
         {/* mobile view ends here */}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default StoresAccessories
+export default StoresAccessories;

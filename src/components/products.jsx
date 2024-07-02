@@ -25,7 +25,7 @@ const Products = () => {
 
       {/* mapping through */}
       <div className="md:hidden relative   mx-auto gap-4 py-[3rem]  b ">
-        <Slider {...settings} >
+        <Slider {...settings}>
           {productdata.map((item) => (
             <div
               key={item.id}
@@ -53,7 +53,6 @@ const Products = () => {
                   Add to cart
                 </button>
               </div>
-
             </div>
           ))}
         </Slider>
@@ -75,7 +74,6 @@ const Products = () => {
               />
               <h1 className=" font-[700] text-[20px] leading-[24px]  font-tekInter pt-1">
                 {item.title}
-             
               </h1>
               <p className="text-[#282828] font-[400] text-[20px] leading-[24px] pb-[1rem] pt-[1rem] font-tekInter">
                 {item.price}
@@ -93,7 +91,6 @@ const Products = () => {
           </div>
         ))}
       </div>
-      
     </section>
   );
 };
