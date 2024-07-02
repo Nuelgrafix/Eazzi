@@ -67,7 +67,9 @@ const Signup = () => {
             </button>
           </form>
 
-          <SignupWithGoogleorLogin />
+          <div className="px-3">
+            <SignupWithGoogleorLogin />
+          </div>
         </div>
       </div>
     </div>
