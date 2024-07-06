@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 import ForgetPassword from "../pages/ForgetPassword";
 import ForgetPasswordVerifyEmail from "../pages/ForgetPasswordVerifyEmail";
 import ForgetPasswordCreatePassword from "../pages/ForgetPasswordCreatePassword";
+import ProductDetails from "../components/ProductDetails";
 
 const Routs = () => {
   return (
@@ -23,6 +24,7 @@ const Routs = () => {
       <Route path="/forget_password" element={<ForgetPassword />} />
       <Route path="/forget_passwordVerify_email" element={<ForgetPasswordVerifyEmail />} />
       <Route path="/forget_passwordCreate_password" element={<ForgetPasswordCreatePassword />} />
+      <Route path="/product/:id" element={<ProductDetails />} />
     </Routes>
   );
 };
