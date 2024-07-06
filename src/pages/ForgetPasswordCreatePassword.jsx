@@ -1,6 +1,7 @@
 import img from "../assets/crpass.png";
 import logo from "../assets/eazzi_logo.svg";
 import eye from "../assets/Show.png";
+import eyex from "../assets/eyex.png";
 import PasswordVisibility from "../hooks/PasswordVisibility";
 
 const ForgetPasswordCreatePassword = () => {
@@ -35,8 +36,8 @@ const ForgetPasswordCreatePassword = () => {
                 required
               />
               <img
-                src={eye}
-                className="absolute top-3 right-3"
+                src={isShow ? eyex : eye}
+                className="absolute cursor-pointer top-3 right-3"
                 alt=""
                 onClick={togglePasswordVisibility}
               />
@@ -51,8 +52,8 @@ const ForgetPasswordCreatePassword = () => {
                 required
               />
               <img
-                src={eye}
-                className="absolute top-3 right-3"
+                src={isShowb ? eyex : eye}
+                className="absolute cursor-pointer top-3 right-3"
                 alt=""
                 onClick={togglePasswordVisibilityb}
               />

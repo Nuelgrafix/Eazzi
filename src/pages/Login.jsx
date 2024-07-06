@@ -4,6 +4,7 @@ import sign from "../assets/signup.png";
 import logo from "../assets/eazzi_logo.svg";
 import mail from "../assets/mail.png";
 import eye from "../assets/Show.png";
+import eyex from "../assets/eyex.png";
 import SignupWithGoogleorSignup from "../components/SignupWithGoogleorSignup";
 
 const Login = () => {
@@ -51,8 +52,8 @@ const Login = () => {
                 required
               />
               <img
-                src={eye}
-                className="absolute top-3 right-3"
+                src={isShow ? eyex : eye}
+                className="absolute cursor-pointer top-3 right-3"
                 alt=""
                 onClick={togglePasswordVisibility}
               />
@@ -68,7 +69,12 @@ const Login = () => {
                 </label>
               </div>
 
-              <Link to="/forget_password" className="text-[14px] text-[#333333] font-[400] font-tekInter">Forget password?</Link>
+              <Link
+                to="/forget_password"
+                className="text-[14px] text-[#333333] font-[400] font-tekInter"
+              >
+                Forget password?
+              </Link>
             </div>
 
             <button

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import img from "../assets/crpass.png";
 import logo from "../assets/eazzi_logo.svg";
 import eye from "../assets/Show.png";
+import eyex from "../assets/eyex.png";
 import SignupWithGoogleorLogin from "../components/SignupWithGoogleorLogin";
 import PasswordVisibility from "../hooks/PasswordVisibility";
 
@@ -36,7 +37,7 @@ const CreatePassword = () => {
                 placeholder="Create Password"
                 required
               />
-              <img src={eye} className="absolute top-3 right-3" alt="" onClick={togglePasswordVisibility} />
+              <img src={isShow ? eyex : eye} className="absolute cursor-pointer top-3 right-3" alt="" onClick={togglePasswordVisibility} />
             </div>
 
             <div className="relative">
@@ -47,7 +48,7 @@ const CreatePassword = () => {
                 placeholder="Confirm Password"
                 required
               />
-              <img src={eye} className="absolute top-3 right-3" alt="" onClick={togglePasswordVisibilityb}/>
+              <img src={isShowb ? eyex : eye} className="absolute cursor-pointer top-3 right-3" alt="" onClick={togglePasswordVisibilityb}/>
             </div>
 
             <button
