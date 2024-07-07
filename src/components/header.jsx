@@ -185,7 +185,7 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="gap-1 absolute top-[70px] lg:relative lg:top-0 bg-[#FFFFFF80] lg:bg-transparent backdrop-blur-[6px] lg:backdrop-blur-0 h-[60px] lg:z-50 lg:flex w-full -ml-5 md:-ml-12 px-5 lg:px-0 lg:mr-10 lg:w-[400px] shadow-md">
+        <div className="gap-1 absolute top-[70px] lg:relative lg:top-0 bg-[#FFFFFF80] lg:bg-transparent backdrop-blur-[6px] lg:backdrop-blur-0 h-[60px] lg:z-50 lg:flex w-full -ml-5 md:-ml-12 px-5 lg:px-0 lg:mr-10 lg:w-[400px]">
           {/* search input */}
           <div className="flex items-center justify-center w-full gap-1">
             <div className="bg-white w-full rounded-[10px] flex outline-none border px-2 mt-[10px] lg:mt-0">
