@@ -5,7 +5,7 @@ export const productdata = [
     id: "1",
     title: "Product name",
     price: "#2570",
-    stock: "40 instock",
+    stock: "40 in stock",
     pics: bag,
   },
 
@@ -13,7 +13,7 @@ export const productdata = [
     id: "2",
     title: "Product name",
     price: "#2570",
-    stock: "40 instock",
+    stock: "40 in stock",
     pics: bag,
   },
 
@@ -21,7 +21,7 @@ export const productdata = [
     id: "3",
     title: "Product name",
     price: "#2570",
-    stock: "40 instock",
+    stock: "40 in stock",
     pics: bag,
   },
 
@@ -29,7 +29,7 @@ export const productdata = [
     id: "4",
     title: "Product name",
     price: "#2570",
-    stock: "40 instock",
+    stock: "40 in stock",
     pics: bag,
   },
 
@@ -37,7 +37,7 @@ export const productdata = [
     id: "5",
     title: "Product name",
     price: "#2570",
-    stock: "40 instock",
+    stock: "40 in stock",
     pics: bag,
   },
 
@@ -45,7 +45,7 @@ export const productdata = [
     id: "6",
     title: "Product name",
     price: "#2570",
-    stock: "40 instock",
+    stock: "40 in stock",
     pics: bag,
   },
 ];
