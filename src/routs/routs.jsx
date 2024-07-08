@@ -5,6 +5,7 @@ import Signup from "../pages/Signup";
 import VerifyEmail from "../pages/VerifyEmail";
 import StoresDetails from "../pages/storesdetails";
 import CreatePassword from "../pages/CreatePassword";
+import Topstoresdetails from "../pages/topstoresdetails";
 
 const Routs = () => {
   return (
@@ -12,6 +13,7 @@ const Routs = () => {
       <Route path="/" element={<Home />} />
       <Route path="/otherstores" element={<Otherstores />} />
       <Route path="/storesdetails" element={<StoresDetails />} />
+      <Route path="/topstoresdetails" element={<Topstoresdetails />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/verify_email" element={<VerifyEmail />} />
       <Route path="/create_password" element={<CreatePassword />} />

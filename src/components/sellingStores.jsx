@@ -83,7 +83,7 @@ const SellingStores = () => {
       className="w-[115px] h-[35px] text-[#F9F5FF] rounded-[8px] font-[400]
 items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
     >
-  Enter Store
+ <Link to="/topstoresdetails">Enter Store</Link>
              
     </button>
   </div>
@@ -115,7 +115,7 @@ items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
                 className="w-[115px] h-[35px] text-[#F9F5FF] rounded-[8px] font-[400]
     items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
               >
-              Enter Store
+            <Link to="/topstoresdetails">Enter Store</Link>
               </button>
             </div>
 
@@ -144,7 +144,7 @@ items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
                 className="w-[115px] h-[35px] text-[#F9F5FF] rounded-[8px] font-[400]
     items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
               >
-              Enter Store
+             <Link to="/topstoresdetails">Enter Store</Link>
               </button>
             </div>
 
@@ -183,7 +183,7 @@ items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
               className="w-[115px] h-[35px] text-[#F9F5FF] rounded-[8px] font-[400]
     items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
             >
-                <Link href="/storesdetails">Enter Store</Link>
+                <Link href="/topstoresdetails">Enter Store</Link>
             </button>
           </div>
 
@@ -210,7 +210,7 @@ items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
               className="w-[115px] h-[35px] text-[#F9F5FF] rounded-[8px] font-[400]
     items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
             >
-              <Link href="/storesdetails">Enter Store</Link>
+              <Link href="/topstoresdetails">Enter Store</Link>
              
             </button>
           </div>
@@ -238,7 +238,7 @@ items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
               className="w-[115px] h-[35px] text-[#F9F5FF] rounded-[8px] font-[400]
     items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
             >
-              <Link href="/storesdetails">Enter Store</Link>
+              <Link href="/topstoresdetails">Enter Store</Link>
              
             </button>
           </div>
