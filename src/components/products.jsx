@@ -1,5 +1,6 @@
 import { productdata } from "../data/product";
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   var settings = {
@@ -24,7 +25,7 @@ const Products = () => {
       {/* first component with slider */}
 
       {/* mapping through */}
-      <div className="md:hidden relative   mx-auto gap-4 py-[3rem]  b ">
+      <div className="md:hidden relative mx-auto gap-4 py-[3rem] b ">
         <Slider {...settings}>
           {productdata.map((item) => (
             <div
@@ -60,12 +61,13 @@ const Products = () => {
 
       {/* second component without slider */}
       {/* mapping through */}
-      <div className="md:grid lg:grid-cols-6 hidden  w-[100%] grid-cols-1 md:grid-cols-3 relative   mx-auto gap-4 py-[3rem] ">
+      <div className="md:grid lg:grid-cols-6 hidden w-[100%] grid-cols-1 md:grid-cols-3 relative mx-auto gap-4 py-[3rem]">
         {productdata.map((item) => (
           <div
             key={item.id}
             className="gap-3   mx-2 top-0 rounded-[5px] w-[223px]  items-center justify-center"
           >
+            <Link to={`/product/${item.id}`}>
             <div className="bg-[#fff] px-2 h-[403px] mr-[2rem]  md:w-[220px] w-[200px] rounded-[8px] ">
               <img
                 src={item.pics}
@@ -88,6 +90,7 @@ const Products = () => {
                 Add to cart
               </button>
             </div>
+            </Link>
           </div>
         ))}
       </div>

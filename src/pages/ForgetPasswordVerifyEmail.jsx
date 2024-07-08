@@ -1,10 +1,10 @@
-import sign from "../assets/ver.png";
+import React from 'react'
+import sign from "../assets/signup.png";
 import logo from "../assets/eazzi_logo.svg";
-import SignupWithGoogleorLogin from "../components/SignupWithGoogleorLogin";
 
-const VerifyEmail = () => {
+const ForgetPasswordVerifyEmail = () => {
   return (
-    <div className="absolute z-50 bg-white w-full pb-56 md:pb-0">
+    <div className="absolute z-50 bg-white w-full pb-[25rem] md:pb-0">
       <div className="w-full flex flex-col md:flex-row items-center justify-between md:px-0">
         <div className="hidden md:flex w-full h-[800px] flex-grow">
           <img src={sign} className="" alt="" />
@@ -39,15 +39,11 @@ const VerifyEmail = () => {
                 Verify
               </button>
             </form>
-
-            <div className="px-3">
-              <SignupWithGoogleorLogin />
-            </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default VerifyEmail;
+export default ForgetPasswordVerifyEmail

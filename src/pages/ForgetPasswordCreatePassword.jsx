@@ -1,12 +1,10 @@
-import React, {useState} from "react";
 import img from "../assets/crpass.png";
 import logo from "../assets/eazzi_logo.svg";
 import eye from "../assets/Show.png";
 import eyex from "../assets/eyex.png";
-import SignupWithGoogleorLogin from "../components/SignupWithGoogleorLogin";
 import PasswordVisibility from "../hooks/PasswordVisibility";
 
-const CreatePassword = () => {
+const ForgetPasswordCreatePassword = () => {
   const {
     isShow,
     isShowb,
@@ -15,7 +13,7 @@ const CreatePassword = () => {
   } = PasswordVisibility();
 
   return (
-    <div className="absolute z-50 bg-white w-full pb-[15rem] md:pb-0">
+    <div className="absolute z-50 bg-white w-full pb-[25rem] md:pb-0">
       <div className="w-full flex flex-col md:flex-row items-center justify-between md:px-0">
         <div className="hidden md:flex w-full h-[800px] flex-grow">
           <img src={img} className="w-full h-full object-cover" alt="Signup" />
@@ -37,7 +35,12 @@ const CreatePassword = () => {
                 placeholder="Create Password"
                 required
               />
-              <img src={isShow ? eyex : eye} className="absolute cursor-pointer top-3 right-3" alt="" onClick={togglePasswordVisibility} />
+              <img
+                src={isShow ? eyex : eye}
+                className="absolute cursor-pointer top-3 right-3"
+                alt=""
+                onClick={togglePasswordVisibility}
+              />
             </div>
 
             <div className="relative">
@@ -48,7 +51,12 @@ const CreatePassword = () => {
                 placeholder="Confirm Password"
                 required
               />
-              <img src={isShowb ? eyex : eye} className="absolute cursor-pointer top-3 right-3" alt="" onClick={togglePasswordVisibilityb}/>
+              <img
+                src={isShowb ? eyex : eye}
+                className="absolute cursor-pointer top-3 right-3"
+                alt=""
+                onClick={togglePasswordVisibilityb}
+              />
             </div>
 
             <button
@@ -58,14 +66,10 @@ const CreatePassword = () => {
               Sign Up
             </button>
           </form>
-
-          <div className="px-3">
-            <SignupWithGoogleorLogin />
-          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default CreatePassword;
+export default ForgetPasswordCreatePassword;
