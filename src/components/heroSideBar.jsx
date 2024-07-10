@@ -43,6 +43,7 @@ const HeroSideBar = () => {
   return (
     <div className="relative mb-16 hidden lg:block">
       <div className="flex flex-col gap-[22px]">
+        
         <div className="flex w-[319px] ml-[25px] mt-[20.5px] py-[20px] flex-col items-start gap-[10px] bg-white shadow-loctionShad relative">
           <div
             className="flex items-center gap-[12px] self-stretch text-[#181818] hover:text-[#1843E2] transition duration-100 px-[24px] group cursor-pointer"
