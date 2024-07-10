@@ -13,6 +13,7 @@ import ForgetPassword from "../pages/ForgetPassword";
 import ForgetPasswordVerifyEmail from "../pages/ForgetPasswordVerifyEmail";
 import ForgetPasswordCreatePassword from "../pages/ForgetPasswordCreatePassword";
 import ProductDetails from "../components/ProductDetails";
+import Search from "../pages/search";
 
 
 const Routs = () => {
@@ -30,6 +31,7 @@ const Routs = () => {
       <Route path="/forget_passwordVerify_email" element={<ForgetPasswordVerifyEmail />} />
       <Route path="/forget_passwordCreate_password" element={<ForgetPasswordCreatePassword />} />
       <Route path="/product/:id" element={<ProductDetails />} />
+      <Route path="/search"   element={<Search />}   />
     </Routes>
   );
 };
