@@ -1,18 +1,19 @@
 import { useState, useEffect, useRef } from "react";
-import icon from "../assets/ic.png";
-import iconBlue from "../assets/icBlue.png";
-import speaker from "../assets/speaker.png";
-import speakerBlue from "../assets/speakerBlue.png";
-import broom from "../assets/broom.png";
-import broomBlue from "../assets/broomBlue.png";
-import game from "../assets/game.png";
-import gameBlue from "../assets/gameBlue.png";
-import menu from "../assets/menu.png";
-import menuBlue from "../assets/menuBlue.png";
-import calling from "../assets/Calling.png";
-import group from "../assets/Group.png";
+import icon from "../../assets/ic.png";
+import iconBlue from "../../assets/icBlue.png";
+import speaker from "../../assets/speaker.png";
+import speakerBlue from "../../assets/speakerBlue.png";
+import broom from "../../assets/broom.png";
+import broomBlue from "../../assets/broomBlue.png";
+import game from "../../assets/game.png";
+import gameBlue from "../../assets/gameBlue.png";
+import menu from "../../assets/menu.png";
+import menuBlue from "../../assets/menuBlue.png";
+import calling from "../../assets/Calling.png";
+import group from "../../assets/Group.png";
 
-const HeroSideBar = () => {
+
+const StoresDetailsHero = () => {
   const [activePopup, setActivePopup] = useState(null);
   const popupRef = useRef(null);
 
@@ -186,7 +187,7 @@ const HeroSideBar = () => {
 
         {/* Popup Accordion for each item */}
         {activePopup === 1 && (
-          <div ref={popupRef} className="absolute top-[2rem] left-[21rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion">
+          <div ref={popupRef} className="absolute top-[2rem] right-[20rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion">
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
@@ -281,7 +282,7 @@ const HeroSideBar = () => {
           </div>
         )}
         {activePopup === 2 && (
-          <div ref={popupRef} className="absolute top-[2rem] left-[21rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
+          <div ref={popupRef} className="absolute top-[2rem] right-[21rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
@@ -377,7 +378,7 @@ const HeroSideBar = () => {
         )}
 
         {activePopup === 3 && (
-          <div ref={popupRef} className="absolute top-[2rem] left-[21rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
+          <div ref={popupRef} className="absolute top-[2rem] right-[21rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
@@ -473,7 +474,7 @@ const HeroSideBar = () => {
         )}
 
         {activePopup === 4 && (
-          <div ref={popupRef} className="absolute top-[2rem] left-[21rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
+          <div ref={popupRef} className="absolute top-[2rem] right-[21rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
@@ -569,7 +570,7 @@ const HeroSideBar = () => {
         )}
 
         {activePopup === 5 && (
-          <div ref={popupRef} className="absolute top-[2rem] left-[21rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
+          <div ref={popupRef} className="absolute top-[2rem] right-[21rem] bg-white opacity-100 transform translate-x-0 transition-all duration-300 inline-flex items-center py-[24px] pl-[66px] pr-[349px] rounded-[8px] loctionShad -mt-5 popup-accordion ">
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
@@ -670,4 +671,4 @@ const HeroSideBar = () => {
   );
 };
 
-export default HeroSideBar;
+export default StoresDetailsHero;
