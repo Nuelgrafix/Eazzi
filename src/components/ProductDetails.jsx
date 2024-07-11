@@ -10,6 +10,10 @@ import star from "../assets/str.png";
 import location from "../assets/location.png";
 import loc from "../assets/loc.png";
 import prof from "../assets/prof.png";
+import ProductLayout from "./productLayout";
+import Products from "./products";
+import SecondAds from "./secondAds";
+import Newsletter from "./newsletter";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -389,13 +393,10 @@ const ProductDetails = () => {
               </p>
 
               <div className="flex gap-2 mt-[24px] items-center">
-                <img
-                  src={loc}
-                  className="h-[40px] w-[40px]"
-                  alt=""
-                />
+                <img src={loc} className="h-[40px] w-[40px]" alt="" />
                 <p className="text-[16px] text-[#828282] font-tekInter">
-                  No. 13 Odo-Ota Street, by Ogbomoso, Ajah Lagos <span className="text-[#5075ff]">5km from your Location</span>
+                  No. 13 Odo-Ota Street, by Ogbomoso, Ajah Lagos{" "}
+                  <span className="text-[#5075ff]">5km from your Location</span>
                 </p>
               </div>
             </div>
@@ -468,10 +469,66 @@ const ProductDetails = () => {
                   </div>
                 </div>
               </div>
+
+              <button
+                type="button"
+                className="px-[18px] py-[10px] flex gap-[8px] border border-[#FF7F00] rounded-[8px] mt-[32px] mx-6 cursor-pointer bg-[#FEF3F2]"
+              >
+                <img src={heart} alt="" />
+                Save this store
+              </button>
+
+              <div className="hidden mt-5 md:flex flex-col gap-3 mx-6">
+                <button className="text-white text-[16px] font-[600] font-tekInter py-[10px] px-[18px] bg-[#1843E2] flex items-center justify-center gap-2 rounded-[8px] shadow-loctionShad cursor-pointer">
+                  <img src={cart} alt="" /> Add this product to cart
+                </button>
+
+                <button className="text-[#1843E2] text-[16px] font-[600] font-tekInter py-[10px] px-[18px] border border-[#1843E2] rounded-[8px] cursor-pointer">
+                  Order now
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <>
+        <section className="md:p-2 overflow-x-hidden">
+          <div className="mt-[2rem]">
+            <div className="max-w-[100%] flex justify-between items-center h-[73px] bg-[#F9F9F9]  md:bg-mainBlue md:border-b-4 md:border-secondOrange md:px-[1rem] p-[0.5rem]">
+              <div className="flex  md:flex-row flex-col md:items-center items-start gap-3">
+                <h1 className="md:text-[#fff] text-[#181818] font-[400] md:text-[20px] text-[16px] leading-[36px]  font-tekInter">
+                  More bags from this store
+                </h1>
+              </div>
+            </div>
+
+            <div className="bg-[#FFB164]  md:bg-productBg">
+              <Products />
+            </div>
+          </div>
+
+          <div className="mt-[2rem]">
+            {/* heading */}
+            <div className="max-w-[100%] flex justify-between items-center h-[73px] bg-[#F9F9F9]  md:bg-mainBlue md:border-b-4 md:border-secondOrange md:px-[1rem] p-[0.5rem]">
+              <div className="flex  md:flex-row flex-col md:items-center items-start gap-3">
+                <h1 className="md:text-[#fff] text-[#181818] font-[400] md:text-[20px] text-[16px] leading-[36px]  font-tekInter">
+                  Other product on this store that will interest you
+                </h1>
+              </div>
+            </div>
+
+            <div className="bg-[#FFB164]  md:bg-productBg">
+              <Products />
+            </div>
+          </div>
+        </section>
+      </>
+
+      <>
+        <SecondAds />
+        <Newsletter />
+      </>
     </div>
   );
 };
