@@ -30,7 +30,7 @@ const Products = () => {
           {productdata.map((item) => (
             <div
               key={item.id}
-              className=" gap-4 top-0 rounded-[5px]     items-center justify-center mx-[2rem] border-2  border-transparent"
+              className=" gap-4 top-0 rounded-[5px] items-center justify-center mx-[2rem] border-2  border-transparent"
             >
               <div className="bg-[#fff] px-2 h-[403px] mx-[2rem]  md:w-[220px] w-[100%] rounded-[8px]   p-1">
                 <img
