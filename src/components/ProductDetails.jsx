@@ -5,6 +5,7 @@ import staro from "../assets/Staro.png";
 import start from "../assets/Start.png";
 import cart from "../assets/cart.png";
 import shop from "../assets/shop.png";
+import TCircle from "../assets/TCircle.png";
 import location from "../assets/location.png";
 
 const ProductDetails = () => {
@@ -20,7 +21,11 @@ const ProductDetails = () => {
       <div className="flex flex-col lg:flex-row w-full gap-7 mt-[80px] lg:mt-7 pb-20 px-[20px] md:px-[61px]">
         <div className="mt-[100px] flex flex-col lg:flex-row gap-[32px] w-full items-center justify-center">
           <div className="relative h-[286px] w-[286px]">
-            <img src={product.pics} alt={product.title} className="w-full h-[286px] md:h-auto md:w-[286px]" />
+            <img
+              src={product.pics}
+              alt={product.title}
+              className="w-full h-[286px] md:h-auto md:w-[286px]"
+            />
             <div className="h-[40px] w-[40px] p-[8px] rounded-full bg-[#F9F9F9] absolute top-3 right-6">
               <img src={heart} className="" alt="" />
             </div>
@@ -87,7 +92,8 @@ const ProductDetails = () => {
             <p className="text-[16px] font-[400] font-tekInter text-[#828282] flex items-center">
               About the store you are shopping from
             </p>
-          </div><hr/>
+          </div>
+          <hr />
 
           <div className="p-2 shadow-loctionShad">
             <p className="text-[#282828] text-[24px] font-tekInter font-[700]">
@@ -105,18 +111,105 @@ const ProductDetails = () => {
             </p>
 
             <div className="flex gap-2 mt-[24px]">
-              <img src={location} className="p-[8px] h-[40px] bg-[#F9F9F9] border border-[#BDBDBD] rounded-[4px]" alt="" />
-              <p className="text-[16px] text-[#828282] font-tekInter">No. 13 Odo-Ota Street, by Ogbomoso, Ajah Lagos</p>
+              <img
+                src={location}
+                className="p-[8px] h-[40px] bg-[#F9F9F9] border border-[#BDBDBD] rounded-[4px]"
+                alt=""
+              />
+              <p className="text-[16px] text-[#828282] font-tekInter">
+                No. 13 Odo-Ota Street, by Ogbomoso, Ajah Lagos
+              </p>
             </div>
 
             <div className="mt-[21px] flex gap-3">
-              <div className="flex gap-1"><img src={staro} className="h-[19px]" alt="" />
-              <p className="text-[16px] text-[#333333] font-tekInter">4.2k (380)</p></div>
+              <div className="flex gap-1">
+                <img src={staro} className="h-[19px]" alt="" />
+                <p className="text-[16px] text-[#333333] font-tekInter">
+                  4.2k (380)
+                </p>
+              </div>
 
-              <p className="text-[16px] text-[#282828] font-[700] font-tekInter">Store Opens:  8am - 5pm</p>
+              <p className="text-[16px] text-[#282828] font-[700] font-tekInter">
+                Store Opens: 8am - 5pm
+              </p>
             </div>
 
-            <button className="bg-[#FEF3F2] mt-[16px] rounded-[8px] flex gap-2 py-[10px] px-[18px] border border-[#FF7F00] text-[#FF7F00] text-[16px] font-tekInter font-[600]"><img src={heart} alt="" /> Save this store</button>
+            <button className="bg-[#FEF3F2] mt-[16px] rounded-[8px] flex gap-2 py-[10px] px-[18px] border border-[#FF7F00] text-[#FF7F00] text-[16px] font-tekInter font-[600]">
+              <img src={heart} alt="" /> Save this store
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-[#F9F9F9] flex flex-col lg:flex-row w-full gap-7 mt-[80px] lg:mt-7 pb-20 px-[20px] md:px-[61px]">
+        <div className="flex w-full mt-[32px]">
+          <div className="w-full lg:w-[820px] bg-white rounded-[10px] ">
+            <div className="flex gap-3 px-6 py-4">
+              <img
+                src={TCircle}
+                className="p-[8px] bg-[#5075FF] rounded-[4px]"
+                alt=""
+              />
+
+              <p className="text-[#333333] text-[24px] font-tekInter">
+                More Detail about this Product
+              </p>
+            </div>
+            <hr />
+            <div className="mt-[24px] px-6">
+              <h2 className="text-[#282828] text-[32px] font-tekInter">
+                Pink Handbag, Skin Leather with Inner Pocket.
+              </h2>
+
+              <p className="text-[16px] mt-[12px] text-[#4f4f4f] font-tekInter">
+                The Pink Handbag is an elegant and versatile accessory crafted
+                from premium skin leather. It combines style, functionality, and
+                durability, making it a perfect addition to any wardrobe.
+              </p>
+              <br />
+
+              <p className="text-[16px] font-[700] text-[#4f4f4f] font-tekInter">
+                Material:
+              </p>
+
+              <ul className="pl-4 mt-3 flex flex-col gap-3">
+                <div>
+                  <li className="text-[16px] font-[700] text-[#4f4f4f] font-tekInter">
+                    <span className="font-[900] relative top-[-.3rem] text-[20px]">
+                      .
+                    </span>
+                    Exterior:
+                  </li>
+                  <li className="text-[16px] text-[#4f4f4f] font-tekInter pl-5">
+                    <span className="font-[900] relative top-[-.3rem] text-[20px]">
+                      .
+                    </span>
+                    Skin Leather: The handbag is made from high-quality skin
+                    leather, known for its smooth texture, durability, and
+                    luxurious appearance. The leather's natural finish gives it
+                    a sophisticated look, suitable for both casual and formal
+                    occasions.
+                  </li>
+                </div>
+
+                <div>
+                  <li className="text-[16px] font-[700] text-[#4f4f4f] font-tekInter">
+                    <span className="font-[900] relative top-[-.3rem] text-[20px]">
+                      .
+                    </span>
+                    Interior:
+                  </li>
+                  <li className="text-[16px] text-[#4f4f4f] font-tekInter pl-5">
+                    <span className="font-[900] relative top-[-.3rem] text-[20px]">
+                      .
+                    </span>
+                    Lining: The interior is lined with a soft, durable fabric to
+                    protect your belongings and enhance the overall structure of
+                    the handbag.
+                  </li>
+                </div>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
