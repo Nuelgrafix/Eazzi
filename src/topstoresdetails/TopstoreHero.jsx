@@ -1,10 +1,11 @@
-import HeroSideBar from "../components/heroSideBar";
+
 
 import detailstores from "/Image/details_store.svg";
 import profilepics from "../../public/Image/details_pics.svg/";
 import star from "/Image/Star 6.svg";
 import whitestar from "/Image/white_star.svg";
 import loveicon from "/Image/Union.svg";
+import StoresDetailsHero from "../components/storedetails/storedetailshero";
 
 const TopstoresHero = () => {
   return (
@@ -107,7 +108,7 @@ const TopstoresHero = () => {
       </div>
 
       <div className="mt-[-2rem]">
-        <HeroSideBar />
+   <StoresDetailsHero />
       </div>
     </section>
   );
