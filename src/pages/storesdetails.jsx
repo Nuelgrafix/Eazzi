@@ -6,7 +6,8 @@ import ProductLayout from "../components/productLayout"
 import Products from "../components/products"
 import SecondAds from "../components/secondAds"
 import StoresAccessories from "../components/storedetails/storesAccessories"
-import StoresHero from "../components/storedetails/storesHero"
+import TopstoresHero from "../topstoresdetails/TopstoreHero"
+
 
 
 
@@ -17,7 +18,7 @@ const StoresDetails = () => {
 <>
 
 <div  className="overflow-x-hidden relative w-[100%]">
-<StoresHero />
+<TopstoresHero />
    {/* trending products */}
    <div className="mt-[2rem]">
         {/* heading */}
