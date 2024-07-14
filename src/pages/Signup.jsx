@@ -2,13 +2,23 @@ import React from "react";
 import sign from "../assets/signup.png";
 import logo from "../assets/eazzi_logo.svg";
 import mail from "../assets/mail.png";
+import eye from "../assets/Show.png";
+import eyex from "../assets/eyex.png";
+import PasswordVisibility from "../hooks/PasswordVisibility";
 import SignupWithGoogleorLogin from "../components/SignupWithGoogleorLogin";
 
 const Signup = () => {
+  const {
+    isShow,
+    isShowb,
+    togglePasswordVisibility,
+    togglePasswordVisibilityb,
+  } = PasswordVisibility();
+
   return (
     <div className="absolute z-50 bg-white w-full pb-36 md:pb-0">
       <div className="w-full flex flex-col md:flex-row items-center justify-between md:px-0">
-        <div className="hidden md:flex w-full h-[800px] flex-grow">
+        <div className="hidden md:flex w-full h-[1000px] flex-grow">
           <img src={sign} className="w-full h-full object-cover" alt="Signup" />
         </div>
 
@@ -58,6 +68,28 @@ const Signup = () => {
               placeholder="Phone No."
               required
             />
+
+<div className="relative">
+              <input
+                type={isShow ? "text" : "password"}
+                className="text-[#828282] h-[53px] py-[26px] px-[16px] border-[1px] border-[#969696] outline-none w-full rounded-[8px] relative"
+                name="password"
+                placeholder="Create Password"
+                required
+              />
+              <img src={isShow ? eyex : eye} className="absolute cursor-pointer top-3 right-3" alt="" onClick={togglePasswordVisibility} />
+            </div>
+
+            <div className="relative">
+              <input
+                type={isShowb ? "text" : "password"}
+                className="text-[#828282] h-[53px] py-[26px] px-[16px] border-[1px] border-[#969696] outline-none w-full rounded-[8px]"
+                name="confirm password"
+                placeholder="Confirm Password"
+                required
+              />
+              <img src={isShowb ? eyex : eye} className="absolute cursor-pointer top-3 right-3" alt="" onClick={togglePasswordVisibilityb}/>
+            </div>
 
             <button
               type="submit"
