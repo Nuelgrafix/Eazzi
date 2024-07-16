@@ -69,11 +69,10 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
     if (!validateForm()) {
       return;
     }
-
+    setIsSubmitting(true);
     try {
       const response = await axios.post(
         "https://django-7u8g.onrender.com/api/authent/register/",
@@ -132,6 +131,7 @@ const Signup = () => {
                 placeholder="First Name"
                 value={formData.first_name}
                 onChange={handleChange}
+                required
               />
               {errors.first_name && (
                 <p className="text-red-600 text-[15px]">{errors.first_name}</p>
@@ -146,6 +146,7 @@ const Signup = () => {
                 placeholder="Last Name"
                 value={formData.last_name}
                 onChange={handleChange}
+                required
               />
               {errors.last_name && (
                 <p className="text-red-600 text-[15px]">{errors.last_name}</p>
@@ -160,6 +161,7 @@ const Signup = () => {
                 placeholder="Email address"
                 value={formData.email}
                 onChange={handleChange}
+                required
               />
               {errors.email && (
                 <p className="text-red-600 text-[15px]">{errors.email}</p>
@@ -180,6 +182,7 @@ const Signup = () => {
                 placeholder="Phone No."
                 value={formData.phone}
                 onChange={handleChange}
+                required
               />
               {errors.phone && (
                 <p className="text-red-600 text-[15px]">{errors.phone}</p>
@@ -194,6 +197,7 @@ const Signup = () => {
                 placeholder="Create Password"
                 value={formData.password}
                 onChange={handleChange}
+                required
               />
               {errors.password && (
                 <p className="text-red-600 text-[15px]">{errors.password}</p>
@@ -215,6 +219,7 @@ const Signup = () => {
                 placeholder="Confirm Password"
                 value={formData.confirm_password}
                 onChange={handleChange}
+                required
               />
               {errors.confirm_password && (
                 <p className="text-red-600 text-[15px]">
@@ -231,7 +236,7 @@ const Signup = () => {
 
             <button
               type="submit"
-              className="bg-[#1843E2] rounded-[8px] shadow-btn text-white text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[38px] py-[10px] px-[18px]"
+              className="bg-[#1843E2] rounded-[8px] shadow-btn text-white text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[38px] py-[10px] px-[18px] flex items-center justify-center"
               disabled={isSubmitting}
             >
               {isSubmitting ? <div className="loader"></div> : "Continue"}
