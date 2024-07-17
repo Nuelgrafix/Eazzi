@@ -1,10 +1,59 @@
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import sign from "../assets/ver.png";
 import logo from "../assets/eazzi_logo.svg";
 import SignupWithGoogleorLogin from "../components/SignupWithGoogleorLogin";
 
 const VerifyEmail = () => {
+  const [code, setCode] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const payload = { code };
+    console.log("Payload:", payload); // Log the payload
+
+    try {
+      const res = await axios.post(
+        "https://django-7u8g.onrender.com/api/authent/verify-email/",
+        payload,
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+
+      if (res.data.success) {
+        toast.success(res.data.message, {
+          position: "top-center",
+        });
+
+        navigate("/login");
+      } else {
+        toast.error(res.data.message, {
+          position: "top-center",
+        });
+      }
+    } catch (err) {
+      console.error("Error response:", err.response); // Log the error response
+      if (err.response && err.response.data) {
+        toast.error(err.response.data.error, {
+          position: "top-center",
+        });
+      } else
+      toast.error("Error. Please try again!", {
+        position: "top-center",
+      });
+    }
+    setIsSubmitting(false);
+  };
+
   return (
     <div className="absolute z-50 bg-white w-full pb-56 md:pb-0">
+      <ToastContainer />
       <div className="w-full flex flex-col md:flex-row items-center justify-between md:px-0">
         <div className="hidden md:flex w-full h-[800px] flex-grow">
           <img src={sign} className="" alt="" />
@@ -22,10 +71,15 @@ const VerifyEmail = () => {
             <p className="text-[16px] font-tekInter text-[#4F4F4F] leading-[30px] font-[400] mt-2">
               Enter the verification code sent to your email
             </p>
-            <form action="" className="mt-[32px] flex flex-col gap-[24px]">
+            <form
+              onSubmit={handleSubmit}
+              className="mt-[32px] flex flex-col gap-[24px]"
+            >
               <input
-                type="number"
+                type=""
                 className="text-[#828282] h-[53px] py-[26px] px-[16px] border-[1px] border-[#969696] outline-none w-full rounded-[8px]"
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
                 placeholder="Enter code"
               />
               <p className="text-[16px] font-tekInter text-[#4F4F4F] leading-[30px] -mt-5 cursor-pointer">
@@ -33,10 +87,11 @@ const VerifyEmail = () => {
                 <span className="text-[#1843E2] font-[700]">Resend</span>
               </p>
               <button
-                type="button"
-                className="bg-[#1843E2] rounded-[8px] shadow-btn text-white text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[38px] py-[10px] px-[18px]"
+                type="submit"
+                className="bg-[#1843E2] flex items-center justify-center rounded-[8px] shadow-btn text-white text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[38px] py-[10px] px-[18px]"
+                disabled={isSubmitting}
               >
-                Verify
+                {isSubmitting ? <div className="loader"></div> : "Verify"}
               </button>
             </form>
 

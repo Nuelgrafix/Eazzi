@@ -79,18 +79,18 @@ const Signup = () => {
         formData
       );
       toast.success("Email verification code sent", {
-        position: "top-right",
+        position: "top-center",
       });
 
       navigate('/verify_email')
     } catch (err) {
       if (err.response && err.response.data) {
         toast.error(err.response.data.error, {
-          position: "top-right",
+          position: "top-center",
         });
       } else
       toast.error("Error submitting the form. Please try again!", {
-        position: "top-right",
+        position: "top-center",
       });
     }
 
