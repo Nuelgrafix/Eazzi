@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import sign from "../assets/signup.png";
 import logo from "../assets/eazzi_logo.svg";
 import mail from "../assets/mail.png";
