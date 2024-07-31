@@ -57,6 +57,7 @@ const Location = () => {
   return (
     <section>
       {/* Full-screen Map */}
+      
       {mapClick && (
         <div className="flex flex-col  " ref={mapRef} onClick={toggleMap}>
           <Map />

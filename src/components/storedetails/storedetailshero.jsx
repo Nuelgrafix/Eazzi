@@ -224,7 +224,7 @@ const StoresDetailsHero = () => {
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Women's Fashion
+                Women&apos;s Fashion
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
@@ -319,7 +319,7 @@ const StoresDetailsHero = () => {
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Women's Fashion
+                  Women&apos;s Fashion
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
@@ -415,7 +415,7 @@ const StoresDetailsHero = () => {
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Women's Fashion
+                  Women&apos;s Fashion
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
@@ -511,7 +511,7 @@ const StoresDetailsHero = () => {
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Women's Fashion
+                  Women&apos;s Fashion
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
@@ -607,7 +607,7 @@ const StoresDetailsHero = () => {
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Women's Fashion
+                  Women&apos;s Fashion
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">

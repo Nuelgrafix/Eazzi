@@ -13,7 +13,8 @@ import ForgetPasswordVerifyEmail from "../pages/ForgetPasswordVerifyEmail";
 import ForgetPasswordCreatePassword from "../pages/ForgetPasswordCreatePassword";
 import ProductDetails from "../components/ProductDetails";
 import Search from "../pages/search";
-
+import SignupNotification from "../pages/signupNotification";
+import SavedItemLayout from "../components/saveditems/savedItemLayout";
 
 const Routs = () => {
   return (
@@ -22,14 +23,26 @@ const Routs = () => {
       <Route path="/otherstores" element={<Otherstores />} />
       <Route path="/storesdetails" element={<StoresDetails />} />
       <Route path="/topstoresdetails" element={<Topstoresdetails />} />
+
+      {/* auth routes */}
       <Route path="/signup" element={<Signup />} />
       <Route path="/verify_email" element={<VerifyEmail />} />
       <Route path="/login" element={<Login />} />
       <Route path="/forget_password" element={<ForgetPassword />} />
-      <Route path="/forget_passwordVerify_email" element={<ForgetPasswordVerifyEmail />} />
-      <Route path="/forget_passwordCreate_password" element={<ForgetPasswordCreatePassword />} />
+      <Route
+        path="/forget_passwordVerify_email"
+        element={<ForgetPasswordVerifyEmail />}
+      />
+      <Route
+        path="/forget_passwordCreate_password"
+        element={<ForgetPasswordCreatePassword />}
+      />
+      {/*  auth routes */}
+
       <Route path="/product/:id" element={<ProductDetails />} />
-      <Route path="/search"   element={<Search />}   />
+      <Route path="/search" element={<Search />} />
+      <Route path="/signup-notification" element={<SignupNotification />} />
+      <Route path="/saveditem" element={<SavedItemLayout />} />
     </Routes>
   );
 };

@@ -18,6 +18,10 @@ import game from "../assets/game.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+
+const user = true;
+
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isCallDropdownOpen, setIsCallDropdownOpen] = useState(false);
   const [isMenuDropdownOpen, setIsMenuDropdownOpen] = useState(false);
@@ -318,7 +322,7 @@ const Header = () => {
                   <li className="text-[17px] font-light">Cancel order</li>
                   <li className="text-[17px] font-light">Payment options</li>
                   <li className="text-[17px] font-light">Help center</li>
-                  <li className="text-[17px] font-light">Saved items</li>
+                  <li className="text-[17px] font-light">{ user ? <Link to="/signup-notification">Saved items</Link> : <></> }</li>
                 </ul>
               )}
             </div>
