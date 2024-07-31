@@ -15,7 +15,6 @@ import ProductDetails from "../components/ProductDetails";
 import Search from "../pages/search";
 import SignupNotification from "../pages/signupNotification";
 import SavedItemLayout from "../components/saveditems/savedItemLayout";
-import SeeMore from "../pages/SeeMore";
 
 const Routs = () => {
   return (
@@ -44,7 +43,13 @@ const Routs = () => {
       <Route path="/product/see-more" element={<SeeMore/>}/>
       <Route path="/search" element={<Search />} />
       <Route path="/signup-notification" element={<SignupNotification />} />
+
+
+      {/* waiting for loggedin users */}
       <Route path="/saveditem" element={<SavedItemLayout />} />
+
+      <Route path="/emptycart" element={<EmptyCart />} />
+      <Route path="/emptycart-signin" element={<EmptyCartSignin />} />
     </Routes>
   );
 };

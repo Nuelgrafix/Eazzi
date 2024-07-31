@@ -292,6 +292,7 @@ items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
           </div>
         </Slider>
       </div>
+      
     </section>
   );
 };
