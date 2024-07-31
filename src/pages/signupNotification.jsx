@@ -45,6 +45,7 @@ const SignupNotification = () => {
         </div>
    
       </div>
+      
     </section>
   );
 };
