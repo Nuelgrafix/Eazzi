@@ -1,4 +1,5 @@
 import Products from "./products";
+import { Link } from "react-router-dom";
 
 const ProductLayout = () => {
   return (
@@ -16,10 +17,10 @@ const ProductLayout = () => {
             </p>
           </div>
 
-          <h1 className=" md:text-[#fff] text-mainBlue font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
+          <Link to={'/product/see-more'} className=" md:text-[#fff] text-mainBlue font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
             See more{" "}
             <i className="ri-arrow-right-s-line text-mainBlue md:text-[#fff] text-[16px]"></i>
-          </h1>
+          </Link>
         </div>
 
         <div className="bg-[#FFB164]  md:bg-productBg">
@@ -40,10 +41,10 @@ const ProductLayout = () => {
             </p>
           </div>
 
-          <h1 className=" md:text-[#fff] text-mainBlue font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
+          <Link to={'/product/see-more'} className=" md:text-[#fff] text-mainBlue font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
             See more{" "}
             <i className="ri-arrow-right-s-line text-mainBlue md:text-[#fff] text-[16px]"></i>
-          </h1>
+          </Link>
         </div>
         <div className="p-1  bg-mainBlue  md:bg-productBg">
           <Products />
@@ -63,10 +64,10 @@ const ProductLayout = () => {
             </p>
           </div>
 
-          <h1 className=" md:text-[#fff] text-mainBlue font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
+          <Link to={'/product/see-more'} className=" md:text-[#fff] text-mainBlue font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
             See more{" "}
             <i className="ri-arrow-right-s-line text-mainBlue md:text-[#fff] text-[16px]"></i>
-          </h1>
+          </Link>
         </div>
 
         <div className="bg-[#FFB164]  md:bg-productBg">
@@ -87,10 +88,10 @@ const ProductLayout = () => {
             </p>
           </div>
 
-          <h1 className=" md:text-[#fff] text-mainBlue font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
+          <Link to={'/product/see-more'} className=" md:text-[#fff] text-mainBlue font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
             See more{" "}
             <i className="ri-arrow-right-s-line text-mainBlue md:text-[#fff] text-[16px]"></i>
-          </h1>
+          </Link>
         </div>
 
         <div className="p-1  bg-mainBlue  md:bg-productBg">
