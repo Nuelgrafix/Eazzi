@@ -18,6 +18,7 @@ import SavedItemLayout from "../components/saveditems/savedItemLayout";
 import EmptyCart from "../components/cart/emptyCart";
 
 import EmptyCartSignin from "../components/cart/emptyCardSignin";
+import FilledCart from "../components/cart/filledCart";
 
 
 const Routs = () => {
@@ -53,6 +54,7 @@ const Routs = () => {
 
       <Route path="/emptycart" element={<EmptyCart />} />
       <Route path="/emptycart-signin" element={<EmptyCartSignin />} />
+      <Route path="/filledcart" element={<FilledCart />} />
     </Routes>
   );
 };
