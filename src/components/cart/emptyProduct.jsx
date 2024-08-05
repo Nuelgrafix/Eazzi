@@ -62,7 +62,8 @@ const EmptyProduct = () => {
 
       {/* second component without slider */}
       {/* mapping through */}
-      <div className="md:grid lg:grid-cols-6 hidden w-[100%] grid-cols-1 md:grid-cols-3 relative mx-auto gap-4 py-[3rem]">
+      <div className="md:grid lg:grid-cols-6 hidden w-[100%] grid-cols-1 md:grid-cols-3 
+      relative mx-auto gap-4 py-[3rem]">
         {productdata.slice(0,2).map((item) => (
           <div
             key={item.id}
