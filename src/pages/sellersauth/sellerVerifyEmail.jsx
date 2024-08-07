@@ -7,7 +7,7 @@ import sign from "../assets/ver.png";
 import logo from "../assets/eazzi_logo.svg";
 import SignupWithGoogleorLogin from "../components/SignupWithGoogleorLogin";
 
-const VerifyEmail = () => {
+const SellerVerifyEmail = () => {
   const [code, setCode] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
@@ -105,4 +105,4 @@ const VerifyEmail = () => {
   );
 };
 
-export default VerifyEmail;
+export default SellerVerifyEmail;

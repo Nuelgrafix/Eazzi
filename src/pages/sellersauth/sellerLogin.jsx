@@ -7,7 +7,7 @@ import eye from "../assets/Show.png";
 import eyex from "../assets/eyex.png";
 import SignupWithGoogleorSignup from "../components/SignupWithGoogleorSignup";
 
-const Login = () => {
+const SellerLogin = () => {
   const [isShow, setIsShow] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -94,4 +94,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SellerLogin;
