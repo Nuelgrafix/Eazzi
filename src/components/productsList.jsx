@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Products from "./products";
 
 const ProductsList = () => {
@@ -16,10 +17,10 @@ const ProductsList = () => {
             </p>
           </div>
 
-          <h1 className=" text-[#fff] p-[2rem] font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
+          <Link to={'/product/see-more'} className=" text-[#fff] p-[2rem] font-[600] text-[16px] leading-[24px] cursor-pointer flex gap-2 font-tekInter ">
             See more{" "}
             <i className="ri-arrow-right-s-line text-[#fff] text-[16px]"></i>
-          </h1>
+          </Link>
         </div>
 
         <Products />
@@ -38,10 +39,10 @@ const ProductsList = () => {
             </p>
           </div>
 
-          <h1 className=" text-[#fff] p-[2rem] font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
+          <Link to={'/product/see-more'} className=" text-[#fff] p-[2rem] font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
             See more{" "}
             <i className="ri-arrow-right-s-line text-[#fff] text-[16px]"></i>
-          </h1>
+          </Link>
         </div>
 
         <Products />
@@ -60,10 +61,10 @@ const ProductsList = () => {
             </p>
           </div>
 
-          <h1 className=" text-[#fff] p-[2rem] font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
+          <Link to={'/product/see-more'} className=" text-[#fff] p-[2rem] font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
             See more{" "}
             <i className="ri-arrow-right-s-line text-[#fff] text-[16px]"></i>
-          </h1>
+          </Link>
         </div>
 
         <Products />
@@ -81,10 +82,10 @@ const ProductsList = () => {
             </p>
           </div>
 
-          <h1 className=" text-[#fff] p-[2rem] font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
+          <Link to={'/product/see-more'} className=" text-[#fff] p-[2rem] font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
             See more{" "}
             <i className="ri-arrow-right-s-line text-[#fff] text-[16px]"></i>
-          </h1>
+          </Link>
         </div>
 
         <Products />
@@ -103,10 +104,10 @@ const ProductsList = () => {
             </p>
           </div>
 
-          <h1 className=" text-[#fff] p-[2rem] font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
+          <Link to={'/product/see-more'} className=" text-[#fff] p-[2rem] font-[600] text-[16px] leading-[24px]  flex gap-2 font-tekInter ">
             See more{" "}
             <i className="ri-arrow-right-s-line text-[#fff] text-[16px]"></i>
-          </h1>
+          </Link>
         </div>
 
         <Products />

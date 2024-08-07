@@ -15,10 +15,14 @@ import ProductDetails from "../components/ProductDetails";
 import Search from "../pages/search";
 import SignupNotification from "../pages/signupNotification";
 import SavedItemLayout from "../components/saveditems/savedItemLayout";
+
 import EmptyCart from "../components/cart/emptyCart";
 
 import EmptyCartSignin from "../components/cart/emptyCardSignin";
 import FilledCart from "../components/cart/filledCart";
+
+
+import SeeMore from "../pages/SeeMore";
 
 
 const Routs = () => {
@@ -45,6 +49,7 @@ const Routs = () => {
       {/*  auth routes */}
 
       <Route path="/product/:id" element={<ProductDetails />} />
+      <Route path="/products/see-more" element={<SeeMore/>}/>
       <Route path="/search" element={<Search />} />
       <Route path="/signup-notification" element={<SignupNotification />} />
 
@@ -52,9 +57,14 @@ const Routs = () => {
       {/* waiting for loggedin users */}
       <Route path="/saveditem" element={<SavedItemLayout />} />
 
+
       <Route path="/emptycart" element={<EmptyCart />} />
       <Route path="/emptycart-signin" element={<EmptyCartSignin />} />
       <Route path="/filledcart" element={<FilledCart />} />
+
+      {/* <Route path="/emptycart" element={<EmptyCart />} />
+      <Route path="/emptycart-signin" element={<EmptyCartSignin />} /> */}
+
     </Routes>
   );
 };
