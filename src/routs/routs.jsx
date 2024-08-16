@@ -23,10 +23,13 @@ import FilledCart from "../components/cart/filledCart";
 
 
 import SeeMore from "../pages/SeeMore";
+import HomeDashboard from "../dahsboad/pages/homeDashboard";
+import ProductUpload from "../dahsboad/pages/productUpload";
 
 
 const Routs = () => {
   return (
+    
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/otherstores" element={<Otherstores />} />
@@ -64,6 +67,11 @@ const Routs = () => {
 
       {/* <Route path="/emptycart" element={<EmptyCart />} />
       <Route path="/emptycart-signin" element={<EmptyCartSignin />} /> */}
+
+
+      {/* DashBoard Routes */}
+      <Route  path="/dashboard"  element={ <HomeDashboard /> } />
+      <Route  path="/product-upload"  element={ <ProductUpload  /> } />
 
     </Routes>
   );

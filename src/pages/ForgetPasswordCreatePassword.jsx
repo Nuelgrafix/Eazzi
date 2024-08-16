@@ -1,4 +1,4 @@
-import img from "../assets/crpass.png";
+ import img from "../assets/crpass.png";
 import logo from "../assets/eazzi_logo.svg";
 import eye from "../assets/Show.png";
 import eyex from "../assets/eyex.png";

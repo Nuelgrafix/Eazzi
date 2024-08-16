@@ -26,11 +26,12 @@ const VerifyEmail = () => {
         { headers: { 'Content-Type': 'application/json' } }
       );
 
-      if (res.data.success) {
+       console.log("Response data:", res.data); 
+       if (res.data.message === "Email verified successfully") {
         toast.success(res.data.message, {
           position: "top-center",
         });
-
+     console.log("Verification mail sent")
         navigate("/login");
       } else {
         toast.error(res.data.message, {

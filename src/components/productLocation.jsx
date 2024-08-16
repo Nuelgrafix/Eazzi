@@ -50,6 +50,7 @@ const ProductLocation = () => {
         <div className="bg-[#FFB164]  md:bg-productBg">
           <Products />
         </div>
+        
       </div>
 
       {/* location */}
