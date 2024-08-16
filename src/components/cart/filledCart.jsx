@@ -222,9 +222,6 @@ const FilledCart = () => {
           </div>
     
 
-
-       
-
         </div>
 
 

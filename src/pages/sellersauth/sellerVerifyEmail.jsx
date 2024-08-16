@@ -7,7 +7,7 @@ import sign from "../assets/ver.png";
 import logo from "../assets/eazzi_logo.svg";
 import SignupWithGoogleorLogin from "../components/SignupWithGoogleorLogin";
 
-const VerifyEmail = () => {
+const SellerVerifyEmail = () => {
   const [code, setCode] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
@@ -26,12 +26,11 @@ const VerifyEmail = () => {
         { headers: { 'Content-Type': 'application/json' } }
       );
 
-       console.log("Response data:", res.data); 
-       if (res.data.message === "Email verified successfully") {
+      if (res.data.success) {
         toast.success(res.data.message, {
           position: "top-center",
         });
-     console.log("Verification mail sent")
+
         navigate("/login");
       } else {
         toast.error(res.data.message, {
@@ -106,4 +105,4 @@ const VerifyEmail = () => {
   );
 };
 
-export default VerifyEmail;
+export default SellerVerifyEmail;

@@ -3,7 +3,7 @@ import img from "../assets/crpass.png";
 import logo from "../assets/eazzi_logo.svg";
 import mail from "../assets/mail.png";
 
-const ForgetPassword = () => {
+const SellerForgetPassword = () => {
   return (
     <div className="absolute z-50 bg-white w-full pb-[25rem] md:pb-0">
       <div className="w-full flex flex-col md:flex-row items-center justify-between md:px-0">
@@ -48,4 +48,4 @@ const ForgetPassword = () => {
   );
 };
 
-export default ForgetPassword;
+export default SellerForgetPassword;

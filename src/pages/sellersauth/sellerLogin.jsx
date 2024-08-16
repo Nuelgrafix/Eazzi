@@ -1,86 +1,18 @@
 import  { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import sign from "../assets/signup.png";
 import logo from "../assets/eazzi_logo.svg";
 import mail from "../assets/mail.png";
 import eye from "../assets/Show.png";
 import eyex from "../assets/eyex.png";
 import SignupWithGoogleorSignup from "../components/SignupWithGoogleorSignup";
-import axios from "axios";
-import { toast } from "react-toastify";
-import PasswordVisibility from "../hooks/PasswordVisibility";
 
-const Login = () => {
+const SellerLogin = () => {
+  const [isShow, setIsShow] = useState(false);
 
-  const [email,setEmail] = useState("");
-  const [ password,setPassword] = useState()
-  const navigate = useNavigate()
-
-  const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-
-
-  const validateForm = () => {
-    const err = {};
-    if (!email.trim()) {
-      err.email = "This Field Required";
-    }
-  
-    // Password validation
-    if (
-      !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}/.test(password)
-    ) {
-      err.password =
-        "Password must be at least 8 characters long and include one uppercase, one lowercase, one number, and one special character.";
-    }
-    if (!password.trim()) {
-      err.password = "This Field Required";
-    }
-    
- 
-    setErrors(err);
-    return Object.keys(err).length === 0;
+  const togglePasswordVisibility = () => {
+    setIsShow(!isShow);
   };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!validateForm()) {
-      return;
-    }
-    setIsSubmitting(true);
-    try {
-     await axios.post( "https://django-7u8g.onrender.com/api/authent/login/",
-      {
-      username: email,  // Rename 'email' to 'username'
-                password: password
-      }
-      );
-      toast.success("Login successfully", {
-        position: "top-center",
-      });
- console.log("logging in")
-      navigate('/')
-    } catch (err) {
-      if (err.response && err.response.data) {
-        toast.error(err.response.data.error, {
-          position: "top-center",
-        });
-      } else
-      toast.error("Error submitting the form. Please try again!", {
-        position: "top-center",
-      });
-    }
-
-    setIsSubmitting(false);
-  };
-
-  const {
-    isShow,
-    togglePasswordVisibility,
-  } = PasswordVisibility();
-
-
   return (
     <div className="absolute z-50 bg-white w-full pb-[14rem] md:pb-0">
       <div className="w-full flex flex-col md:flex-row items-center justify-between md:px-0">
@@ -95,7 +27,7 @@ const Login = () => {
           <h2 className="text-[24px] font-tekInter text-[#4F4F4F] leading-[30px] font-[700] px-3 mt-10">
             Welcome back, Log in
           </h2>
-          <form action=""  onSubmit={handleSubmit} className="mt-[32px] flex flex-col gap-[24px] px-3">
+          <form action="" className="mt-[32px] flex flex-col gap-[24px] px-3">
             <div className="w-full relative">
               <input
                 type="email"
@@ -103,17 +35,12 @@ const Login = () => {
                 name="Last name"
                 placeholder="Email address"
                 required
-                value={email}
-                onChange={(e)=> setEmail(e.target.value)}
               />
               <img
                 src={mail}
                 className="absolute top-[13px] left-[10.3px]"
                 alt="Mail icon"
               />
-                    {errors.email && (
-                <p className="text-red-600 text-[15px]">{errors.email}</p>
-              )}
             </div>
 
             <div className="relative">
@@ -123,8 +50,6 @@ const Login = () => {
                 name="password"
                 placeholder="Password"
                 required
-                value={password}
-                onChange={(e)=> setPassword(e.target.value)}
               />
               <img
                 src={isShow ? eyex : eye}
@@ -132,9 +57,6 @@ const Login = () => {
                 alt=""
                 onClick={togglePasswordVisibility}
               />
-                   {errors.password && (
-                <p className="text-red-600 text-[15px]">{errors.password}</p>
-              )}
             </div>
             <div className="flex items-center justify-between mt-[-1rem]">
               <div className="flex gap-2">
@@ -157,11 +79,9 @@ const Login = () => {
 
             <button
               type="submit"
-              className="bg-[#1843E2] rounded-[8px] shadow-btn text-white text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[38px] py-[10px] px-[18px] justify-center items-center flex"
-              disabled={isSubmitting} 
+              className="bg-[#1843E2] rounded-[8px] shadow-btn text-white text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[38px] py-[10px] px-[18px]"
             >
-              
-              {isSubmitting ? <div className="loader flex justify-center items-center"></div> : "Login"}
+              Log in
             </button>
           </form>
 
@@ -174,4 +94,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SellerLogin;

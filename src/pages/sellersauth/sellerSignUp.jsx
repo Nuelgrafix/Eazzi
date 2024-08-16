@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const SellerSignup = () => {
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -74,7 +74,7 @@ const Signup = () => {
     }
     setIsSubmitting(true);
     try {
-     await axios.post(
+      await axios.post(
         "https://django-7u8g.onrender.com/api/authent/register/",
         formData
       );
@@ -252,4 +252,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SellerSignup;
