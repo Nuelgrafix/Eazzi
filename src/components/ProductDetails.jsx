@@ -10,7 +10,6 @@ import star from "../assets/str.png";
 import location from "../assets/location.png";
 import loc from "../assets/loc.png";
 import prof from "../assets/prof.png";
-import ProductLayout from "./productLayout";
 import Products from "./products";
 import SecondAds from "./secondAds";
 import Newsletter from "./newsletter";
@@ -190,7 +189,7 @@ const ProductDetails = () => {
                   <li className="text-[16px] text-[#4f4f4f] font-tekInter pl-5">
                     Skin Leather: The handbag is made from high-quality skin
                     leather, known for its smooth texture, durability, and
-                    luxurious appearance. The leather's natural finish gives it
+                    luxurious appearance. The leather&apos;s natural finish gives it
                     a sophisticated look, suitable for both casual and formal
                     occasions.
                   </li>

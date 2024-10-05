@@ -12,7 +12,7 @@ import { Link } from "react-router-dom"
 const sidebar_Link = [
 
     {
-        path: "#",
+        path: "/dashboard",
         display: "Dashboard",
         img: dashboardHome,
     },

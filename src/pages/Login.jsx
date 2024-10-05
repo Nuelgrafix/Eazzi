@@ -9,6 +9,7 @@ import SignupWithGoogleorSignup from "../components/SignupWithGoogleorSignup";
 import axios from "axios";
 import { toast } from "react-toastify";
 import PasswordVisibility from "../hooks/PasswordVisibility";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const Login = () => {
 
@@ -18,7 +19,7 @@ const Login = () => {
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+const {setAuthUser}  = useAuthContext();
 
 
   const validateForm = () => {
@@ -50,17 +51,21 @@ const Login = () => {
     }
     setIsSubmitting(true);
     try {
-     await axios.post( "https://django-7u8g.onrender.com/api/authent/login/",
+   const res =  await axios.post( "https://django-7u8g.onrender.com/api/authent/login/",
       {
       username: email,  // Rename 'email' to 'username'
                 password: password
       }
       );
+      
+ const aware = localStorage.setItem("user", JSON.stringify(res));
+ setAuthUser(res)
       toast.success("Login successfully", {
         position: "top-center",
       });
- console.log("logging in")
+      console.log(aware)
       navigate('/')
+    
     } catch (err) {
       if (err.response && err.response.data) {
         toast.error(err.response.data.error, {
