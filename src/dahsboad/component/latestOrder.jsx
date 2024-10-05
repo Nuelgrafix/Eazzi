@@ -46,7 +46,8 @@ style={{boxShadow:" 0px 8px 32px 0px #3326AE14"}}
                 <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter pl-[16px]">{l.date}</td>
                 <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter pl-[16px]">{l.Amount}</td>
                 <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter pl-[16px]">{l.orderId}</td>
-                <td className={`border-r-0 border-l-0 text-[14px] leading-[16px] font-[400] font-tekInter  ${l.statusReceive ? 'bg-[#F4EBFF] text-[#1843E2]'
+                <td className={`border-r-0 border-l-0 text-[14px] leading-[16px] font-[400] font-tekInter
+                  ${l.statusReceive ? 'bg-[#F4EBFF] text-[#1843E2]'
                      : l.statusPending ? 'bg-[#FFB1641A] text-[#FF7F00]' : l.statusCompleted ? 'bg-[#24B6611A] text-[#24B661]' : ''}
                       border-[1px] lg:w-[126px] w-[100px] h-[37px] flex items-center justify-center rounded-[8px] mt-[0.7rem]`}>
                     {l.statusReceive || l.statusPending || l.statusCompleted}

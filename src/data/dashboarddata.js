@@ -42,9 +42,12 @@ export const dashboardtopdata = [
 
 ]
 
-import LatestOrderOne from "../../public/Image/latestOrderOne.svg"
-import LatestOrderTwo from "../../public/Image/latestorderTwo.svg"
-import LatestOrderThree from "../../public/Image/latestorderThree.svg"
+import LatestOrderOne from "/Image/latestOrderOne.svg"
+import LatestOrderTwo from "/Image/latestorderTwo.svg"
+import LatestOrderThree from "/Image/latestorderThree.svg"
+import pink from "../../public/Image/pink-lether.svg"
+import flatBase from "../../public/Image/flat-base.svg"
+import pinkSneakers from "../../public/Image/pink_sneakers.svg"
 
 export const latestorderdata = [
 
@@ -57,6 +60,49 @@ export const latestorderdata = [
         Amount: "N556.24",
         orderId: "BEN983546",
         statusReceive: "Receive Order",
+      card: [
+
+        {
+            id: '1',
+            img: pink,
+            title: 'Pink leather hand bag',
+            qty: "2",
+            amount: "#7,000"
+
+        },
+
+        {
+            id: '2',
+            img: flatBase,
+            title: 'Flat base sneaker',
+            qty: "2",
+            amount: "#7,000"
+
+        },
+
+
+        {
+            id: '3',
+            img: pinkSneakers,
+            title: 'Pink leather hand bag',
+            qty: "2",
+            amount: "#7,000"
+
+        },
+
+
+        {
+            id: '4',
+            img: flatBase,
+            title: 'Flat base sneaker',
+            qty: "2",
+            amount: "#7,000"
+
+        },
+
+
+
+      ]
 
     },
 
@@ -70,6 +116,50 @@ export const latestorderdata = [
         Amount: "N556.24",
         orderId: "BEN983546",
         statusReceive: "Receive Order",
+        card: [
+
+            {
+                id: '1',
+                img: pink,
+                title: 'Pink leather hand bag',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+            {
+                id: '2',
+                img: flatBase,
+                title: 'Flat base sneaker',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+    
+            {
+                id: '3',
+                img: pink,
+                title: 'Pink leather hand bag',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+    
+            {
+                id: '4',
+                img: flatBase,
+                title: 'Flat base sneaker',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+    
+    
+          ]
+    
 
     },
 
@@ -83,6 +173,50 @@ export const latestorderdata = [
         Amount: "N556.24",
         orderId: "BEN983546",
         statusReceive: "Receive Order",
+        card: [
+
+            {
+                id: '1',
+                img: pink,
+                title: 'Pink leather hand bag',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+            {
+                id: '2',
+                img: flatBase,
+                title: 'Flat base sneaker',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+    
+            {
+                id: '3',
+                img: pink,
+                title: 'Pink leather hand bag',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+    
+            {
+                id: '4',
+                img: flatBase,
+                title: 'Flat base sneaker',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+    
+    
+          ]
+    
 
     },
     
@@ -95,6 +229,50 @@ export const latestorderdata = [
         Amount: "N556.24",
         orderId: "BEN983546",
         statusPending: "Pending",
+        card: [
+
+            {
+                id: '1',
+                img: pink,
+                title: 'Pink leather hand bag',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+            {
+                id: '2',
+                img: flatBase,
+                title: 'Flat base sneaker',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+    
+            {
+                id: '3',
+                img: pink,
+                title: 'Pink leather hand bag',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+    
+            {
+                id: '4',
+                img: flatBase,
+                title: 'Flat base sneaker',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+    
+    
+          ]
+    
 
     },
     
@@ -182,6 +360,50 @@ export const latestorderdata = [
         Amount: "N556.24",
         orderId: "BEN983546",
         statusReceive: "Receive Order",
+        card: [
+
+            {
+                id: '1',
+                img: pink,
+                title: 'Pink leather hand bag',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+            {
+                id: '2',
+                img: flatBase,
+                title: 'Flat base sneaker',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+    
+            {
+                id: '3',
+                img: pink,
+                title: 'Pink leather hand bag',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+    
+            {
+                id: '4',
+                img: flatBase,
+                title: 'Flat base sneaker',
+                qty: "2",
+                amount: "#7,000"
+    
+            },
+    
+    
+    
+          ]
+    
 
     },
 
@@ -420,5 +642,4 @@ export const dashboardchartdata = [
       
 
 ]
-
 

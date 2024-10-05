@@ -16,10 +16,11 @@ import speaker from "../assets/speaker.png";
 import broom from "../assets/broom.png";
 import game from "../assets/game.png";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const Header = () => {
 
-const user = true;
+  const {authUser} = useAuthContext();
 
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -293,7 +294,7 @@ const user = true;
                 alt="profile_icon"
                 className="w-[12px] h-[16px]"
               />
-              Sign Up
+          {authUser ? "Welcome" : "Sign up"}
             </button>
           </Link>
 
@@ -322,7 +323,7 @@ const user = true;
                   <li className="text-[17px] font-light">Cancel order</li>
                   <li className="text-[17px] font-light">Payment options</li>
                   <li className="text-[17px] font-light">Help center</li>
-                  <li className="text-[17px] font-light">{ user ? <Link to="/signup-notification">Saved items</Link> : <></> }</li>
+                  <li className="text-[17px] font-light">{ authUser ? <Link to="/saveditem">  Saved items</Link> : <Link to="/signup-notification">Saved items</Link>}</li>
                 </ul>
               )}
             </div>
@@ -330,15 +331,16 @@ const user = true;
 
           {/* cart */}
           <div className="flex items-center gap-1">
-            <h1 className="text-[16px] font-[400] text-[#fff] text-nowrap">
+            <Link to={authUser? "/emptycart-signin" : "/emptycart"} className="text-[16px] font-[400] text-[#fff] text-nowrap">
               My cart
-            </h1>
+            </Link>
             <ul>
               <li>
                 <img src={carticon} className="w-[16px] h-[15px]" alt="" />
               </li>
             </ul>
           </div>
+
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import React from "react";
+
 import heart from "../assets/Heart.png";
 import location from "../assets/location.png";
 import arr from "../assets/arr.png";
