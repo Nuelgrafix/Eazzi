@@ -38,6 +38,29 @@ import EditProfile from "../dahsboad/component/editProfile";
 import NotificationDetails from "../dahsboad/component/notification/notificationDetails";
 import DashboardNotification from "../dahsboad/pages/dashboardNotification";
 import Analyticsdashboard from "../dahsboad/pages/analyticsdashboard";
+import Settings from "../dahsboad/pages/settings";
+
+import RiderHomeDashboard from "../riderdashboard/riderpages/riderHomeDashboard";
+import RiderAnalyticsdashboard from "../riderdashboard/riderpages/riderAnalyticsdashboard";
+import RiderSettings from "../riderdashboard/riderpages/riderSettings";
+import RiderOrderHistory from "../riderdashboard/riderpages/riderOrderHistory";
+import RiderProfile from "../riderdashboard/riderpages/riderProfile";
+import RiderDashboardProduct from "../riderdashboard/riderpages/riderDashboardProduct";
+import RiderOrders from "../riderdashboard/riderpages/riderOrders";
+import RiderDashboardNotification from "../riderdashboard/riderpages/riderDashboardNotification";
+import RiderProductUpload from "../riderdashboard/riderpages/riderProductUpload";
+import RiderEditProduct from "../riderdashboard/riderpages/riderEditProduct";
+import RiderEditProfile from "../riderdashboard/component/riderEditProfile";
+import RiderOrderDetails from "../riderdashboard/riderpages/riderOrderDetails";
+import RiderNotificationDetails from "../riderdashboard/component/notification/riderNotificationDetails";
+import RiderRiders from "../riderdashboard/riderpages/riderRiders";
+import RiderCustomer from "../riderdashboard/riderpages/riderCustomer";
+import RiderStores from "../riderdashboard/riderpages/riderStores";
+import RiderStoresDetails from "../riderdashboard/riderpages/riderStoresDetails";
+import RiderCustomerDetails from "../riderdashboard/riderpages/riderCustomerDetails";
+import AllRiderDetails from "../riderdashboard/riderpages/allRiderDetails";
+import AllRiderPage from "../riderdashboard/riderpages/allRiderPage";
+import RiderAssignedOrder from "../riderdashboard/riderpages/riderAssignedOrder";
 
 
 const Routs = () => {
@@ -78,34 +101,60 @@ const {authUser} = useAuthContext()
 
 
 {/* Cart */}
-      <Route path="/emptycart-signin" element={<EmptyCartSignin />} /> 
-       {/* <Route path="/emptycart" element={<EmptyCart />} />  */}
-      <Route path="/filledcart" element={<FilledCart />} />
-     <Route path="/emptycart" element={ authUser? <EmptyCartSignin />  : <EmptyCart />   } />
+    <Route path="/emptycart-signin" element={<EmptyCartSignin />} /> 
+  {/* <Route path="/emptycart" element={<EmptyCart />} />  */}
+ <Route path="/filledcart" element={<FilledCart />} />
+ <Route path="/emptycart" element={ authUser? <EmptyCartSignin />  : <EmptyCart />   } />
 
 
 
-      {/* DashBoard Routes */}
-      <Route  path="/dashboard"  element={ <HomeDashboard /> } />
-      <Route  path="/product-upload"  element={ <ProductUpload  /> } />
-      <Route  path="/dashboard-analytics"  element={ <Analyticsdashboard  /> } />
-      <Route  path="/product-upload"  element={ <ProductUpload  /> } />
-      <Route  path="/orders"  element={ <Orders  /> } />
-      <Route  path="/dashboard-product"  element={ <DashboardProduct  /> } />
+      {/*Admin  DashBoard Routes */}
+      <Route  path="/admin-dashboard"  element={ <HomeDashboard /> } />
+      <Route  path="/admin-product-upload"  element={ <ProductUpload  /> } />
+      <Route  path="/admin-analytics"  element={ <Analyticsdashboard  /> } />
+      {/* <Route  path="/product-upload"  element={ <ProductUpload  /> } /> */}
+      <Route  path="/admin-orders"  element={ <Orders  /> } />
+      <Route  path="/admin-product"  element={ <DashboardProduct  /> } />
       <Route  path="/ordersdetails/:id"  element={ <OrderDetails /> } />
-      <Route  path="/dashboard-profile"  element={ <Profile /> } />
+      <Route  path="/admin-profile"  element={ <Profile /> } />
       <Route  path="/dashboard-edit/:id"  element={ <EditProduct /> } />
       <Route path="/dashboard/about-product/:id"  element={ <AboutProduct />}  />
       <Route path="/dashboard/profile"  element={ <Profile />}  />
       <Route path="/dashboard/edit-profile/:id"  element={ <EditProfile />}  />
-
-      <Route path="/dashboard/notification"  element={ <  DashboardNotification />}  />
+      <Route path="/admin-notification"  element={ <  DashboardNotification />}  />
       <Route path="/dashboard/notification/:id"  element={ <NotificationDetails />}  />
       <Route  path="/order-history"  element={ <OrderHistory  /> } />
+      <Route  path="/admin-settings"  element={ <Settings /> } />
 
-      {/* Admin Routes */}
-            
-
+      {/* Rider Dashboard Routes */}
+    
+            <Route  path="/rider-dashboard"  element={ <RiderHomeDashboard /> } />
+      <Route  path="/rider-product-upload"  element={ <RiderProductUpload  /> } />
+      <Route  path="/rider-analytics"  element={ <RiderAnalyticsdashboard  /> } />
+      {/* <Route  path="/product-upload"  element={ <ProductUpload  /> } /> */}
+    
+      <Route  path="/rider-product"  element={ <RiderDashboardProduct  /> } />
+      <Route  path="/rider-orders"  element={ <RiderOrders  /> } />
+      <Route  path="/rider-assigned-orders/:id"  element={ <RiderAssignedOrder /> } />
+      <Route  path="/rider/ordersdetails/:id"  element={ <RiderOrderDetails /> } />
+      <Route  path="/rider/profile"  element={ <RiderProfile /> } />
+      <Route  path="/rider-edit/:id"  element={ <RiderEditProduct /> } />
+      <Route path="/dashboard/about-product/:id"  element={ <AboutProduct />}  />
+      {/* <Route path="/dashboard/profile"  element={ <Profile />}  /> */}
+      <Route path="/rider/edit-profile/:id"  element={ <RiderEditProfile />}  />
+      <Route path="/rider/notification"  element={ <  RiderDashboardNotification />}  />
+      <Route path="/rider/notification/:id"  element={ <RiderNotificationDetails />}  />
+      <Route  path="/rider-order-history"  element={ <RiderOrderHistory  /> } />
+      <Route  path="/rider/settings"  element={ <RiderSettings /> } />
+     
+      <Route  path="/rider/customer"  element={ <RiderCustomer/> } />
+      <Route path="/rider/customerdetails/:id"  element={ <RiderCustomerDetails />}  />
+      <Route  path="/rider/stores"  element={ <RiderStores /> } />
+      <Route path="/rider/storesdetails/:id"  element={ <RiderStoresDetails />}  />
+      
+      <Route  path="/rider/riders"  element={ <RiderRiders /> } />
+      <Route path="/rider/allrider"  element={ <AllRiderPage />}  />
+      <Route path="/rider/allriderdetails/:id"  element={ <AllRiderDetails />}  />
 
 
 {/* No page Found */}

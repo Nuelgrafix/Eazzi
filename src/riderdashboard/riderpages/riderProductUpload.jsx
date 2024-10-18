@@ -1,4 +1,4 @@
-import SidebarDashboard from "../component/sidebarDashboard"
+
 
 
 import manager from "/Image/manager.svg"
@@ -16,15 +16,16 @@ import { toast } from "react-toastify";
 
 
 import Products from "../../components/products"
-import MobileSideDashboard from "../component/mobileSideDashboard"
 import Footerimg from "../../../public/Image/footer-dahsboard.svg"
+import RiderMobileSideDashboard from "../component/riderMobileSideDashboard"
+import RiderSidebarDashboard from "../component/riderSidebarDashboard"
 // import useGetProducts from "../dashboardhooks/useGetProducts"
 
 
 
 
 
-const ProductUpload = () => {
+const RiderProductUpload = () => {
 
  
 
@@ -110,7 +111,7 @@ const ProductUpload = () => {
       }
     });
 
-console.log(formData)
+    console.log('Yes')
       toast.success("Product uploaded successfully!", {
         position: "top-center",
       });
@@ -127,7 +128,7 @@ console.log(formData)
       }
     } finally {
       setIsSubmitting(false);
-     
+      console.log('Yes again')
     }
   };
   
@@ -193,12 +194,12 @@ console.log(formData)
       </div>
 <div  className={`fixed overflow-y-scroll z-[1000] h-full  ${showSide? "max-w-[214px] w-full bg-[#1843E2] " 
     : "max-w-[214px] w-[0px] bg-[#1843E2] "}`}>
-<MobileSideDashboard />
+<RiderMobileSideDashboard />
  </div>
    
 </div>  
     <div  className="max-w-[204px] w-full  md:flex hidden  bg-[#1843E2]">
-<SidebarDashboard />
+<RiderSidebarDashboard />
  </div>
 
 
@@ -422,4 +423,4 @@ style={{boxShadow: "0px 8px 32px 0px #3326AE14"}} >
   )
 }
 
-export default ProductUpload
+export default RiderProductUpload

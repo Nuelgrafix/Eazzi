@@ -1,8 +1,12 @@
 import { productdata } from "../data/product";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Products = () => {
+
   var settings = {
     dots: false,
     infinite: true,
@@ -19,6 +23,39 @@ const Products = () => {
       },
     ],
   };
+
+
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(()=>  {
+    const getProducts = async () => {
+      try {
+        const result = await axios.get("https://django-7u8g.onrender.com/api/products/list/");
+        console.log("API Response:", result); // Debugging line
+        const res = result.data;
+        console.log("Data:", res); // Debugging line
+        setProducts(res);
+  
+        toast.success("Products fetched successfully!", {
+          position: "top-center",
+        });
+      } catch (err) {
+        console.error("Error:", err); // Debugging line
+        if (err.response && err.response.data) {
+          toast.error(err.response.data.error, {
+            position: "top-center",
+          });
+        } else {
+          toast.error("Error fetching the products. Please try again!", {
+            position: "top-center",
+          });
+        }
+      }
+    };
+
+    getProducts()
+  }, [])
 
   return (
     <section className="">
@@ -60,9 +97,9 @@ const Products = () => {
       </div>
 
       {/* second component without slider */}
-      {/* mapping through */}
+
       <div className="md:grid lg:grid-cols-6 hidden w-[100%] grid-cols-1 md:grid-cols-3 relative mx-auto gap-4 py-[3rem]">
-        {productdata.map((item) => (
+        {products.map((item) => (
           <div
             key={item.id}
             className="gap-3   mx-2 top-0 rounded-[5px] w-[223px]  items-center justify-center"

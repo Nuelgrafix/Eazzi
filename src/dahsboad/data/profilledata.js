@@ -2,7 +2,7 @@
 
 
 import detailstores from "/Image/details_store.svg";
-import profilepics from "../../../public/Image/details_pics.svg"
+import profilepics from "/Image/details_pics.svg"
 
 export const profiledata = [
 

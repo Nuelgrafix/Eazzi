@@ -22,24 +22,26 @@ import IC_BlueProfile from "../../../public/Component/IC_BlueProfile"
 import IC_BlueAnalytics from "../../../public/Component/IC_BlueAnalytics"
 
 
+
+
 const sidebar_Link = [
   {
     id: "1",
-    path: "/dashboard",
+    path: "/admin-dashboard",
     display: "Dashboard",
     iconTwo: <IC_Home className="group-hover:stroke-white" />,
     icon: <IC_BlueHome />,
   },
   {
     id: "2",
-    path: "/dashboard-analytics",
+    path: "/admin-analytics",
     display: "Analytics",
     icon: <IC_Analytics />,
     iconTwo: <IC_BlueAnalytics/>,
   },
   {
     id: "3",
-    path: "/orders",
+    path: "/admin-orders",
     display: "Orders",
     icon: <IC_Order />,
     iconTwo: <IC_BlueOrder />,
@@ -47,7 +49,7 @@ const sidebar_Link = [
   },
   {
     id: "4",
-    path: "/dashboard-product",
+    path: "/admin-product",
     display: "Products",
     icon: <IC_Product />,
     iconTwo: <IC_BlueProduct />,
@@ -61,14 +63,14 @@ const sidebar_Link = [
   },
   {
     id: "6",
-    path: "/dashboard/profile",
+    path: "/admin-profile",
     display: "Profile",
     icon: <IC_Profile />,
     iconTwo: <IC_BlueProfile />,
   },
   {
     id: "7",
-    path: "#",
+    path: "/admin-settings",
     display: "Setting",
     icon: <IC_Setting />,
   },
@@ -94,7 +96,7 @@ const SidebarDashboard = () => {
           Ben&apos;s Store
         </h1>
         <Link
-          to="/product-upload"
+          to="/admin-product-upload"
           className="bg-[#FF7F00] gap-[8px] rounded-[8px] border-[1px] border-[#FF7F00] h-[38px] text-[#FFFFFF] text-[16px] leading-[24px] font-[600] font-tekInter pt-[8px] pr-[20px] pb-[8px] pl-[10px]"
           style={{ boxShadow: "0px 1px 2px 0px #1018280D" }}
         >
@@ -102,13 +104,14 @@ const SidebarDashboard = () => {
         </Link>
       </div>
 
+
+
       <div className="flex flex-col gap-[18px]">
         {sidebar_Link.map((s) => (
           <div
             key={s.id}
             className={`flex rounded-[8px] gap-[10px] w-[151px] h-[39px] items-center justify-start pl-[0.5rem] group cursor-pointer
               ${activeId === s.id ? 'bg-[#FFFFFF] stroke-[#1843E2]' : 'bg-[#A9BCFF]'}`}
-          
           >
             <div
               className={`w-[20px] h-[20px] ${
@@ -121,7 +124,7 @@ const SidebarDashboard = () => {
             </div> 
             <Link   onClick={() => handleToggle(s.id)}
               to={s.path}
-              className="text-[16px] leading-[19px] text-[#181818] font-tekInter font-[400] flex items-center justify-center gap-[10px]"
+    className={`text-[16px] leading-[19px] text-[#181818] font-tekInter font-[400] flex items-center justify-center gap-[10px] `}
             >
               {s.display}
               {s.number && (
@@ -135,6 +138,9 @@ const SidebarDashboard = () => {
           </div>
         ))}
       </div>
+      
+
+
     </section>
   );
 };
