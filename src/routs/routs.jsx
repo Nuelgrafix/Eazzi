@@ -25,7 +25,7 @@ import FilledCart from "../components/cart/filledCart";
 import SeeMore from "../pages/SeeMore";
 import HomeDashboard from "../dahsboad/pages/homeDashboard";
 import ProductUpload from "../dahsboad/pages/productUpload";
- import { useAuthContext } from "../hooks/useAuthContext";
+//  import { useAuthContext } from "../hooks/useAuthContext";
 import NoPageFound from "../pages/noPageFound";
 import Orders from "../dahsboad/pages/orders";
 import OrderHistory from "../dahsboad/pages/orderHistory";
@@ -53,7 +53,6 @@ import RiderEditProduct from "../riderdashboard/riderpages/riderEditProduct";
 import RiderEditProfile from "../riderdashboard/component/riderEditProfile";
 import RiderOrderDetails from "../riderdashboard/riderpages/riderOrderDetails";
 import RiderNotificationDetails from "../riderdashboard/component/notification/riderNotificationDetails";
-import RiderRiders from "../riderdashboard/riderpages/riderRiders";
 import RiderCustomer from "../riderdashboard/riderpages/riderCustomer";
 import RiderStores from "../riderdashboard/riderpages/riderStores";
 import RiderStoresDetails from "../riderdashboard/riderpages/riderStoresDetails";
@@ -61,11 +60,18 @@ import RiderCustomerDetails from "../riderdashboard/riderpages/riderCustomerDeta
 import AllRiderDetails from "../riderdashboard/riderpages/allRiderDetails";
 import AllRiderPage from "../riderdashboard/riderpages/allRiderPage";
 import RiderAssignedOrder from "../riderdashboard/riderpages/riderAssignedOrder";
+import RiderLogin from "../rider/auth/riderLogin";
+import RiderSignup from "../rider/auth/riderSignup";
+import RiderDashboard from "../rider/dashboard";
+import RiderMessages from "../rider/riderMessages";
+import Checkout from "../pages/Checkout";
+import AddAddress from "../components/checkouts/addAddress";
+import AdminRiders from "../riderdashboard/riderpages/riderRiders";
 
 
 const Routs = () => {
 
-const {authUser} = useAuthContext()
+// const {authUser} = useAuthContext()
 
   return (
     
@@ -74,21 +80,27 @@ const {authUser} = useAuthContext()
       <Route path="/otherstores" element={<Otherstores />} />
       <Route path="/storesdetails" element={<StoresDetails />} />
       <Route path="/topstoresdetails" element={<Topstoresdetails />} />
+      <Route path="/checkout"  element={<Checkout />}  />
+      <Route path="/checkout-address"  element={<AddAddress/>}  />
 
       {/* auth routes */}
       <Route path="/signup" element={<Signup />} />
       <Route path="/verify_email" element={<VerifyEmail />} />
       <Route path="/login" element={<Login />} />
       <Route path="/forget_password" element={<ForgetPassword />} />
-      <Route
-        path="/forget_passwordVerify_email"
-        element={<ForgetPasswordVerifyEmail />}
-      />
-      <Route
-        path="/forget_passwordCreate_password"
-        element={<ForgetPasswordCreatePassword />}
-      />
-      {/*  auth routes */}
+      <Route path="/forget_passwordVerify_email" element={<ForgetPasswordVerifyEmail />} />
+      <Route  path="/forget_passwordCreate_password" element={<ForgetPasswordCreatePassword />} />
+
+
+
+      {/* rider auth */}
+      <Route path="/rider-signup" element={<RiderSignup />} />
+      <Route path="/verify_email" element={<VerifyEmail />} />
+      <Route path="/rider-login" element={<RiderLogin />} />
+      <Route path="/rider-dashboards" element={<RiderDashboard />} />
+      <Route path="/rider-messages" element={<RiderMessages />} />
+
+      {/*  auth routes  ends */}
 
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/products/see-more" element={<SeeMore/>}/>
@@ -102,14 +114,22 @@ const {authUser} = useAuthContext()
 
 {/* Cart */}
     <Route path="/emptycart-signin" element={<EmptyCartSignin />} /> 
-  {/* <Route path="/emptycart" element={<EmptyCart />} />  */}
+ <Route path="/emptycart" element={<EmptyCart />} /> 
  <Route path="/filledcart" element={<FilledCart />} />
- <Route path="/emptycart" element={ authUser? <EmptyCartSignin />  : <EmptyCart />   } />
+ {/* <Route path="/emptycart" element={ authUser? <EmptyCartSignin />  : <EmptyCart />   } /> */}
+
+
+      {/* Rider auth & dashboard */}
+      <Route path="/rider-signup" element={<RiderSignup />} />
+      <Route path="/verify-email" element={<VerifyEmail />} />
+      <Route path="/rider-login" element={<RiderLogin />} />
+      <Route path="/rider-dashboards" element={<RiderDashboard />} />
+      <Route path="/rider-messages" element={<RiderMessages />} />
 
 
 
-      {/*Admin  DashBoard Routes */}
-      <Route  path="/admin-dashboard"  element={ <HomeDashboard /> } />
+      {/*Store DashBoard Routes */}
+      <Route  path="/store-dashboard"  element={ <HomeDashboard /> } />
       <Route  path="/admin-product-upload"  element={ <ProductUpload  /> } />
       <Route  path="/admin-analytics"  element={ <Analyticsdashboard  /> } />
       {/* <Route  path="/product-upload"  element={ <ProductUpload  /> } /> */}
@@ -126,9 +146,11 @@ const {authUser} = useAuthContext()
       <Route  path="/order-history"  element={ <OrderHistory  /> } />
       <Route  path="/admin-settings"  element={ <Settings /> } />
 
-      {/* Rider Dashboard Routes */}
+
+
+      {/* Admin Dashboard Routes */}
     
-            <Route  path="/rider-dashboard"  element={ <RiderHomeDashboard /> } />
+            <Route  path="/admin-dashboard"  element={ <RiderHomeDashboard /> } />
       <Route  path="/rider-product-upload"  element={ <RiderProductUpload  /> } />
       <Route  path="/rider-analytics"  element={ <RiderAnalyticsdashboard  /> } />
       {/* <Route  path="/product-upload"  element={ <ProductUpload  /> } /> */}
@@ -152,7 +174,7 @@ const {authUser} = useAuthContext()
       <Route  path="/rider/stores"  element={ <RiderStores /> } />
       <Route path="/rider/storesdetails/:id"  element={ <RiderStoresDetails />}  />
       
-      <Route  path="/rider/riders"  element={ <RiderRiders /> } />
+      <Route  path="/admin/riders"  element={ <AdminRiders /> } />
       <Route path="/rider/allrider"  element={ <AllRiderPage />}  />
       <Route path="/rider/allriderdetails/:id"  element={ <AllRiderDetails />}  />
 

@@ -1,20 +1,20 @@
 import  { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import sign from "../assets/signup.png";
-import logo from "../assets/eazzi_logo.svg";
-import mail from "../assets/mail.png";
-import eye from "../assets/Show.png";
-import eyex from "../assets/eyex.png";
-import SignupWithGoogleorSignup from "../components/SignupWithGoogleorSignup";
+import sign from "../../assets/signup.png";
+import logo from "../../assets/eazzi_logo.svg";
+import mail from "../../assets/mail.png";
+import eye from "../../assets/Show.png";
+import eyex from "../../assets/eyex.png";
 import axios from "axios";
-import { toast } from "react-toastify";
-import PasswordVisibility from "../hooks/PasswordVisibility";
-import { useAuthContext } from "../hooks/useAuthContext";
+import { toast, ToastContainer } from "react-toastify";
 
-const Login = () => {
+import PasswordVisibility from "../../hooks/PasswordVisibility";
+import { useAuthContext } from "../../hooks/useAuthContext";
+
+const RiderLogin = () => {
 
   const [email,setEmail] = useState("");
-  const [ password,setPassword] = useState()
+  const [ password,setPassword] = useState("")
   const navigate = useNavigate()
 
   const [errors, setErrors] = useState({});
@@ -44,6 +44,7 @@ const {setAuthUser}  = useAuthContext();
     return Object.keys(err).length === 0;
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) {
@@ -51,20 +52,20 @@ const {setAuthUser}  = useAuthContext();
     }
     setIsSubmitting(true);
     try {
-   const res =  await axios.post( "https://django-7u8g.onrender.com/api/authent/login/",
+   const res =  await axios.post( "https://django-7u8g.onrender.com/api/dispatch-riders/login/",
       {
-      username: email,  // Rename 'email' to 'username'
+      email: email,  // Rename 'email' to 'username'
        password: password
       }
       );
       
- const user = localStorage.setItem("user", JSON.stringify(res));
+ const rider_details = localStorage.setItem("user", JSON.stringify(res));
  setAuthUser(res)
       toast.success("Login successfully", {
         position: "top-center",
       });
-      console.log(user)
-      navigate('/')
+      console.log(rider_details)
+      navigate('/rider-dashboards')
     
     } catch (err) {
       if (err.response && err.response.data) {
@@ -87,7 +88,9 @@ const {setAuthUser}  = useAuthContext();
 
 
   return (
-    <div className="absolute z-50 bg-white w-full pb-[14rem] md:pb-0">
+    <section className="absolute z-50 bg-white w-full pb-[14rem] md:pb-0  lg:hidden">
+
+      <ToastContainer  />
       <div className="w-full flex flex-col md:flex-row items-center justify-between md:px-0">
         <div className="hidden md:flex w-full h-[800px] flex-grow">
           <img src={sign} className="w-full h-full object-cover" alt="Signup" />
@@ -101,6 +104,7 @@ const {setAuthUser}  = useAuthContext();
             Welcome back, Log in
           </h2>
           <form action=""  onSubmit={handleSubmit} className="mt-[32px] flex flex-col gap-[24px] px-3">
+
             <div className="w-full relative">
               <input
                 type="email"
@@ -141,6 +145,7 @@ const {setAuthUser}  = useAuthContext();
                 <p className="text-red-600 text-[15px]">{errors.password}</p>
               )}
             </div>
+
             <div className="flex items-center justify-between mt-[-1rem]">
               <div className="flex gap-2">
                 <input type="checkbox" name="" id="" />
@@ -168,15 +173,19 @@ const {setAuthUser}  = useAuthContext();
               
               {isSubmitting ? <div className="loader flex justify-center items-center"></div> : "Login"}
             </button>
+
+            <p className="text-[#828282] text-center text-[16px] font-[400] font-tekInter mt-[14px]">
+        Don&apos;t have account? <Link to="/rider-signup" className="text-[#1843E2]">Sign up</Link>
+      </p>
+
+            
           </form>
 
-          <div className="px-3">
-            <SignupWithGoogleorSignup />
-          </div>
+   
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Login;
+export default RiderLogin;

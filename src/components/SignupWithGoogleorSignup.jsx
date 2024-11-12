@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 import google from "../assets/google.png"
 
@@ -19,6 +19,7 @@ const SignupWithGoogleorSignup = () => {
       <p className="text-[#828282] text-center text-[16px] font-[400] font-tekInter mt-[24px]">
         Don't have account? <Link to="/signup" className="text-[#1843E2]">Sign up</Link>
       </p>
+      
     </div>
   )
 }

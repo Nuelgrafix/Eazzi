@@ -79,7 +79,7 @@ const ProductUpload = () => {
     if (!inputs.image) {
       err.image = "This Field is Required";
     }
-
+    
     return Object.keys(err).length === 0;
   };
 
@@ -110,11 +110,13 @@ const ProductUpload = () => {
       }
     });
 
-console.log(formData)
+
       toast.success("Product uploaded successfully!", {
         position: "top-center",
       });
-      navigate("/product-upload");
+   
+    
+      console.log(formData)
     } catch (err) {
       if (err.response && err.response.data) {
         toast.error(err.response.data.error, {
@@ -127,7 +129,8 @@ console.log(formData)
       }
     } finally {
       setIsSubmitting(false);
-     
+      setInputs('')
+      navigate("/admin-product-upload");
     }
   };
   
@@ -138,9 +141,8 @@ console.log(formData)
     const getProducts = async () => {
       try {
         const result = await axios.get("https://django-7u8g.onrender.com/api/products/list/");
-        console.log("API Response:", result); // Debugging line
+
         const res = result.data;
-        console.log("Data:", res); // Debugging line
         setProducts(res);
   
         toast.success("Products fetched successfully!", {

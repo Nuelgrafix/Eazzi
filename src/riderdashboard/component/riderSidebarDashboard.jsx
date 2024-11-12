@@ -63,7 +63,7 @@ const sidebar_Link = [
 
   {
     id: "5",
-    path: "/rider/riders",
+    path: "/admin/riders",
     display: "Riders",
     icon: <IC_GreyRider />,
     iconTwo: <IC_BlueRider/>,

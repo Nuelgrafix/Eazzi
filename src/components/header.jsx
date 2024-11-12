@@ -331,7 +331,7 @@ const Header = () => {
 
           {/* cart */}
           <div className="flex items-center gap-1">
-            <Link to={authUser? "/emptycart-signin" : "/emptycart"} className="text-[16px] font-[400] text-[#fff] text-nowrap">
+            <Link to={"filledcart"} className="text-[16px] font-[400] text-[#fff] text-nowrap">
               My cart
             </Link>
             <ul>

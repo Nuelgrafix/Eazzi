@@ -15,7 +15,7 @@ import AllRiders from "../component/allRiders";
 
 
 
-const RiderRiders = () => {
+const AdminRiders = () => {
 
     const [showSide, setShowSide] = useState(false)
 
@@ -150,4 +150,4 @@ const RiderRiders = () => {
   )
 }
 
-export default RiderRiders
+export default AdminRiders

@@ -48,6 +48,7 @@ const EmptyCart = () => {
     <section className="lg:mt-[3.5rem] mt-[9rem] flex flex-col  justify-center md:items-center">
       {/* hero section */}
       <div className="flex flex-col-reverse md:flex-row items-center justify-around w-[100%] h-full md:py-[4rem]   lg:max-w-[1440px]">
+        
         <div
           className="lg:w-[860px]   h-full  w-full items-center flex flex-col py-[3rem]"
           style={{ boxShadow: "6px 7px 12px 0px #1843E20D" }}

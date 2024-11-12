@@ -4,7 +4,7 @@ import {smallerlatestorderdata } from "../../data/dashboarddata"
 
 
 import OrderPagination from "./pagination/riderOrderPagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { realstoredata } from "../data/storedata";
 
@@ -19,6 +19,41 @@ const currentrealorderdata = realstoredata.slice(firstIndex, lastIndex)
 const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
 
+
+const [ riders, setRiders] = useState([])
+const [loading,setLoading]  = useState(false)
+const [error, setError]  = useState(false)
+
+
+
+const getAllRiders = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("https://django-7u8g.onrender.com/api/dispatch-riders/list/", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const result = await res.json();
+      setRiders(result);
+      setLoading(false);
+      setError(false);
+    } catch (error) {
+      setError(true);
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getAllRiders();
+  }, []);
+
+useEffect(()=>{
+    getAllRiders()   
+},[])
+
+
   return (
 <section className=" flex flex-col rounded-[16px] bg-[#FFFFFF] gap-[27px] p-[10px] md:p-[30px]  max-w-[1147px]"
 style={{boxShadow:" 0px 8px 32px 0px #3326AE14"}}
@@ -30,10 +65,21 @@ style={{boxShadow:" 0px 8px 32px 0px #3326AE14"}}
     </div>
 
 
+
+    {loading && <div><h1>Loading......</h1></div>}
+{error && <div><h1>{error}</h1></div>}
+
 {/* Table */}
 <div className="flex flex-col max-w-full">
 
+
+    
+
 {/* table for big screen */}
+
+{
+        loading ? <div><h1>Loading......</h1></div> :
+
 <div className="hidden md:block max-w-full">
 
 
@@ -50,7 +96,7 @@ style={{boxShadow:" 0px 8px 32px 0px #3326AE14"}}
     </thead>
 
     <tbody className="w-full">
-        {currentrealorderdata.map((l) => (
+        {riders.map((l) => (
             <tr key={l.id} className="border-b-[1px] border-t-[1px] border-[#828282] max-h-[64px]">
                 <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter py-2 pl-[16px]">
                     <div className="flex items-center">
@@ -58,10 +104,10 @@ style={{boxShadow:" 0px 8px 32px 0px #3326AE14"}}
                         <h1>{l.title}</h1>
                     </div> 
                 </td>
-                <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter py-2 pl-[16px]">{l.location}</td>
-                <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter pl-[16px]">{l.email}</td>
-                <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter pl-[16px]">{l.datejoined}</td>
-                <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter pl-[16px] cursor-pointer">{l.contact}</td>
+                <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter py-2 pl-[16px]">{l.company}</td>
+                <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter pl-[16px]">{l.location}</td>
+                <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter pl-[16px]">{l.rider_id}</td>
+                <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter pl-[16px] cursor-pointer">{l.phone}</td>
                 <td className="border-r-0 border-l-0 py-2 text-[12px] leading-[14px] text-[#828282] font-[400] font-tekInter"><Link to={`/rider/allriderdetails/${l.id}`}  className="border-[1px] border-[#1843E2]  text-[#1843E2]text-[14px] leading-[16px] font-[400] px-[16px] py-[10px] rounded-[8px] flex justify-center items-center text-[#1843E2]">More  Details </Link></td>
             </tr>
         ))}
@@ -70,6 +116,8 @@ style={{boxShadow:" 0px 8px 32px 0px #3326AE14"}}
 
 </div>
 
+
+}
 
 
 {/* table for smaller screen */}
@@ -106,6 +154,9 @@ style={{boxShadow:" 0px 8px 32px 0px #3326AE14"}}
 
 
 </div>
+
+
+
 
 {/* pagination */}
 <div className="max-w-full items-center justify-center flex flex-col ">
