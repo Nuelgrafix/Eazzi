@@ -26,6 +26,13 @@ import Footerimg from "../../../public/Image/footer-dahsboard.svg"
 
 const ProductUpload = () => {
 
+
+    
+
+  const [showSide, setShowSide] = useState(false)
+  const handleSide = ( ) => {
+    setShowSide((prev) => !prev);
+  }
  
 
   // eslint-disable-next-line no-unused-vars
@@ -41,15 +48,10 @@ const ProductUpload = () => {
       alert("File size exceeds 5MB");
     }
   };
-  
-
-  const [showSide, setShowSide] = useState(false)
-  const handleSide = ( ) => {
-    setShowSide((prev) => !prev);
-  }
 
 
 
+  const navigate = useNavigate();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [inputs, setInputs] = useState({
@@ -60,7 +62,7 @@ const ProductUpload = () => {
     image: null,
   });
 
-  const navigate = useNavigate();
+
 
   const validateForm = () => {
     const err = {};
@@ -104,36 +106,28 @@ const ProductUpload = () => {
 
 
   try {
-    await axios.post("https://django-7u8g.onrender.com/api/products/upload/", formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
+    const response = await axios.post(
+      "https://django-7u8g.onrender.com/api/products/upload/",
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       }
+    );
+
+    toast.success("Product uploaded successfully!", { position: "top-center" });
+    console.log(response.data);
+    navigate("/admin-product-upload");
+  } catch (err) {
+    console.error(err.response?.data || "Error occurred");
+    toast.error(err.response?.data?.error || "Error submitting the form. Please try again!", {
+      position: "top-center",
     });
-
-
-      toast.success("Product uploaded successfully!", {
-        position: "top-center",
-      });
-   
-    
-      console.log(formData)
-    } catch (err) {
-      if (err.response && err.response.data) {
-        toast.error(err.response.data.error, {
-          position: "top-center",
-        });
-      } else {
-        toast.error("Error submitting the form. Please try again!", {
-          position: "top-center",
-        });
-      }
-    } finally {
-      setIsSubmitting(false);
-      setInputs('')
-      navigate("/admin-product-upload");
-    }
-  };
-  
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const [products, setProducts] = useState([]);
 

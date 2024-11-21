@@ -47,7 +47,7 @@ const ProductLocation = () => {
           </Link>
         </div>
 
-        <div className="bg-[#FFB164]  md:bg-productBg">
+        <div className="bg-[#FFB164]  md:bg-productBg w-full">
           <Products />
         </div>
         
