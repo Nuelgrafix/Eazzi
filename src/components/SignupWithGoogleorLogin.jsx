@@ -1,6 +1,6 @@
-import React from "react";
+// import React from "react";
 import google from "../assets/google.png"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const SignupWithGoogleorLogin = () => {
   return (
@@ -16,9 +16,9 @@ const SignupWithGoogleorLogin = () => {
         <img src={google} className="" alt="" /> Sign up with Google
       </button>
 
-      <p className="text-[#828282] text-center text-[16px] font-[400] font-tekInter mt-[24px]">
+      {/* <p className="text-[#828282] text-center text-[16px] font-[400] font-tekInter mt-[24px]">
         Already have account? <Link to="/login" className="text-[#1843E2]">Log in</Link>
-      </p>
+      </p> */}
     </div>
   );
 };

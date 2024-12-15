@@ -1,20 +1,25 @@
 import  { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import sign from "../assets/signup.png";
-import logo from "../assets/eazzi_logo.svg";
-import mail from "../assets/mail.png";
-import eye from "../assets/Show.png";
-import eyex from "../assets/eyex.png";
-import SignupWithGoogleorSignup from "../components/SignupWithGoogleorSignup";
-import axios from "axios";
-import { toast } from "react-toastify";
-import PasswordVisibility from "../hooks/PasswordVisibility";
-import { useAuthContext } from "../hooks/useAuthContext";
 
-const Login = () => {
+import sign from "../../assets/signup.png";
+import logo from "../../assets/eazzi_logo.svg";
+import mail from "../../assets/mail.png";
+import eye from "../../assets/Show.png";
+import eyex from "../../assets/eyex.png";
+
+import SignupWithGoogleorSignup from "../../components/SignupWithGoogleorSignup";
+import axios from "axios";
+
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import PasswordVisibility from "../../hooks/PasswordVisibility";
+import { useAuthContext } from "../../hooks/useAuthContext";
+
+const StoreLogins = () => {
 
   const [email,setEmail] = useState("");
-  const [ password,setPassword] = useState()
+  const [ password,setPassword] = useState("")
   const navigate = useNavigate()
 
   const [errors, setErrors] = useState({});
@@ -51,10 +56,12 @@ const {setAuthUser}  = useAuthContext();
     }
     setIsSubmitting(true);
     try {
-   const res =  await axios.post( "https://django-7u8g.onrender.com/api/authent/login/",
+   const res =  await axios.post( "https://django-7u8g.onrender.com/api/stores/login/",
       {
-      username: email,  // Rename 'email' to 'username'
+        user:{
+      email: email, 
        password: password
+      }
       }
       );
       
@@ -64,7 +71,7 @@ const {setAuthUser}  = useAuthContext();
         position: "top-center",
       });
       console.log(user)
-      navigate('/')
+      navigate('/store-createaccount')
     
     } catch (err) {
       if (err.response && err.response.data) {
@@ -88,6 +95,8 @@ const {setAuthUser}  = useAuthContext();
 
   return (
     <div className="absolute z-50 bg-white w-full pb-[14rem] md:pb-0">
+      <ToastContainer />
+
       <div className="w-full flex flex-col md:flex-row items-center justify-between md:px-0">
         <div className="hidden md:flex w-full h-[800px] flex-grow">
           <img src={sign} className="w-full h-full object-cover" alt="Signup" />
@@ -141,8 +150,6 @@ const {setAuthUser}  = useAuthContext();
                 <p className="text-red-600 text-[15px]">{errors.password}</p>
               )}
             </div>
-
-            
             <div className="flex items-center justify-between mt-[-1rem]">
               <div className="flex gap-2">
                 <input type="checkbox" name="" id="" />
@@ -174,11 +181,16 @@ const {setAuthUser}  = useAuthContext();
 
           <div className="px-3">
             <SignupWithGoogleorSignup />
+
+            <p className="text-[#828282] text-center text-[16px] font-[400] font-tekInter mt-[24px]">
+        Don&apos;t have account? <Link to="/store-signup" className="text-[#1843E2]">Signup</Link>
+      </p>
           </div>
         </div>
       </div>
+
     </div>
   );
 };
 
-export default Login;
+export default StoreLogins;

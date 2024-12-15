@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 const RiderOrderPagination = ({ totalItems, itemPerPage, paginate, currentPage }) => {
+    
     const totalPages = Math.ceil(totalItems / itemPerPage);
 
     console.log(totalPages)

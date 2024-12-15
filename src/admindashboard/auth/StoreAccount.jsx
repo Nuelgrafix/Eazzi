@@ -1,26 +1,24 @@
 import { useState } from "react";
-import sign from "../assets/signup.png";
-import logo from "../assets/eazzi_logo.svg";
-import mail from "../assets/mail.png";
-import eye from "../assets/Show.png";
-import eyex from "../assets/eyex.png";
-import PasswordVisibility from "../hooks/PasswordVisibility";
-import SignupWithGoogleorLogin from "../components/SignupWithGoogleorLogin";
+import sign from "../../assets/signup.png";
+import logo from "../../assets/eazzi_logo.svg";
+
+
+
+import SignupWithGoogleorLogin from "../../components/SignupWithGoogleorLogin";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Signup = () => {
+const StoreAccount = () => {
   const [formData, setFormData] = useState({
-    first_name: "",
-    last_name: "",
-    email: "",
-    phone: "",
-    password: "",
-    confirm_password: "",
+    store_name: "",
+    store_address: "",
+    street: "",
+    city: "",
+    state:""
   });
   const navigate = useNavigate()
 
@@ -47,23 +45,9 @@ const Signup = () => {
     if (!formData.phone.trim()) {
       err.phone = "This Field Required";
     }
+
     // Password validation
-    if (
-      !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}/.test(formData.password)
-    ) {
-      err.password =
-        "Password must be at least 8 characters long and include one uppercase, one lowercase, one number, and one special character.";
-    }
-    if (!formData.password.trim()) {
-      err.password = "This Field Required";
-    }
-    
-    if (!formData.confirm_password.trim()) {
-      err.confirm_password = "This Field Required";
-    }
-    if (formData.password !== formData.confirm_password) {
-      err.confirm_password = "Password does not match";
-    }
+  
     setErrors(err);
     return Object.keys(err).length === 0;
   };
@@ -79,11 +63,11 @@ const Signup = () => {
         "https://django-7u8g.onrender.com/api/authent/register/",
         formData
       );
-      toast.success("Email verification code sent", {
+      toast.success("Registered successfully", {
         position: "top-center",
       });
 
-      navigate('/verify_email')
+      navigate('/store-dashboard')
     } catch (err) {
       if (err.response && err.response.data) {
         toast.error(err.response.data.error, {
@@ -98,12 +82,7 @@ const Signup = () => {
     setIsSubmitting(false);
   };
 
-  const {
-    isShow,
-    isShowb,
-    togglePasswordVisibility,
-    togglePasswordVisibilityb,
-  } = PasswordVisibility();
+
 
   return (
     <div className="absolute z-50 bg-white w-full pb-36 md:pb-0">
@@ -118,8 +97,9 @@ const Signup = () => {
             <img src={logo} className="pb-8 pt-[29px] h-[104px]" alt="" />
           </div>
           <h2 className="text-[24px] font-tekInter text-[#4F4F4F] leading-[30px] font-[700] px-3 mt-10">
-            Sign up
+          My Store details
           </h2>
+          <p className="text-xl font-tekInter text-[#4F4F4F]  font-[400] px-3 ">Please kindly provide the store information here</p>
           <form
             onSubmit={handleSubmit}
             className="mt-[32px] flex flex-col gap-[24px] px-3"
@@ -129,8 +109,8 @@ const Signup = () => {
                 type="text"
                 className="text-[#828282] h-[53px] py-[26px] px-[16px] border-[1px] border-[#969696] outline-none w-full rounded-[8px]"
                 name="first_name"
-                placeholder="First Name"
-                value={formData.first_name}
+                placeholder="Store Name"
+                value={formData.store_name}
                 onChange={handleChange}
                 required
               />
@@ -143,9 +123,9 @@ const Signup = () => {
               <input
                 type="text"
                 className="text-[#828282] h-[53px] py-[26px] px-[16px] border-[1px] border-[#969696] outline-none w-full rounded-[8px]"
-                name="last_name"
-                placeholder="Last Name"
-                value={formData.last_name}
+                name="store_address"
+                placeholder="Store Address"
+                value={formData.store_address}
                 onChange={handleChange}
                 required
               />
@@ -156,84 +136,74 @@ const Signup = () => {
 
             <div className="w-full relative">
               <input
-                type="email"
-                className="text-[#828282] h-[53px] py-[26px] px-[16px] pl-10 border-[1px] border-[#969696] outline-none w-full rounded-[8px] relative"
-                name="email"
-                placeholder="Email address"
-                value={formData.email}
+                type="text"
+                className="text-[#828282] h-[53px] py-[26px] px-[16px]  border-[1px] border-[#969696] outline-none w-full rounded-[8px] relative"
+                name="street"
+                placeholder="Street"
+                value={formData.street}
                 onChange={handleChange}
                 required
               />
-              {errors.email && (
-                <p className="text-red-600 text-[15px]">{errors.email}</p>
+              {errors.street && (
+                <p className="text-red-600 text-[15px]">{errors.street}</p>
               )}
 
-              <img
-                src={mail}
-                className="absolute top-[13px] left-[10.3px]"
-                alt="Mail icon"
-              />
+           
             </div>
 
-            <div>
+    
+
+            <div className="w-full relative">
               <input
-                type="number"
-                className="text-[#828282] h-[53px] py-[26px] px-[16px] border-[1px] border-[#969696] outline-none w-full rounded-[8px]"
-                name="phone"
-                placeholder="Phone No."
-                value={formData.phone}
+                type="text"
+                className="text-[#828282] h-[53px] py-[26px] px-[16px]  border-[1px] border-[#969696] outline-none w-full rounded-[8px] relative"
+                name="city"
+                placeholder="City"
+                value={formData.city}
                 onChange={handleChange}
                 required
               />
-              {errors.phone && (
-                <p className="text-red-600 text-[15px]">{errors.phone}</p>
+              {errors.city && (
+                <p className="text-red-600 text-[15px]">{errors.city}</p>
               )}
+
+           
             </div>
 
-            <div className="relative">
+            <div className="w-full relative">
               <input
-                type={isShow ? "text" : "password"}
-                className="text-[#828282] h-[53px] py-[26px] px-[16px] border-[1px] border-[#969696] outline-none w-full rounded-[8px] relative"
-                name="password"
-                placeholder="Create Password"
-                value={formData.password}
+                type="text"
+                className="text-[#828282] h-[53px] py-[26px] px-[16px]  border-[1px] border-[#969696] outline-none w-full rounded-[8px] relative"
+                name="state"
+                placeholder="State"
+                value={formData.state}
                 onChange={handleChange}
                 required
               />
-              {errors.password && (
-                <p className="text-red-600 text-[15px]">{errors.password}</p>
+              {errors.state && (
+                <p className="text-red-600 text-[15px]">{errors.state}</p>
               )}
 
-              <img
-                src={isShow ? eyex : eye}
-                className="absolute cursor-pointer top-3 right-3"
-                alt=""
-                onClick={togglePasswordVisibility}
-              />
+           
             </div>
 
-            <div className="relative">
+            <div className="w-full relative">
               <input
-                type={isShowb ? "text" : "password"}
-                className="text-[#828282] h-[53px] py-[26px] px-[16px] border-[1px] border-[#969696] outline-none w-full rounded-[8px]"
-                name="confirm_password"
-                placeholder="Confirm Password"
-                value={formData.confirm_password}
+                type="text"
+                className="text-[#828282] h-[53px] py-[26px] px-[16px]  border-[1px] border-[#969696] outline-none w-full rounded-[8px] relative"
+                name="state"
+                placeholder="Upload your CAC image"
+                value={formData.state}
                 onChange={handleChange}
                 required
               />
-              {errors.confirm_password && (
-                <p className="text-red-600 text-[15px]">
-                  {errors.confirm_password}
-                </p>
+              {errors.state && (
+                <p className="text-red-600 text-[15px]">{errors.state}</p>
               )}
-              <img
-                src={isShowb ? eyex : eye}
-                className="absolute cursor-pointer top-3 right-3"
-                alt=""
-                onClick={togglePasswordVisibilityb}
-              />
+
+           
             </div>
+
 
             <button
               type="submit"
@@ -246,9 +216,6 @@ const Signup = () => {
 
           <div className="px-3">
             <SignupWithGoogleorLogin />
-            <p className="text-[#828282] text-center text-[16px] font-[400] font-tekInter mt-[24px]">
-        Don&apos;t have account? <Link to="/signup" className="text-[#1843E2]">Sign up</Link>
-      </p>
           </div>
         </div>
       </div>
@@ -256,4 +223,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default StoreAccount;

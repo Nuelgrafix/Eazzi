@@ -30,6 +30,8 @@ function App() {
   const isSettings = location.pathname.startsWith('/rider/settings')
   const isRiderStoreDetails = location.pathname.includes('/rider/storesdetails')
 
+  const isStoreConfirmation = location.pathname.includes('/store-confirmation')
+
 
   //rider dashboards
   const isRiderMessages = location.pathname.includes('/rider-messages')
@@ -41,14 +43,14 @@ function App() {
         {!isAdmin && !isProductUpload && !isOrders && !isOrderHistory && !isProduct && !isProfile && !isNotification 
       && !isRider && !isRiderOrders && !isRidersAssignedOrder  && !isRiderOrderHistory && !isRiderStores && !isRiderRiders && !isRidersDetails && 
       !isRiderCustomer && !isRiderNotification && !isSettings
-      && !isRiderStoreDetails   && !isRidersOrderDetails && !isAllRiders  && !isRiderMessages  && <Header />}
+      && !isRiderStoreDetails   && !isRidersOrderDetails && !isAllRiders  && !isRiderMessages && !isStoreConfirmation && <Header />}
         
         <Routs />
         
         {!isAdmin && !isProductUpload && !isOrders && !isOrderHistory && !isProduct && !isProfile && !isNotification 
            && !isRider && !isRiderOrders && !isRiderOrderHistory && !isRiderStores && !isRiderRiders && !isRidersDetails && !isRiderCustomer  && !isRiderNotification && !isSettings
            && !isRiderStoreDetails  && !isRidersOrderDetails && !isAllRiders  && !isRidersAssignedOrder     
-           && !isRiderMessages && <Footer />}
+           && !isRiderMessages  && !isStoreConfirmation && <Footer />}
       </div>
     </>
   );

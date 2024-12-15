@@ -67,6 +67,15 @@ import RiderMessages from "../rider/riderMessages";
 import Checkout from "../pages/Checkout";
 import AddAddress from "../components/checkouts/addAddress";
 import AdminRiders from "../riderdashboard/riderpages/riderRiders";
+import StoreSignup from "../admindashboard/auth/StoreSignup";
+import StoreLogins from "../admindashboard/auth/StoreLogins";
+import StoreVerifyEmail from "../admindashboard/auth/StoreVerifyEmail";
+import StoreCreatePassword from "../admindashboard/auth/StoreCreatePassword";
+import StoreAccount from "../admindashboard/auth/StoreAccount";
+import StoreConfirmation from "../admindashboard/auth/StoreConfirmation";
+
+
+
 
 
 const Routs = () => {
@@ -126,6 +135,18 @@ const Routs = () => {
       <Route path="/rider-dashboards" element={<RiderDashboard />} />
       <Route path="/rider-messages" element={<RiderMessages />} />
 
+
+
+
+     {/* Store auth  */}
+     <Route path="/store-signup" element={<StoreSignup />} />
+      <Route path="/store-verify-email" element={<StoreVerifyEmail />} />
+      <Route path="/store-login" element={<StoreLogins />} />
+      <Route path="/store-createaccount" element={<StoreAccount />} />
+      <Route path="/forget_password" element={<ForgetPassword />} />
+      <Route path="/forget_passwordVerify_email" element={<ForgetPasswordVerifyEmail />} />
+      <Route  path="/store-createpassword" element={<StoreCreatePassword />} />
+      <Route  path="/store-confirmation" element={<StoreConfirmation />} />
 
 
       {/*Store DashBoard Routes */}
