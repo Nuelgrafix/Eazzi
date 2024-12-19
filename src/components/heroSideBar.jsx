@@ -11,6 +11,7 @@ import menu from "../assets/menu.png";
 import menuBlue from "../assets/menuBlue.png";
 import calling from "../assets/Calling.png";
 import group from "../assets/Group.png";
+import { Link } from "react-router-dom";
 
 const HeroSideBar = () => {
   const [activePopup, setActivePopup] = useState(null);
@@ -164,9 +165,9 @@ const HeroSideBar = () => {
               <img src={group} className="w-[18px] h-[18px]" alt="" />
             </div>
 
-            <p className="text-[16px] font-[400] leading-normal font-tekInter">
+            <Link to="/store-signup"  className="text-[16px] font-[400] leading-normal font-tekInter">
               Become a seller on Eazzi
-            </p>
+            </Link>
           </div>
 
           <p className="font-[700] font-tekInter text-[16px] leading-normal text-[#1843E2] ">

@@ -25,6 +25,7 @@ import FilledCart from "../components/cart/filledCart";
 import SeeMore from "../pages/SeeMore";
 import HomeDashboard from "../dahsboad/pages/homeDashboard";
 import ProductUpload from "../dahsboad/pages/productUpload";
+
 //  import { useAuthContext } from "../hooks/useAuthContext";
 import NoPageFound from "../pages/noPageFound";
 import Orders from "../dahsboad/pages/orders";
@@ -142,7 +143,7 @@ const Routs = () => {
      <Route path="/store-signup" element={<StoreSignup />} />
       <Route path="/store-verify-email" element={<StoreVerifyEmail />} />
       <Route path="/store-login" element={<StoreLogins />} />
-      <Route path="/store-createaccount" element={<StoreAccount />} />
+      <Route path={`/store-createaccount/:id`} element={<StoreAccount />} />
       <Route path="/forget_password" element={<ForgetPassword />} />
       <Route path="/forget_passwordVerify_email" element={<ForgetPasswordVerifyEmail />} />
       <Route  path="/store-createpassword" element={<StoreCreatePassword />} />

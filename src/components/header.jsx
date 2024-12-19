@@ -174,9 +174,9 @@ const Header = () => {
                     <img src={group} className="w-[18px] h-[18px]" alt="" />
                   </div>
 
-                  <p className="text-[16px] font-[500] leading-normal whitespace-nowrap font-tekInter">
-                    Become a seller on Eazzi
-                  </p>
+                  <Link to="/store-signup"  className="text-[16px] font-[500] leading-normal whitespace-nowrap font-tekInter">
+                    Become a seller on Eazzi 
+                  </Link>
                 </div>
 
                 <Link

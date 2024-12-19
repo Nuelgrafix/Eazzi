@@ -1,5 +1,5 @@
 import  { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import sign from "../../assets/signup.png";
 import logo from "../../assets/eazzi_logo.svg";
@@ -17,14 +17,14 @@ import PasswordVisibility from "../../hooks/PasswordVisibility";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 const StoreLogins = () => {
-
+  const {id}  = useParams()
   const [email,setEmail] = useState("");
   const [ password,setPassword] = useState("")
   const navigate = useNavigate()
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-const {setAuthUser}  = useAuthContext();
+const {setAuthUser, setToken}  = useAuthContext();
 
 
   const validateForm = () => {
@@ -66,12 +66,16 @@ const {setAuthUser}  = useAuthContext();
       );
       
  const user = localStorage.setItem("user", JSON.stringify(res));
- setAuthUser(res)
+ const token = localStorage.setItem("token", JSON.stringify(res.data.token));
+ console.log(token)
+ setAuthUser(res);
+ setToken(res.data.token)
       toast.success("Login successfully", {
         position: "top-center",
       });
       console.log(user)
-      navigate('/store-createaccount')
+ 
+      navigate(`/store-createaccount/${id}`)
     
     } catch (err) {
       if (err.response && err.response.data) {

@@ -38,7 +38,7 @@ const ProductUpload = () => {
   // eslint-disable-next-line no-unused-vars
   const [preview, setPreview] = useState(null);
   
-
+  
   const handleImage = (e) => {
     const file = e.target.files[0];
     if (file && file.size <= 5 * 1024 * 1024) {
@@ -246,7 +246,8 @@ const ProductUpload = () => {
   </div> 
 
    :
-    <div className="bg-[#FFFFFF] flex flex-col items-center justify-center w-full h-[317px] gap-[3px]">
+    <div className="bg-[#FFFFFF] flex flex-col items-center justify-center
+     w-full h-[317px] gap-1">
       {/* File Input (Hidden) */}
       <input 
              type="file"

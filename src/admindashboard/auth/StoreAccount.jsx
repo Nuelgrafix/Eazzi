@@ -1,26 +1,50 @@
 import { useState } from "react";
 import sign from "../../assets/signup.png";
 import logo from "../../assets/eazzi_logo.svg";
+import defaultImage from "../../../public/Image/artboard.png"
 
 
-
-import SignupWithGoogleorLogin from "../../components/SignupWithGoogleorLogin";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
+
+
 
 const StoreAccount = () => {
+
+
   const [formData, setFormData] = useState({
     store_name: "",
     store_address: "",
     street: "",
     city: "",
-    state:""
+    state:"",
+    cac_image : ""
   });
   const navigate = useNavigate()
+  const {token}  = useAuthContext();
+
+
+  const [preview,setPreview] = useState(null)
+
+  const handleImage = (e) => {
+    const file = e.target.files[0]; 
+    if (file) {
+      if (file.size <= 5 * 1024 * 1024) {
+        setFormData((prevState) => ({
+          ...prevState,
+          cac_image: file,
+        }));
+        setPreview(URL.createObjectURL(file)); 
+      } else {
+        alert("File size exceeds 5MB");
+      }
+    }
+  };
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,54 +57,87 @@ const StoreAccount = () => {
   const validateForm = () => {
     const err = {};
 
-    if (!formData.first_name.trim()) {
-      err.first_name = "This Field Required";
+    if (!formData.store_name.trim()) {
+      err.store_name = "This Field Required";
     }
-    if (!formData.last_name.trim()) {
-      err.last_name = "This Field Required";
+    if (!formData.store_address.trim()) {
+      err.store_address = "This Field Required";
     }
-    if (!formData.email.trim()) {
-      err.email = "This Field Required";
+    if (!formData.street.trim()) {
+      err.street = "This Field Required";
     }
-    if (!formData.phone.trim()) {
-      err.phone = "This Field Required";
+    if (!formData.city.trim()) {
+      err.city = "This Field Required";
     }
+    if (!formData.state.trim()) {
+      err.state = "This Field Required";
+    }
+    // if (!formData.cac_image.trim()) {
+    //   err.cac_image = "This Field Required";
+    // }
 
-    // Password validation
+
   
     setErrors(err);
     return Object.keys(err).length === 0;
   };
 
+
+  const {id}  = useParams()
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validateForm()) {
+
+    if (!id) {
+      toast.error("Store ID is missing!", { position: "top-center" });
       return;
     }
-    setIsSubmitting(true);
-    try {
-     await axios.post(
-        "https://django-7u8g.onrender.com/api/authent/register/",
-        formData
-      );
-      toast.success("Registered successfully", {
-        position: "top-center",
-      });
 
-      navigate('/store-dashboard')
+
+    if (!validateForm()) {
+        return;
+    }
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("store_name", formData.store_name);
+    formDataToSend.append("store_address", formData.store_address);
+    formDataToSend.append("street", formData.street);
+    formDataToSend.append("city", formData.city);
+    formDataToSend.append("state", formData.state);
+
+    if (formData.cac_image) {
+        formDataToSend.append("cac_image", formData.cac_image); 
+    }
+
+    setIsSubmitting(true);
+
+    try {
+        await axios.post(
+            `https://django-7u8g.onrender.com/api/stores/store/${id}/`,
+            formDataToSend,
+            {
+                headers: {
+                    Authorization: `Token ${token}`,
+                    "Content-Type": "multipart/form-data", 
+                },
+            }
+        );
+
+        toast.success("Registered successfully!", { position: "top-center" });
+        console.log(formDataToSend)
+        navigate("/store-dashboard");
     } catch (err) {
-      if (err.response && err.response.data) {
-        toast.error(err.response.data.error, {
-          position: "top-center",
-        });
-      } else
-      toast.error("Error submitting the form. Please try again!", {
-        position: "top-center",
-      });
+        if (err.response && err.response.data) {
+            toast.error(JSON.stringify(err.response.data), { position: "top-center" });
+        } else {
+            toast.error("Error submitting the form. Please try again!", {
+                position: "top-center",
+            });
+        }
     }
 
     setIsSubmitting(false);
-  };
+};
 
 
 
@@ -108,14 +165,14 @@ const StoreAccount = () => {
               <input
                 type="text"
                 className="text-[#828282] h-[53px] py-[26px] px-[16px] border-[1px] border-[#969696] outline-none w-full rounded-[8px]"
-                name="first_name"
+                name="store_name"
                 placeholder="Store Name"
                 value={formData.store_name}
                 onChange={handleChange}
                 required
               />
-              {errors.first_name && (
-                <p className="text-red-600 text-[15px]">{errors.first_name}</p>
+              {errors.store_name && (
+                <p className="text-red-600 text-[15px]">{errors.store_name}</p>
               )}
             </div>
 
@@ -129,8 +186,8 @@ const StoreAccount = () => {
                 onChange={handleChange}
                 required
               />
-              {errors.last_name && (
-                <p className="text-red-600 text-[15px]">{errors.last_name}</p>
+              {errors.store_address && (
+                <p className="text-red-600 text-[15px]">{errors.store_address}</p>
               )}
             </div>
 
@@ -187,36 +244,71 @@ const StoreAccount = () => {
            
             </div>
 
-            <div className="w-full relative">
-              <input
-                type="text"
-                className="text-[#828282] h-[53px] py-[26px] px-[16px]  border-[1px] border-[#969696] outline-none w-full rounded-[8px] relative"
-                name="state"
-                placeholder="Upload your CAC image"
-                value={formData.state}
-                onChange={handleChange}
-                required
-              />
-              {errors.state && (
-                <p className="text-red-600 text-[15px]">{errors.state}</p>
-              )}
+
+            <div  className="flex items-center justify-start gap-2 text-[#828282] h-[53px] py-[26px] px-[16px]  border-[1px] border-[#969696] outline-none w-full rounded-[8px]">
+
+  {
+
+    preview ?
+
+
+            (  <div className="max-w-[70px] w-full ">
+           
+
+                <img
+                  src={preview} 
+                  className="w-full h-[40px]  "
+                  alt="Preview"
+                />
 
            
+                  
+              </div>)
+:
+
+  (
+  <div className="flex">
+
+<label htmlFor="fileInput" className="cursor-pointer flex gap-3 items-center">
+      <img src={ preview || defaultImage } alt="add-pics" className="w-[40px] h-[40px] " />
+      
+      <h1 className="text-[#828282] font-[400] text-[16px] leading-[19px] font-tekInter py-[0.1rem]">
+upload your cac image
+        </h1>
+      </label>
+
+              <input
+              id="fileInput"
+                  type="file"
+                  name="cac_image"
+                  accept="image/*"
+                  placeholder="Upload your Cac_image"
+                  onChange={handleImage}
+                  className="hidden"
+                />
+
+  
+
+                </div>
+  )
+}
+              {errors.cac_image && (
+                <p className="text-red-600 text-[15px]">{errors.cac_image}</p>
+              )}
             </div>
 
 
             <button
               type="submit"
-              className="bg-[#1843E2] rounded-[8px] shadow-btn text-white text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[38px] py-[10px] px-[18px] flex items-center justify-center"
+              className="bg-[#1843E2] rounded-[8px] shadow-btn text-white text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[28px] py-[10px] px-[18px] flex items-center justify-center"
               disabled={isSubmitting}
             >
               {isSubmitting ? <div className="loader"></div> : "Continue"}
             </button>
           </form>
 
-          <div className="px-3">
-            <SignupWithGoogleorLogin />
-          </div>
+ 
+
         </div>
       </div>
     </div>

@@ -40,7 +40,7 @@ const StoreVerifyEmail = () => {
       }
 
       
-      navigate("/store-login");
+      navigate(`/store-createaccount/:id`);
     } catch (err) {
       console.error("Error response:", err.response); // Log the error response
       if (err.response && err.response.data) {
