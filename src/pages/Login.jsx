@@ -7,7 +7,7 @@ import eye from "../assets/Show.png";
 import eyex from "../assets/eyex.png";
 import SignupWithGoogleorSignup from "../components/SignupWithGoogleorSignup";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import PasswordVisibility from "../hooks/PasswordVisibility";
 import { useAuthContext } from "../hooks/useAuthContext";
 
@@ -88,6 +88,8 @@ const {setAuthUser}  = useAuthContext();
 
   return (
     <div className="absolute z-50 bg-white w-full pb-[14rem] md:pb-0">
+
+      <ToastContainer />
       <div className="w-full flex flex-col md:flex-row items-center justify-between md:px-0">
         <div className="hidden md:flex w-full h-[800px] flex-grow">
           <img src={sign} className="w-full h-full object-cover" alt="Signup" />

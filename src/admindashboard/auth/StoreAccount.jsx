@@ -9,14 +9,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import axios from "axios";
-import { useNavigate, useParams} from "react-router-dom";
+import { useNavigate, useParams,} from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
+
 
 
 
 const StoreAccount = () => {
 
-  const { setId}  = useAuthContext();
+
   const [formData, setFormData] = useState({
     store_name: "",
     store_address: "",
@@ -28,6 +29,9 @@ const StoreAccount = () => {
   const navigate = useNavigate()
   const {token}  = useAuthContext();
 
+
+  const {id} = useParams()
+  console.log(id)
 
   const [preview,setPreview] = useState(null)
 
@@ -83,12 +87,12 @@ const StoreAccount = () => {
   };
 
 
-  const {id}  = useParams()
+  // const {id}  = useParams()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!setId) {
+    if (!id) {
       toast.error("Store ID is missing!", { position: "top-center" });
       return;
     }

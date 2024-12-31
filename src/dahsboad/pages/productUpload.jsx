@@ -11,7 +11,7 @@ import { useEffect, useState } from "react"
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 
 
@@ -54,6 +54,7 @@ const ProductUpload = () => {
   const navigate = useNavigate();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
@@ -106,7 +107,7 @@ const ProductUpload = () => {
 
 
   try {
-    const response = await axios.post(
+   await axios.post(
       "https://django-7u8g.onrender.com/api/products/upload/",
       formData,
       {
@@ -117,7 +118,13 @@ const ProductUpload = () => {
     );
 
     toast.success("Product uploaded successfully!", { position: "top-center" });
-    console.log(response.data);
+    setInputs({
+      title: "",
+      description: "",
+      unit_price: "",
+      stock: "",
+      image: "",
+    });
     navigate("/admin-product-upload");
   } catch (err) {
     console.error(err.response?.data || "Error occurred");
@@ -139,9 +146,9 @@ const ProductUpload = () => {
         const res = result.data;
         setProducts(res);
   
-        toast.success("Products fetched successfully!", {
-          position: "top-center",
-        });
+        // toast.success("Products fetched successfully!", {
+        //   position: "top-center",
+        // });
       } catch (err) {
         console.error("Error:", err); // Debugging line
         if (err.response && err.response.data) {
@@ -166,7 +173,7 @@ const ProductUpload = () => {
 
   return (
     <section className="flex w-full  bg-[#F8F8F8] ">
-
+<ToastContainer />
 
 
 <div >

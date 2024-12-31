@@ -7,11 +7,13 @@ import sign from "../../assets/ver.png";
 import logo from "../../assets/eazzi_logo.svg";
 import SignupWithGoogleorLogin from "../../components/SignupWithGoogleorLogin";
 import { toast, ToastContainer } from "react-toastify";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const StoreVerifyEmail = () => {
   const [code, setCode] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
+  const {setId, setToken}  = useAuthContext()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,8 +43,13 @@ const StoreVerifyEmail = () => {
  
       const id = localStorage.setItem("id", JSON.stringify(res.data.id));
       const token = localStorage.setItem("token", JSON.stringify(res.data.token));
-      console.log(id,token)
-      navigate(`/store-createaccount/${id}`);
+     setId(id)
+     setToken(token);
+
+   
+      navigate(`/store-createaccount/${res.data.id}`);
+     
+  
     } catch (err) {
       console.error("Error response:", err.response); 
       if (err.response && err.response.data) {
