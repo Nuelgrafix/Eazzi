@@ -38,11 +38,13 @@ const StoreVerifyEmail = () => {
           position: "top-center",
         });
       }
-
-      
-      navigate(`/store-createaccount/:id`);
+ 
+      const id = localStorage.setItem("id", JSON.stringify(res.data.id));
+      const token = localStorage.setItem("token", JSON.stringify(res.data.token));
+      console.log(id,token)
+      navigate(`/store-createaccount/${id}`);
     } catch (err) {
-      console.error("Error response:", err.response); // Log the error response
+      console.error("Error response:", err.response); 
       if (err.response && err.response.data) {
         toast.error(err.response.data.error, {
           position: "top-center",

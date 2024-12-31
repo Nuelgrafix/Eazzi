@@ -287,7 +287,7 @@ const Header = () => {
         {/* sign up, Menu, and cart */}
         <div className="hidden lg:flex gap-5 items-center">
           {/* sign up */}
-          <Link to={"signup"}>
+          <Link to={authUser ? "#" : "signup"}>
             <button className="px-5 h-[42px] text-nowrap rounded-[8px] items-center text-[#fff] bg-mainOrange flex gap-3">
               <img
                 src={profile}
