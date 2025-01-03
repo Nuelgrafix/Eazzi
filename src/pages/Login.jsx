@@ -57,14 +57,20 @@ const {setAuthUser}  = useAuthContext();
        password: password
       }
       );
+
+ 
       
  const user = localStorage.setItem("user", JSON.stringify(res));
+ const isAdmin = res.data.is_admin
+
+ console.log(user)
  setAuthUser(res)
       toast.success("Login successfully", {
         position: "top-center",
       });
-      console.log(user)
-      navigate('/')
+      
+
+      navigate(`${isAdmin? '/admin-dashboard' : '/'}`)
     
     } catch (err) {
       if (err.response && err.response.data) {

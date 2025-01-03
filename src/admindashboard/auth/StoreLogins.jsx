@@ -1,5 +1,5 @@
 import  { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import sign from "../../assets/signup.png";
 import logo from "../../assets/eazzi_logo.svg";
@@ -17,7 +17,10 @@ import PasswordVisibility from "../../hooks/PasswordVisibility";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 const StoreLogins = () => {
-  const {id}  = useParams()
+
+
+
+ 
   const [email,setEmail] = useState("");
   const [ password,setPassword] = useState("")
   const navigate = useNavigate()
@@ -75,7 +78,7 @@ const {setAuthUser, setToken}  = useAuthContext();
       });
       console.log(user)
  
-      navigate(`/store-createaccount/${id}`)
+      navigate(`/store-dashboard`)
     
     } catch (err) {
       if (err.response && err.response.data) {

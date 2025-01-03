@@ -247,7 +247,7 @@ const Signup = () => {
           <div className="px-3">
             <SignupWithGoogleorLogin />
             <p className="text-[#828282] text-center text-[16px] font-[400] font-tekInter mt-[24px]">
-        Don&apos;t have account? <Link to="/signup" className="text-[#1843E2]">Sign up</Link>
+        Don&apos;t have account? <Link to="/login" className="text-[#1843E2]">Sign in</Link>
       </p>
           </div>
         </div>
