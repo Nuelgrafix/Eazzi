@@ -9,6 +9,7 @@ function App() {
 
   const location = useLocation();
   const isAdmin = location.pathname.startsWith('/admin-dashboard');
+  const isStore = location.pathname.startsWith('/store-dashboard');
    const isProductUpload = location.pathname.startsWith('/admin-product-upload')
    const isOrders = location.pathname.startsWith('/admin-orders')
    const isOrderHistory = location.pathname.startsWith('/order-history')
@@ -40,14 +41,14 @@ function App() {
    return (
     <>
       <div className="overflow-x-hidden">
-        {!isAdmin && !isProductUpload && !isOrders && !isOrderHistory && !isProduct && !isProfile && !isNotification 
+        {!isAdmin && !isStore && !isProductUpload && !isOrders && !isOrderHistory && !isProduct && !isProfile && !isNotification 
       && !isRider && !isRiderOrders && !isRidersAssignedOrder  && !isRiderOrderHistory && !isRiderStores && !isRiderRiders && !isRidersDetails && 
       !isRiderCustomer && !isRiderNotification && !isSettings
       && !isRiderStoreDetails   && !isRidersOrderDetails && !isAllRiders  && !isRiderMessages && !isStoreConfirmation && <Header />}
         
         <Routs />
         
-        {!isAdmin && !isProductUpload && !isOrders && !isOrderHistory && !isProduct && !isProfile && !isNotification 
+        {!isAdmin && !isStore && !isProductUpload && !isOrders && !isOrderHistory && !isProduct && !isProfile && !isNotification 
            && !isRider && !isRiderOrders && !isRiderOrderHistory && !isRiderStores && !isRiderRiders && !isRidersDetails && !isRiderCustomer  && !isRiderNotification && !isSettings
            && !isRiderStoreDetails  && !isRidersOrderDetails && !isAllRiders  && !isRidersAssignedOrder     
            && !isRiderMessages  && !isStoreConfirmation && <Footer />}
