@@ -11,7 +11,7 @@ import { useEffect, useState } from "react"
 
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 
 
@@ -125,7 +125,7 @@ const ProductUpload = () => {
       stock: "",
       image: "",
     });
-    navigate("/admin-product-upload");
+    navigate("/store-product-upload");
   } catch (err) {
     console.error(err.response?.data || "Error occurred");
     toast.error(err.response?.data?.error || "Error submitting the form. Please try again!", {
@@ -173,7 +173,7 @@ const ProductUpload = () => {
 
   return (
     <section className="flex w-full  bg-[#F8F8F8] ">
-<ToastContainer />
+
 
 
 <div >

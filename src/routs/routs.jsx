@@ -68,12 +68,12 @@ import RiderMessages from "../rider/riderMessages";
 import Checkout from "../pages/Checkout";
 import AddAddress from "../components/checkouts/addAddress";
 import AdminRiders from "../riderdashboard/riderpages/riderRiders";
-import StoreSignup from "../admindashboard/auth/StoreSignup";
-import StoreLogins from "../admindashboard/auth/StoreLogins";
-import StoreVerifyEmail from "../admindashboard/auth/StoreVerifyEmail";
-import StoreCreatePassword from "../admindashboard/auth/StoreCreatePassword";
-import StoreAccount from "../admindashboard/auth/StoreAccount";
-import StoreConfirmation from "../admindashboard/auth/StoreConfirmation";
+import StoreSignup from "../storedashboard/auth/StoreSignup";
+import StoreLogins from "../storedashboard/auth/StoreLogins";
+import StoreVerifyEmail from "../storedashboard/auth/StoreVerifyEmail";
+import StoreCreatePassword from "../storedashboard/auth/StoreCreatePassword";
+import StoreAccount from "../storedashboard/auth/StoreAccount";
+import StoreConfirmation from "../storedashboard/auth/StoreConfirmation";
 
 
 
@@ -89,7 +89,7 @@ const Routs = () => {
       <Route path="/" element={<Home />} />
       <Route path="/otherstores" element={<Otherstores />} />
       <Route path="/storesdetails" element={<StoresDetails />} />
-      <Route path="/topstoresdetails" element={<Topstoresdetails />} />
+      <Route path="/topstoresdetails/:id" element={<Topstoresdetails />} />
       <Route path="/checkout"  element={<Checkout />}  />
       <Route path="/checkout-address"  element={<AddAddress/>}  />
 
@@ -152,21 +152,21 @@ const Routs = () => {
 
       {/*Store DashBoard Routes */}
       <Route  path="/store-dashboard"  element={ <HomeDashboard /> } />
-      <Route  path="/admin-product-upload"  element={ <ProductUpload  /> } />
-      <Route  path="/admin-analytics"  element={ <Analyticsdashboard  /> } />
+      <Route  path="/store-product-upload"  element={ <ProductUpload  /> } />
+      <Route  path="/store-analytics"  element={ <Analyticsdashboard  /> } />
       {/* <Route  path="/product-upload"  element={ <ProductUpload  /> } /> */}
-      <Route  path="/admin-orders"  element={ <Orders  /> } />
-      <Route  path="/admin-product"  element={ <DashboardProduct  /> } />
+      <Route  path="/store-orders"  element={ <Orders  /> } />
+      <Route  path="/store-product"  element={ <DashboardProduct  /> } />
       <Route  path="/ordersdetails/:id"  element={ <OrderDetails /> } />
-      <Route  path="/admin-profile"  element={ <Profile /> } />
+      <Route  path="/store-profile"  element={ <Profile /> } />
       <Route  path="/dashboard-edit/:id"  element={ <EditProduct /> } />
       <Route path="/dashboard/about-product/:id"  element={ <AboutProduct />}  />
       <Route path="/dashboard/profile"  element={ <Profile />}  />
-      <Route path="/dashboard/edit-profile/:id"  element={ <EditProfile />}  />
-      <Route path="/admin-notification"  element={ <  DashboardNotification />}  />
+      <Route path="/store/edit-profile/:id"  element={ <EditProfile />}  />
+      <Route path="/store-notification"  element={ <  DashboardNotification />}  />
       <Route path="/dashboard/notification/:id"  element={ <NotificationDetails />}  />
-      <Route  path="/order-history"  element={ <OrderHistory  /> } />
-      <Route  path="/admin-settings"  element={ <Settings /> } />
+      <Route  path="/store-order-history"  element={ <OrderHistory  /> } />
+      <Route  path="/store-settings"  element={ <Settings /> } />
 
 
 

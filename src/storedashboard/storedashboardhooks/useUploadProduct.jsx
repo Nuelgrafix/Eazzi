@@ -66,7 +66,7 @@ const useUploadProduct = () => {
       }
     });
 
-    console.log('Yes')
+
       toast.success("Product uploaded successfully!", {
         position: "top-center",
       });

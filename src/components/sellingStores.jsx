@@ -104,7 +104,7 @@ items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
               Top selling stores
               </h1>
               <p className="text-[#181818] font-[400] text-[20px] leading-[36px]  font-tekInter">
-                No 10 Lekki phase 1
+                No 10 Lekki phase 2
               </p>
               <span className="text-[#333333] font-[400] text-[16px] leading-[19px]  font-tekInter flex gap-1 items-center">
     <img src={star}  alt="star_pics" className=" rounded-[50%] w-[13px] h-[13px]" />
@@ -133,7 +133,7 @@ items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
               Top selling stores
               </h1>
               <p className="text-[#181818] font-[400] text-[20px] leading-[36px]  font-tekInter">
-                No 10 Lekki phase 1
+                No 10 Lekki phase 3
               </p>
               <span className="text-[#333333] font-[400] text-[16px] leading-[19px]  font-tekInter flex gap-1 items-center">
     <img src={star}  alt="star_pics" className=" rounded-[50%] w-[13px] h-[13px]" />
@@ -197,7 +197,7 @@ items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
               Top selling stores
             </h1>
             <p className="text-[#181818] font-[400] text-[20px] leading-[36px]  font-tekInter">
-              No 10 Lekki phase 1
+              No 10 Lekki phase 2
             </p>
 
             <span className="text-[#333333] font-[400] text-[16px] leading-[19px]  font-tekInter flex gap-1 items-center">
@@ -225,7 +225,7 @@ items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
               Top selling stores
             </h1>
             <p className="text-[#181818] font-[400] text-[20px] leading-[36px]  font-tekInter">
-              No 10 Lekki phase 1
+              No 10 Lekki phase 3
             </p>
 
             <span className="text-[#333333] font-[400] text-[16px] leading-[19px]  font-tekInter flex gap-1 items-center">
@@ -253,7 +253,7 @@ items-center text-center bg-mainBlue text-[16px] mt-[1rem]"
               Top selling stores
             </h1>
             <p className="text-[#181818] font-[400] text-[20px] leading-[36px]  font-tekInter">
-              No 10 Lekki phase 1
+              No 10 Lekki phase 4
             </p>
 
             <span className="text-[#333333] font-[400] text-[16px] leading-[19px]  font-tekInter flex gap-1 items-center">

@@ -6,6 +6,8 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addToCart, getCartTotal } from "../redux/CartSlice";
 
+import bag from '../../public/Image/bag.svg'
+
 const Products = () => {
 
   var settings = {
@@ -33,7 +35,7 @@ const Products = () => {
       try {
         const result = await axios.get("https://django-7u8g.onrender.com/api/products/list/");
         const res = await result.data;
-        console.log(res)
+        console.log('Product', res)
         setProducts(res);
         toast.success("Products fetched successfully!", {
           position: "top-center",
@@ -91,11 +93,15 @@ const Products = () => {
               className=" gap-4 top-0 rounded-[5px] items-center justify-center mx-[2rem]  md:mx-0 border-2  border-transparent "
             >
               <div className="bg-[#fff] px-2 h-[403px] mx-[2rem]  md:w-[220px] w-[100%] rounded-[8px]   p-1">
-                <img
-                  src={item.image}
-                  alt="trending_pics"
-                  className="w-[200px] md:w-[300px] h-[220px] "
-                />
+              <img
+  src={item.image ? item.image : bag}
+  alt="product_image"
+  className="w-[200px] md:w-[300px] h-[220px]"
+  onError={(e) => {
+    e.target.src = bag; 
+  }}
+/>
+
                 <h1 className=" font-[700] text-[20px] leading-[24px]  font-tekInter pt-1">
                   {item.name}
                 </h1>

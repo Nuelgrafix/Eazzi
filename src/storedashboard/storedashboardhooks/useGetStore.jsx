@@ -1,17 +1,21 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-const useGetProducts = () => {
-  const [products, setProducts] = useState([]);
+const useGetStores = () => {
+  const [stores, setStores] = useState([]);
 
-  const getProducts = async () => {
+
+  useEffect(()=> {
+
+
+  const getStores = async () => {
     try {
-      const result = await axios.get("https://django-7u8g.onrender.com/api/products/list/");
-      console.log("API Response:", result); // Debugging line
+      const result = await axios.get("https://django-7u8g.onrender.com/api/stores/storeslist/");
+
       const res = result.data;
-      console.log("Data:", res); // Debugging line
-      setProducts(res);
+
+      setStores(res);
 
       toast.success("Products fetched successfully!", {
         position: "top-center",
@@ -30,11 +34,16 @@ const useGetProducts = () => {
     }
   };
 
+
+getStores()
+
+},[])
+
   return {
-    getProducts,
-    setProducts,
-    products,
+
+    setStores,
+    stores,
   };
 };
 
-export default useGetProducts;
+export default useGetStores;

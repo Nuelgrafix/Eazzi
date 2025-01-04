@@ -6,8 +6,38 @@ import star from "/Image/Star 6.svg";
 import whitestar from "/Image/white_star.svg";
 import loveicon from "/Image/Union.svg";
 import StoresDetailsHero from "../components/storedetails/storedetailshero";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const TopstoresHero = () => {
+
+const {id}  = useParams()
+const [singleStores, setSingleStores]  = useState([])
+
+useEffect(()=> {
+  const getSingleStore = async () => {
+    try {
+      const result = await axios.get(`https://django-7u8g.onrender.com/api/stores/storeslist/${id}`);
+
+      const res = result.data;
+
+      setSingleStores(res);
+
+
+    } catch (err) {
+      console.error("Error:", err); 
+    }
+  };
+
+
+  getSingleStore()
+})
+
+
+
+
+
   return (
     <section className="flex pt-[5rem] justify-between  px-[1rem] mt-[1rem]">
       <div className=" flex flex-col">
@@ -25,19 +55,22 @@ const TopstoresHero = () => {
           <div className="flex  flex-col md:flex-row gap-[2rem]">
             <div className="md:w-[210px] md:h-[210px] w-[84px] h-[84px]">
               <img
-                src={profilepics}
+                src={singleStores.cac_image ? singleStores.cac_image : profilepics}
                 alt="user_pics"
                 className=" rounded-[50%] "
+                onError={(e) => {
+                  e.target.src = profilepics
+                }}
               />
             </div>
 
             <div className="flex flex-col md:flex-row  md:items-center justify-between md:pt-[4rem] w-[100%] lg:w-[715px]">
               <div className="flex flex-col">
                 <h1 className="font-tekInter md:text-[32px] font-[700] md:leading-[48px] text-[20px] leading-[24px] text[#000000]">
-                  Top Selling Store - Ajah, Lagos
+                  {singleStores.store_name} - {singleStores.state}
                 </h1>
                 <p className="font-tekInter text-[16px] font-[400] leading-[19px] text-[#4F4F4F] pt-[0.5rem]">
-                  No. 13 Odo-Ota Street, Ajah Lagos.
+                {singleStores.store_address}
                 </p>
 
                 <div className="flex gap-4 items-center  pt-[0.5rem]">
