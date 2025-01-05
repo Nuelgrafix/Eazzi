@@ -10,7 +10,7 @@ const useGetProducts = () => {
       const result = await axios.get("https://django-7u8g.onrender.com/api/products/list/");
       const res = result.data;
       setProducts(res);
-console.log("Products", res)
+
       toast.success("Products fetched successfully!", {
         position: "top-center",
       });

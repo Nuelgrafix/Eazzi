@@ -88,7 +88,7 @@ useEffect(()=> {
                   <div>
                     <span className="text-[16px] font-[700] leading-[19.36px] font-tekInter text-[#3157E1]">
                       {" "}
-                      Store Opens: 8am - 5pm
+                      {singleStores.working_hours}
                     </span>
                   </div>
                 </div>
@@ -124,25 +124,31 @@ useEffect(()=> {
             {" "}
             About this Store
           </h1>
+
           <p className="font-[400] pt-[1rem] md:text-[16px] text-[14px] leading-[16px] md:leading-[19px] font-tekInter text-[#4F4F4F]">
+          {singleStores.about_store}
+          </p>
+
+
+          {/* <p className="font-[400] pt-[1rem] md:text-[16px] text-[14px] leading-[16px] md:leading-[19px] font-tekInter text-[#4F4F4F]">
             Welcome to Top Selling Store, your one-stop destination for quality and
             affordability. Founded with a passion for providing the best
             products and services to our customers, Ahmed Store has grown into a
             beloved shopping destination for families and individuals alike.
-          </p>
+          </p> */}
 
-          <p className="pt-[2rem] font-[400] md:text-[16px] text-[14px] leading-[16px] md:leading-[19px] font-tekInter text-[#4F4F4F]">
+          {/* <p className="pt-[2rem] font-[400] md:text-[16px] text-[14px] leading-[16px] md:leading-[19px] font-tekInter text-[#4F4F4F]">
             At Top Selling Store, we believe in the power of choice and convenience.
             Our extensive range of products spans across various categories
             including electronics, home appliances, fashion, beauty, and
             groceries. We carefully select each item to ensure it meets our high
             standards of quality, durability, and value for money.
-          </p>
+          </p> */}
         </div>
       </div>
 
       <div className="mt-[-2rem]">
-   <StoresDetailsHero />
+   <StoresDetailsHero   singleStores={singleStores}/>
       </div>
     </section>
   );

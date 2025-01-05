@@ -98,6 +98,7 @@ const Products = () => {
   alt="product_image"
   className="w-[200px] md:w-[300px] h-[220px]"
   onError={(e) => {
+    e.target.onerror = null;
     e.target.src = bag; 
   }}
 />

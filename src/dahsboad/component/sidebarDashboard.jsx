@@ -96,7 +96,7 @@ const SidebarDashboard = () => {
           Ben&apos;s Store
         </h1>
         <Link
-          to="/admin-product-upload"
+          to="/store-product-upload"
           className="bg-[#FF7F00] gap-[8px] rounded-[8px] border-[1px] border-[#FF7F00] h-[38px] text-[#FFFFFF] text-[16px] leading-[24px] font-[600] font-tekInter pt-[8px] pr-[20px] pb-[8px] pl-[10px]"
           style={{ boxShadow: "0px 1px 2px 0px #1018280D" }}
         >

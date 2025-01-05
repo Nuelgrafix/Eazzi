@@ -1,7 +1,7 @@
 import Products from "./products";
 
 import store from "/Image/store.png";
-import storess from "/Image/stores.png";
+// import storess from "/Image/stores.png";
 
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
@@ -114,7 +114,7 @@ const ProductLocation = () => {
                   alt="star_pics"
                   className="rounded-[50%] w-[13px] h-[13px]"
                 />{" "}
-                4.2 (380) Opens; 8am - 8pm
+              {s.working_hours}
               </span>
               <button
                 className="w-[115px] h-[35px] text-[#F9F5FF] rounded-[8px] font-[400]
@@ -134,7 +134,7 @@ const ProductLocation = () => {
           className="flex justify-around items-center lg:w-[600px] sm:w-[420px] w-[100%] h-[252px] bg-[#E0E0E0] mb-[2rem]"
         >
           <img
-            src={storess}
+              src={s.cac_image}
             alt="stores-pics"
             className="lg:w-[269px] sm:w-[200px] w-[100%] h-[217px] rounded-[5px]"
           />
@@ -151,7 +151,7 @@ const ProductLocation = () => {
                 alt="star_pics"
                 className="rounded-[50%] w-[13px] h-[13px]"
               />{" "}
-              4.2 (380) Opens; 8am - 8pm
+               {s.working_hours}
             </span>
             <button
               className="w-[115px] h-[35px] text-[#F9F5FF] rounded-[8px] font-[400]

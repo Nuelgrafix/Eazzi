@@ -14,7 +14,7 @@ const useGetStores = () => {
       const result = await axios.get("https://django-7u8g.onrender.com/api/stores/storeslist/");
 
       const res = result.data;
-
+      console.log("Store details", res)
       setStores(res);
 
       toast.success("Products fetched successfully!", {

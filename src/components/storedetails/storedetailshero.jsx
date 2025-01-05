@@ -10,7 +10,7 @@ import gameBlue from "../../assets/gameBlue.png";
 import menu from "../../assets/menu.png";
 import menuBlue from "../../assets/menuBlue.png";
 import calling from "../../assets/Calling.png";
-import group from "../../assets/Group.png";
+// import group from "../../assets/Group.png";
 
 
 const StoresDetailsHero = () => {
@@ -160,7 +160,8 @@ const StoresDetailsHero = () => {
         </div>
 
         <div className="ml-[25px] flex flex-col w-[319px] shadow-loctionShad items-start gap-[14px] py-[14px] px-[19px] bg-white">
-          <div className="flex items-center gap-[12px] self-stretch text-[#181818] hover:text-[#1843E2] transition duration-300">
+
+          {/* <div className="flex items-center gap-[12px] self-stretch text-[#181818] hover:text-[#1843E2] transition duration-300">
             <div className="flex items-center justify-center w-[30px] h-[30px] p-[6px] rounded-[83.333px] border-[0.833px] border-[#3157E1] bg-[#e1b16433]">
               <img src={group} className="w-[18px] h-[18px]" alt="" />
             </div>
@@ -168,7 +169,7 @@ const StoresDetailsHero = () => {
             <p className="text-[16px] font-[400] leading-normal font-tekInter">
               Become a seller on Eazzi
             </p>
-          </div>
+          </div> */}
 
           <p className="font-[700] font-tekInter text-[16px] leading-normal text-[#1843E2] ">
             Customer Support

@@ -24,7 +24,9 @@ const StoreAccount = () => {
     street: "",
     city: "",
     state:"",
-    cac_image : ""
+    cac_image : "",
+    working_hours: "",
+    about_store: ""
   });
   const navigate = useNavigate()
   const {token}  = useAuthContext();
@@ -108,6 +110,8 @@ const StoreAccount = () => {
     formDataToSend.append("street", formData.street);
     formDataToSend.append("city", formData.city);
     formDataToSend.append("state", formData.state);
+    formDataToSend.append("state", formData.working_hours);
+    formDataToSend.append("state", formData.about_store);
 
     if (formData.cac_image) {
         formDataToSend.append("cac_image", formData.cac_image); 
@@ -248,6 +252,23 @@ const StoreAccount = () => {
            
             </div>
 
+            <div className="w-full relative">
+              <input
+                type="text"
+                className="text-[#828282] h-[53px] py-[26px] px-[16px]  border-[1px] border-[#969696] outline-none w-full rounded-[8px] relative"
+                name="Working Hours"
+                placeholder="Working Hours"
+                value={formData.working_hours}
+                onChange={handleChange}
+                required
+              />
+              {errors.working_hours && (
+                <p className="text-red-600 text-[15px]">{errors.working_hours}</p>
+              )}
+
+        
+            </div>
+
 
             <div  className="flex items-center justify-start gap-2 text-[#828282] h-[53px] py-[26px] px-[16px]  border-[1px] border-[#969696] outline-none w-full rounded-[8px]">
 
@@ -299,6 +320,25 @@ upload your cac image
               {errors.cac_image && (
                 <p className="text-red-600 text-[15px]">{errors.cac_image}</p>
               )}
+            </div>
+
+
+            <div className="w-full h-[50px] relative">
+              <textarea
+                type="text"
+              className="text-[#828282]  py-[16px] px-[16px] h-[150px] border-[1px]
+               border-[#969696] outline-none w-full rounded-[8px] relative"
+                name="about_Store"
+                placeholder="About Store"
+                value={formData.about_store}
+                onChange={handleChange}
+                required
+              />
+              {errors.about_store && (
+                <p className="text-red-600 text-[15px]">{errors.about_store}</p>
+              )}
+
+        
             </div>
 
 
