@@ -162,7 +162,7 @@ const StoreAccount = () => {
             <img src={logo} className="pb-8 pt-[29px] h-[104px]" alt="" />
           </div>
           <h2 className="text-[24px] font-tekInter text-[#4F4F4F] leading-[30px] font-[700] px-3 mt-10">
-          My Store details
+          My Store details 
           </h2>
           <p className="text-xl font-tekInter text-[#4F4F4F]  font-[400] px-3 ">Please kindly provide the store information here</p>
           <form
@@ -323,6 +323,7 @@ upload your cac image
             </div>
 
 
+
             <div className="w-full h-[50px] relative">
               <textarea
                 type="text"
@@ -342,13 +343,19 @@ upload your cac image
             </div>
 
 
+
+
+
+
             <button
               type="submit"
-              className="bg-[#1843E2] rounded-[8px] shadow-btn text-white text-center text-[16px] font-tekInter font-[600] leading-[24px] mt-[28px] py-[10px] px-[18px] flex items-center justify-center"
+              className="bg-[#1843E2] rounded-[8px] shadow-btn text-white text-center text-[16px] 
+              font-tekInter font-[600] leading-[24px] mt-[89px] py-[10px] px-[18px] flex items-center justify-center"
               disabled={isSubmitting}
             >
               {isSubmitting ? <div className="loader"></div> : "Continue"}
             </button>
+  
           </form>
 
  
