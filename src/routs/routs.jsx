@@ -32,10 +32,12 @@ import Orders from "../dahsboad/pages/orders";
 import OrderHistory from "../dahsboad/pages/orderHistory";
 import OrderDetails from "../dahsboad/pages/orderDetails";
 import DashboardProduct from "../dahsboad/pages/dashboardProduct";
+
 import Profile from "../dahsboad/pages/profile";
 import EditProduct from "../dahsboad/pages/editProduct";
 import AboutProduct from "../dahsboad/pages/aboutProduct";
 import EditProfile from "../dahsboad/component/editProfile";
+import EditProfileMobile from "../dahsboad/component/editProfileMobile";
 import NotificationDetails from "../dahsboad/component/notification/notificationDetails";
 import DashboardNotification from "../dahsboad/pages/dashboardNotification";
 import Analyticsdashboard from "../dahsboad/pages/analyticsdashboard";
@@ -74,6 +76,9 @@ import StoreVerifyEmail from "../storedashboard/auth/StoreVerifyEmail";
 import StoreCreatePassword from "../storedashboard/auth/StoreCreatePassword";
 import StoreAccount from "../storedashboard/auth/StoreAccount";
 import StoreConfirmation from "../storedashboard/auth/StoreConfirmation";
+import DashboardProductMobile from "../dahsboad/pages/dashboardProductMobile";
+import ProfileMobile from "../dahsboad/pages/profileMobile";
+import ProductsPage from "../pages/productsPage";
 
 
 
@@ -87,6 +92,7 @@ const Routs = () => {
     
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="productsPage" element={<ProductsPage />} />
       <Route path="/otherstores" element={<Otherstores />} />
       <Route path="/storesdetails" element={<StoresDetails />} />
       <Route path="/topstoresdetails/:id" element={<Topstoresdetails />} />
@@ -157,12 +163,16 @@ const Routs = () => {
       {/* <Route  path="/product-upload"  element={ <ProductUpload  /> } /> */}
       <Route  path="/store-orders"  element={ <Orders  /> } />
       <Route  path="/store-product"  element={ <DashboardProduct  /> } />
+      <Route  path="/store-product-mobile"  element={ <DashboardProductMobile  /> } />
       <Route  path="/ordersdetails/:id"  element={ <OrderDetails /> } />
       <Route  path="/store-profile"  element={ <Profile /> } />
+      <Route  path="/store-profile-mobile/:storeId"  element={ <ProfileMobile /> } />
+      <Route  path="/store-profile/:storeId"  element={ <Profile /> } />
       <Route  path="/dashboard-edit/:id"  element={ <EditProduct /> } />
       <Route path="/dashboard/about-product/:id"  element={ <AboutProduct />}  />
       <Route path="/dashboard/profile"  element={ <Profile />}  />
-      <Route path="/store/edit-profile/:id"  element={ <EditProfile />}  />
+      <Route path="/store/edit-profile/:storeId"  element={ <EditProfile />}  />
+      <Route path="/store/edit-profile-mobile/:storeId"  element={ <EditProfileMobile />}  />
       <Route path="/store-notification"  element={ <  DashboardNotification />}  />
       <Route path="/dashboard/notification/:id"  element={ <NotificationDetails />}  />
       <Route  path="/store-order-history"  element={ <OrderHistory  /> } />

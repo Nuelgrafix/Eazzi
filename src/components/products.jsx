@@ -5,113 +5,119 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addToCart, getCartTotal } from "../redux/CartSlice";
-
-import bag from '../../public/Image/bag.svg'
+import { Link } from "react-router-dom";  
+import bag from '../../public/Image/bag.svg';
+//import HeroSidebar from "../HeroSidebar"
 
 const Products = () => {
-
-  var settings = {
+  const settings = {
     dots: false,
-    infinite: false,
+    //infinite: false,
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 1,
+    initialSlide: 0,
+    infinite: true, // Set to true
+    
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: 1280, // Large screens
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 1024, // Tablets
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768, // Mobile landscape
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480, // Small mobile
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          //initialSlide: 0,
         },
       },
     ],
   };
 
-
   const [products, setProducts] = useState([]);
+  const [filterKeyword, setFilterKeyword] = useState('');
 
-  useEffect(()=>  {
+  const filteredProducts = filterKeyword
+  ? products.filter((product) =>
+      product.name.toLowerCase().includes(filterKeyword.toLowerCase())
+    )
+  : products;
+
+  console.log('Filter keyword:', filterKeyword);
+console.log('Filtered products:', filteredProducts);
+
+
+  useEffect(() => {
     const getProducts = async () => {
       try {
         const result = await axios.get("https://django-7u8g.onrender.com/api/products/list/");
-        const res = await result.data;
-        console.log('Product', res)
+        const res = result.data;
         setProducts(res);
         toast.success("Products fetched successfully!", {
           position: "top-center",
         });
       } catch (err) {
-        console.error("Error:", err); 
-        if (err.response && err.response.data) {
-          toast.error(err.response.data.error, {
-            position: "top-center",
-          });
-        } else {
-          toast.error("Error fetching the products. Please try again!", {
-            position: "top-center",
-          });
-        }
+        console.error("Error:", err);
+        toast.error("Error fetching the products. Please try again!", {
+          position: "top-center",
+        });
       }
     };
 
-    getProducts()
-  }, [])
+    getProducts();
+  }, []);
 
-
-
-  const [qty] = useState(1)
- 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const addItemToCart = (product) => {
-    const totalPrice = qty * product.unit_price;
     const tempCart = {
       ...product,
-      quantity: qty,
-      totalPrice,
+      quantity: 1,
+      totalPrice: product.unit_price,
     };
-  
-    console.log("Dispatching addToCart with:", tempCart); // Log the dispatched payload
     dispatch(addToCart(tempCart));
     dispatch(getCartTotal());
   };
-  
-
-
 
   return (
-    <section className="relative left-0">
-      {/* first component with slider */}
-
-      {/* mapping through */}
-      <div className=" relative mx-auto gap-4 py-[3rem]  ">
-        <Slider className="" {...settings}>
-          
-          {products.map((item) => (
+    <section className="relative left-0 px-4">
+      <div className="mx-auto py-6">
+        <Slider {...settings}>
+          {filteredProducts.map((item) => (
             <div
               key={item.id}
-              className=" gap-4 top-0 rounded-[5px] items-center justify-center mx-[2rem]  md:mx-0 border-2  border-transparent "
+              className="px-2"
             >
-              <div className="bg-[#fff] px-2 h-[403px] mx-[2rem]  md:w-[220px] w-[100%] rounded-[8px]   p-1">
-              <img
-  src={item.image ? item.image : bag}
-  alt="product_image"
-  className="w-[200px] md:w-[300px] h-[220px]"
-  onError={(e) => {
-    e.target.onerror = null;
-    e.target.src = bag; 
-  }}
-/>
-
-                <h1 className=" font-[700] text-[20px] leading-[24px]  font-tekInter pt-1">
-                  {item.name}
-                </h1>
-                <p className="text-[#282828] font-[400] text-[20px] leading-[24px] pb-[1rem] pt-[1rem] font-tekInter">
-                  #{item.unit_price}
-                </p>
-                <h1 className="text-fifthOrange font-[700] text-[20px] leading-[20px] pt-[1rem] font-tekInter">
-                {item.stock} instock
-                </h1>
+              <div className="bg-white p-4 shadow-md rounded-lg text-center">
+                <Link to={`/product/${item.id}`}>
+                  <img
+                    src={item.image || bag}
+                    alt={item.name}
+                    className="w-full h-[200px] object-cover rounded-md"
+                    onError={(e) => { e.target.src = bag; }}
+                  />
+                </Link>
+                <h1 className="font-[700] text-[20px] leading-[24px]  font-tekInter pt-1">{item.name}</h1>
+                <p className="text-[#282828] font-[400] text-[20px] leading-[24px] pb-[1rem] pt-[1rem] font-tekInter">#{item.unit_price}</p>
+                <h1 className="text-fifthOrange font-[700] text-[20px] leading-[20px] pt-[1rem] font-tekInter">{item.stock} in stock</h1>
                 <button
                   className="w-[125px] h-[44px] bg-[#F9F5FF] rounded-[8px] hover:bg-mainBlue hover:text-[#fff] hover:translate-x-1
     items-center text-center text-mainBlue text-[16px] mt-[1rem] my-[0.7rem] mb-2"
@@ -127,10 +133,9 @@ const Products = () => {
           ))}
         </Slider>
       </div>
-
-      
     </section>
   );
 };
 
 export default Products;
+

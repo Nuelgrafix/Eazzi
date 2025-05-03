@@ -18,7 +18,9 @@ import { toast } from "react-toastify";
 import Products from "../../components/products"
 import MobileSideDashboard from "../component/mobileSideDashboard"
 import Footerimg from "../../../public/Image/footer-dahsboard.svg"
+import { useAuthContext } from "../../hooks/useAuthContext"; // Adjust the path
 // import useGetProducts from "../dashboardhooks/useGetProducts"
+
 
 
 
@@ -26,7 +28,8 @@ import Footerimg from "../../../public/Image/footer-dahsboard.svg"
 
 const ProductUpload = () => {
 
-
+  const { token } = useAuthContext();
+  //const token = user?.token;
     
 
   const [showSide, setShowSide] = useState(false)
@@ -88,54 +91,118 @@ const ProductUpload = () => {
 
   const uploadProduct = async (e) => {
     e.preventDefault();
-    if (!validateForm()) {
-      toast.error("Please fill in all required fields.", {
-        position: "top-center",
-      });
-      return;
+   
+    
+
+    if (isSubmitting) {
+        console.warn("⏳ Submission blocked: Already submitting.");
+        return; // Prevent multiple submissions
     }
+
+    console.log("🚀 Form submitted");
+
+    if (!validateForm()) {
+        toast.error("⚠️ Please fill in all required fields.", { position: "top-center" });
+        return;
+    }
+
+    console.log("🔄 Setting isSubmitting to true...");
     setIsSubmitting(true);
 
+    // Retrieve token & vendor ID from localStorage
+    //const token = localStorage.getItem("token")?.trim();
+    //console.log("🔍 Token from localStorage:", `"${localStorage.getItem("token")}"`);
+    let vendorId = localStorage.getItem("storeId")
 
- const formData = new FormData();
-  formData.append('name', inputs.title);
-  formData.append('description', inputs.description);
-  formData.append('unit_price', inputs.unit_price);
-  formData.append('stock', inputs.stock);
-  formData.append('image', inputs.image);  // Use the image state directly
+    console.log("🔍 Checking token before sending:", token);
 
+    if (!token) {
+        console.error("❌ Token not found! User must log in.");
+        toast.error("Unauthorized! Please log in again.", { position: "top-center" });
+        setIsSubmitting(false);
+        return;
+    }
 
+    vendorId = parseInt(vendorId, 10);
+    if (!vendorId || isNaN(vendorId)) {
+        console.error("❌ Vendor ID missing or invalid:", vendorId);
+        toast.error("Vendor ID is missing or invalid. Please log in again.", { position: "top-center" });
+        setIsSubmitting(false);
+        return;
+    }
 
-  try {
-   await axios.post(
-      "https://django-7u8g.onrender.com/api/products/upload/",
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
+    // Ensure image is a valid file object before appending
+    if (!inputs.image || !(inputs.image instanceof Blob)) {
+        console.error("❌ Invalid image file:", inputs.image);
+        toast.error("Please upload a valid image file.", { position: "top-center" });
+        setIsSubmitting(false);
+        return;
+    }
 
-    toast.success("Product uploaded successfully!", { position: "top-center" });
-    setInputs({
-      title: "",
-      description: "",
-      unit_price: "",
-      stock: "",
-      image: "",
-    });
-    navigate("/store-product-upload");
-  } catch (err) {
-    console.error(err.response?.data || "Error occurred");
-    toast.error(err.response?.data?.error || "Error submitting the form. Please try again!", {
-      position: "top-center",
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
+    // Create FormData
+    const formData = new FormData();
+    formData.append("name", inputs.title);
+    formData.append("description", inputs.description);
+    formData.append("unit_price", inputs.unit_price);
+    formData.append("stock", inputs.stock);
+    formData.append("image", inputs.image);
+    formData.append("vendor_id", vendorId);
+
+    // Log FormData contents for debugging
+    console.log("📝 FormData contents:");
+    for (let [key, value] of formData.entries()) {
+        console.log(`${key}:`, value);
+    }
+
+    try {
+        console.log("📡 Sending request to API...");
+        
+        const response = await axios.post(
+            "https://django-7u8g.onrender.com/api/products/upload/",
+            formData,
+            {
+              headers: {
+                Authorization: `Token ${token}`,
+                "Content-Type": "multipart/form-data"
+              }
+    
+            }
+        );
+        
+        console.log("✅ Response received:", response.data);
+
+        toast.success("🎉 Product uploaded successfully!", { position: "top-center" });
+
+        // Reset form fields
+        setInputs({
+            title: "",
+            description: "",
+            unit_price: "",
+            stock: "",
+            image: null, // Reset to null for correct state handling
+        });
+
+        navigate("/store-product-upload"); // Redirect user
+    } catch (err) {
+        console.error("❌ Error occurred:", err.response?.data || err.message);
+
+        if (err.response?.status === 401) {
+            toast.error("Unauthorized! Your session may have expired. Please log in again.", { position: "top-center" });
+            
+        }
+
+        toast.error(
+            err.response?.data?.error || "⚠️ Error submitting the form. Please try again!",
+            { position: "top-center" }
+        );
+    } finally {
+        console.log("⏳ Resetting isSubmitting state...");
+        setTimeout(() => setIsSubmitting(false), 1000); // Delay reset to prevent immediate re-click
+    }
 };
 
+
+  
   const [products, setProducts] = useState([]);
 
   useEffect(()=>  {

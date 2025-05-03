@@ -29,7 +29,7 @@ const FilledCart = () => {
   const handleRemoveItemOutside = (e) => {
     if (
       removeItemRef.current &&
-      !removeItemRef.current.contains(e.tagert.value)
+      !removeItemRef.current.contains(e.target.value)
     ) {
       setRemoveItemClick(false);
     }

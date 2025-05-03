@@ -1,6 +1,6 @@
 
 import img from "../assets/crpass.png";
-import logo from "../assets/eazzi_logo.svg";
+import logo from "/Image/logo.svg";
 import mail from "../assets/mail.png";
 
 const ForgetPassword = () => {

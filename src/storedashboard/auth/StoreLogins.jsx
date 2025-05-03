@@ -2,7 +2,7 @@ import  { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import sign from "../../assets/signup.png";
-import logo from "../../assets/eazzi_logo.svg";
+import logo from "/Image/logo.svg";
 import mail from "../../assets/mail.png";
 import eye from "../../assets/Show.png";
 import eyex from "../../assets/eyex.png";
@@ -68,9 +68,14 @@ const {setAuthUser, setToken}  = useAuthContext();
       }
       );
       
- const user = localStorage.setItem("user", JSON.stringify(res));
+ const user = localStorage.setItem("user", JSON.stringify(res.data));
  const token = localStorage.setItem("token", JSON.stringify(res.data.token));
  console.log(token)
+ // Store store ID in local storage (assuming response contains store_id)
+ if (res.data.store_id) {
+  localStorage.setItem("storeId", res.data.store_id);
+  localStorage.setItem("store_name", res.data.store_name);
+}
  setAuthUser(res);
  setToken(res.data.token)
       toast.success("Login successfully", {

@@ -1,7 +1,7 @@
 import Products from "./products";
 import { Link } from "react-router-dom";
 
-const ProductLayout = () => {
+const ProductLayout = ({ filterKeyword }) => {
   return (
     <section className="md:p-2 overflow-x-hidden">
       {/* trending products */}
@@ -24,7 +24,7 @@ const ProductLayout = () => {
         </div>
 
         <div className="bg-[#FFB164]  md:bg-productBg">
-          <Products />
+          <Products filterKeyword={filterKeyword} />
         </div>
       </div>
 
@@ -47,7 +47,7 @@ const ProductLayout = () => {
           </Link>
         </div>
         <div className="p-1  bg-mainBlue  md:bg-productBg">
-          <Products />
+          <Products filterKeyword={filterKeyword}/>
         </div>
       </div>
 
@@ -71,7 +71,7 @@ const ProductLayout = () => {
         </div>
 
         <div className="bg-[#FFB164]  md:bg-productBg">
-          <Products />
+          <Products filterKeyword={filterKeyword}/>
         </div>
       </div>
 
@@ -95,7 +95,7 @@ const ProductLayout = () => {
         </div>
 
         <div className="p-1  bg-mainBlue  md:bg-productBg">
-          <Products />
+          <Products filterKeyword={filterKeyword} />
         </div>
       </div>
     </section>

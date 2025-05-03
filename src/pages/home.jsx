@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Accessories from "../components/accessories";
 import Faq from "../components/faq";
 import Hero from "../components/hero";
@@ -9,18 +10,22 @@ import SecondAds from "../components/secondAds";
 import SellingStores from "../components/sellingStores";
 
 const Home = () => {
+  const [filterKeyword, setFilterKeyword] = useState("");
+  const handleFilterSelect = (keyword) => {
+    setFilterKeyword(keyword);
+  };
   return (
     <>
       <div className="overflow-x-hidden relative w-[100%] flex flex-col ">
-        <Hero />
-        <ProductLocation />
+        <Hero setFilterKeyword={setFilterKeyword} />
+        <ProductLocation filterKeyword={filterKeyword}/>
         <Accessories />
         <div className="overflow-x-hidden relative w-[100%] flex flex-col items-center ">
           <HeroSwiper />
         </div>
         <SellingStores />
-        <ProductLocation />
-        <ProductLayout />
+        <ProductLocation filterKeyword={filterKeyword} />
+        <ProductLayout filterKeyword={filterKeyword} />
         <SecondAds />
         <Faq />
         <Newsletter />

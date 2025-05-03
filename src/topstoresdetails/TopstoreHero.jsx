@@ -1,157 +1,137 @@
-
-
-import detailstores from "/Image/details_store.svg";
-import profilepics from "../../public/Image/details_pics.svg/";
-import star from "/Image/Star 6.svg";
-import whitestar from "/Image/white_star.svg";
-import loveicon from "/Image/Union.svg";
-import StoresDetailsHero from "../components/storedetails/storedetailshero";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom"; 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import StoresDetailsHero from "../components/storedetails/storedetailshero";
+import { Link, useNavigate } from "react-router-dom";
+import edit from "/Image/edit.svg";
+//import SecondAds from "./secondAds";
+//import Newsletter from "./newsletter";
+import Newsletter from "../components/newsletter";
+import SecondAds from "../components/secondAds";
 
 const TopstoresHero = () => {
+  const { id } = useParams();
+  const [singleStores, setSingleStores] = useState([]);
+  const [storeProducts, setStoreProducts] = useState([]); // Store products
 
-const {id}  = useParams()
-const [singleStores, setSingleStores]  = useState([])
+  useEffect(() => {
+    const getSingleStore = async () => {
+      try {
+        const result = await axios.get(
+          `https://django-7u8g.onrender.com/api/stores/storeslist/${id}`
+        );
+        setSingleStores(result.data);
+      } catch (err) {
+        console.error("Error:", err);
+      }
+    };
 
-useEffect(()=> {
-  const getSingleStore = async () => {
-    try {
-      const result = await axios.get(`https://django-7u8g.onrender.com/api/stores/storeslist/${id}`);
+    const getStoreProducts = async () => {
+      try {
+        const response = await axios.get(
+          `https://django-7u8g.onrender.com/api/products/stores/${id}/products/`
+        ); 
+        setStoreProducts(response.data);
+      } catch (error) {
+        console.error("Error fetching store products:", error);
+      }
+    };
 
-      const res = result.data;
-
-      setSingleStores(res);
-
-
-    } catch (err) {
-      console.error("Error:", err); 
-    }
-  };
-
-
-  getSingleStore()
-})
-
-
-
-
+    getSingleStore();
+    getStoreProducts();
+  }, [id]);
 
   return (
-    <section className="flex pt-[5rem] justify-between  px-[1rem] mt-[1rem]">
-      <div className=" flex flex-col">
-        {/* image */}
-        <div className="max-w-[973px] relative md:h-[244px] h-[154px]">
-          <img
-            src={detailstores}
-            alt="ahmed_pics"
-            className="max-w-[973px] w-[100%] h-[100%]  rounded-[5px]"
-          />
-        </div>
-
-        {/* details about ahmed */}
-        <div className="flex md:mt-[-4rem] mt-[-2rem] relative  mb-[2rem] px-1">
-          <div className="flex  flex-col md:flex-row gap-[2rem]">
-            <div className="md:w-[210px] md:h-[210px] w-[84px] h-[84px]">
-              <img
-                src={singleStores.cac_image ? singleStores.cac_image : profilepics}
-                alt="user_pics"
-                className=" rounded-[50%] "
-                onError={(e) => {
-                  e.target.src = profilepics
-                }}
-              />
-            </div>
-
-            <div className="flex flex-col md:flex-row  md:items-center justify-between md:pt-[4rem] w-[100%] lg:w-[715px]">
-              <div className="flex flex-col">
-                <h1 className="font-tekInter md:text-[32px] font-[700] md:leading-[48px] text-[20px] leading-[24px] text[#000000]">
-                  {singleStores.store_name} - {singleStores.state}
-                </h1>
-                <p className="font-tekInter text-[16px] font-[400] leading-[19px] text-[#4F4F4F] pt-[0.5rem]">
-                {singleStores.store_address}
-                </p>
-
-                <div className="flex gap-4 items-center  pt-[0.5rem]">
-                  <div className="flex gap-1">
-                    <img
-                      src={star}
-                      alt="star_pics"
-                      className=" rounded-[50%] w-[18px] h-[18px]"
-                    />
-                    <span className="font-tekInter text-[16px] font-[400] leading-[19px] text-[#4F4F4F]">
-                      4.2k (380)
-                    </span>
-                  </div>
-
-                  <div>
-                    <span className="text-[16px] font-[700] leading-[19.36px] font-tekInter text-[#3157E1]">
-                      {" "}
-                      {singleStores.working_hours}
-                    </span>
-                  </div>
-                </div>
-                
+    <section className="flex flex-col pt-[5rem] px-[1rem] mt-[1rem]">
+      {/* Store Details Section */}
+      <div className="flex justify-between">
+        <div className="flex flex-col">
+          <div className="max-w-[973px] relative md:h-[244px] h-[154px]">
+            <img
+              src={singleStores.background_image}
+              alt="store_banner"
+              className="max-w-[973px] w-full h-full rounded-[5px]"
+            />
+          </div>
+          <div className="flex md:mt-[-4rem] mt-[-2rem] relative mb-[2rem] px-1">
+            <div className="flex flex-col md:flex-row gap-[2rem]">
+              <div className="md:w-[210px] md:h-[210px] w-[84px] h-[84px] rounded-full overflow-hidden">
+                <img
+                  src={singleStores.profile_image}
+                  alt="store_profile"
+                  className="w-full h-full object-cover"
+                />
               </div>
-
-              <div className=" flex flex-row  md:flex-col gap-2 md:gap-0  md:mt-[2rem] mt-[1rem] lg:items-end">
-                <button className="flex items-center justify-center gap-2 mb-2 w-[134px] h-[36px] rounded-[8px] bg-mainBlue text-[#fff] text-[16px] font-[400] leading-[19px]">
-                  <img
-                    src={whitestar}
-                    alt="star_pics"
-                    className=" rounded-[50%] w-[16px] h-[16px]"
-                  />{" "}
-                  Rate Sure
-                </button>
-
-                <button className="lg:w-[169px] w-[139px] h-[36px] rounded-[8px] border-[1px] flex gap-2 items-center justify-center bg-[#F9F5FF] border-mainBlue text-mainBlue text-[16px] font-[400] leading-[19px]">
-                  <img
-                    src={loveicon}
-                    alt="star_pics"
-                    className=" rounded-[50%] w-[15px] h-[13px]"
-                  />{" "}
-                  Save this store
-                </button>
+              <div className="flex flex-col md:flex-row md:items-center justify-between md:pt-[4rem] w-full lg:w-[715px]">
+                <div className="flex flex-col">
+                  <h1 className="font-tekInter md:text-[32px] font-[700] md:leading-[48px] text-[20px] leading-[24px]">
+                    {singleStores.store_name} - {singleStores.state}
+                  </h1>
+                  <p className="text-[16px] font-[400] text-[#4F4F4F] pt-[0.5rem]">
+                    {singleStores.store_address}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+          <div>
+            <h1 className="font-[700] md:text-[24px] text-[20px] leading-[24px] md:leading-[38px]">
+              About this Store
+            </h1>
+            <p className="font-[400] pt-[1rem] md:text-[16px] text-[14px] text-[#4F4F4F]">
+              {singleStores.about_store}
+            </p>
+          </div>
         </div>
+        <StoresDetailsHero singleStores={singleStores} />
+      </div>
 
-        {/* about stores  and text */}
-        <div>
-          <h1 className="font-[700] md:text-[24px] text-[20px] leading-[24px] md:leading-[38px] font-tekInter">
-            {" "}
-            About this Store
+      {/* Store Products Section */}
+<div className="mt-[3rem]">
+<div className="max-w-[100%] flex justify-between items-center h-[73px] bg-mainBlue border-b-4 border-secondOrange px-[0.5rem]">
+          <h1 className="text-[#fff] font-[400] text-[18px] leading-[19px] font-tekInter">
+          Available in this Store
           </h1>
-
-          <p className="font-[400] pt-[1rem] md:text-[16px] text-[14px] leading-[16px] md:leading-[19px] font-tekInter text-[#4F4F4F]">
-          {singleStores.about_store}
-          </p>
-
-
-          {/* <p className="font-[400] pt-[1rem] md:text-[16px] text-[14px] leading-[16px] md:leading-[19px] font-tekInter text-[#4F4F4F]">
-            Welcome to Top Selling Store, your one-stop destination for quality and
-            affordability. Founded with a passion for providing the best
-            products and services to our customers, Ahmed Store has grown into a
-            beloved shopping destination for families and individuals alike.
-          </p> */}
-
-          {/* <p className="pt-[2rem] font-[400] md:text-[16px] text-[14px] leading-[16px] md:leading-[19px] font-tekInter text-[#4F4F4F]">
-            At Top Selling Store, we believe in the power of choice and convenience.
-            Our extensive range of products spans across various categories
-            including electronics, home appliances, fashion, beauty, and
-            groceries. We carefully select each item to ensure it meets our high
-            standards of quality, durability, and value for money.
-          </p> */}
+          <Link to="/otherstores" className="text-[#fff] font-[600] text-[16px] leading-[24px] flex gap-2 font-tekInter">
+            View all stores <i className="ri-arrow-right-s-line text-[#fff] text-[16px]"></i>
+          </Link>
         </div>
-      </div>
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+    {storeProducts.length > 0 ? (
+      storeProducts.map((item) => (
+        <div key={item.id} className="bg-white shadow-md rounded-md p-4">
+          <Link to={`/dashboard/about-product/${item.id}`}>
+            <div className="h-[250px] w-full rounded-md overflow-hidden">
+              <img 
+                src={item.image || "default-image.png"} 
+                alt="product" 
+                className="w-full h-full object-cover" 
+              />
+            </div>
+            <div className="mt-3">
+              <h1 className="text-lg font-bold text-gray-900 truncate">{item.name}</h1>
+              <p className="text-gray-800 text-md py-1">₦{item.unit_price || "No Price"}</p>
+              <span className={`font-bold ${item.stock ? "text-green-600" : "text-red-500"}`}>
+                {item.stock ? `${item.stock} in stock` : "Out of stock"}
+              </span>
+            </div>
+          </Link>
+          <button className="w-full bg-[#F9F5FF] border border-[#1843E2] rounded-md mt-3 py-2 text-[#1843E2] font-semibold flex justify-center items-center gap-2">
+            Add to cart
+          </button>
+        </div>
+      ))
+    ) : (
+      <p className="col-span-full text-center text-gray-600">No products available from this store.</p>
+    )}
+  </div>
+</div>
 
-      <div className="mt-[-2rem]">
-   <StoresDetailsHero   singleStores={singleStores}/>
-      </div>
     </section>
+    
   );
+
+
 };
 
 export default TopstoresHero;

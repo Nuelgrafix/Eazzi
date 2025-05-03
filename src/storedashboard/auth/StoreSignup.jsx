@@ -1,8 +1,8 @@
 import { useState } from "react";
 import sign from "../../assets/signup.png";
-import logo from "../../assets/eazzi_logo.svg";
+import logo from "/Image/logo.svg";
 import mail from "../../assets/mail.png";
-import SignupWithGoogleorLogin from "../../components/SignupWithGoogleorLogin";
+import SignupWithGoogleorSignup from "../../components/SignupWithGoogleorSignup";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -228,7 +228,7 @@ const StoreSignup = () => {
           </form>
 
           <div className="px-3">
-            <SignupWithGoogleorLogin />
+            <SignupWithGoogleorSignup />
 
             <p className="text-[#828282] text-center text-[16px] font-[400] font-tekInter mt-[24px]">
         Don&apos;t have account? <Link to="/store-login" className="text-[#1843E2]">Login</Link>

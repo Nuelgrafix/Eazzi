@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import logo from "/Image/logo.png";
+import logo from "/Image/logo.svg";
 import profile from "/Image/Profile.png";
 
 // import carticon from "../../public/Image/Icon.png";
@@ -145,7 +145,9 @@ const Header = () => {
           </div>
 
           <div className="h-[45px] w-[45px] flex items-center justify-center">
+          <Link to={"filledcart"}>
             <img src={cart} className="h-[24px] w-[24px]" alt="" />
+            </Link>
           </div>
 
           <div
@@ -208,7 +210,7 @@ const Header = () => {
               onClick={toggleCatDropdown}
             >
               <div className="p-2 w-[44px] sm:w-[45px] flex items-center justify-center border bg-[#F9F9F9] rounded-full mt-2 lg:hidden">
-                <img src={cat} className="h-[24px] w-[24px]" alt="" />
+               <img src={cat} className="h-[24px] w-[24px]" alt="" /> 
               </div>
 
               {isCatDropdownOpen && (

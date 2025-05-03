@@ -30,8 +30,8 @@ const ProductUpload = () => {
 
   // eslint-disable-next-line no-unused-vars
   const [preview, setPreview] = useState(null);
-  
-
+  const vendorId = Number(localStorage.getItem("storeId"));
+  //const [products, setProducts] = useState([]);
   const handleImage = (e) => {
     const file = e.target.files[0];
     if (file && file.size <= 5 * 1024 * 1024) {
@@ -93,30 +93,44 @@ const ProductUpload = () => {
       return;
     }
     setIsSubmitting(true);
-
-
- const formData = new FormData();
-  formData.append('name', inputs.title);
-  formData.append('description', inputs.description);
-  formData.append('unit_price', inputs.unit_price);
-  formData.append('stock', inputs.stock);
-  formData.append('image', inputs.image);  // Use the image state directly
-
-
-
-  try {
-    await axios.post("https://django-7u8g.onrender.com/api/products/upload/", formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    });
-
-    console.log('Yes')
+  
+    const token = localStorage.getItem("token"); // Get token from localStorage
+    const vendorId = localStorage.getItem("vendor_id"); // Get vendor ID from localStorage
+    
+    console.log("Token from localStorage:", token); // Debugging token
+    console.log("Vendor ID from localStorage:", vendorId); // Debugging vendor ID
+  
+    if (!vendorId) {
+      toast.error("Vendor ID is missing. Please log in again.", {
+        position: "top-center",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+  
+    const formData = new FormData();
+    formData.append("name", inputs.title);
+    formData.append("description", inputs.description);
+    formData.append("unit_price", inputs.unit_price);
+    formData.append("stock", inputs.stock);
+    formData.append("image", inputs.image);
+    formData.append("vendor", vendorId); // Add vendor ID
+  
+    try {
+      await axios.post("https://django-7u8g.onrender.com/api/products/upload/", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          "Authorization": `Token ${token}`,
+        },
+      });
+  
+      console.log("Product upload successful");
       toast.success("Product uploaded successfully!", {
         position: "top-center",
       });
       navigate("/product-upload");
     } catch (err) {
+      console.error("Error uploading product:", err);
       if (err.response && err.response.data) {
         toast.error(err.response.data.error, {
           position: "top-center",
@@ -128,41 +142,32 @@ const ProductUpload = () => {
       }
     } finally {
       setIsSubmitting(false);
-      console.log('Yes again')
     }
-  };
+};
+
+  
   
 
   const [products, setProducts] = useState([]);
 
-  useEffect(()=>  {
-    const getProducts = async () => {
+  useEffect(() => {
+    const fetchProducts = async () => {
       try {
-        const result = await axios.get("https://django-7u8g.onrender.com/api/products/list/");
-        console.log("API Response:", result); // Debugging line
-        const res = result.data;
-        console.log("Data:", res); // Debugging line
-        setProducts(res);
-  
-        toast.success("Products fetched successfully!", {
-          position: "top-center",
-        });
-      } catch (err) {
-        console.error("Error:", err); // Debugging line
-        if (err.response && err.response.data) {
-          toast.error(err.response.data.error, {
-            position: "top-center",
-          });
-        } else {
-          toast.error("Error fetching the products. Please try again!", {
-            position: "top-center",
-          });
-        }
+        const response = await fetch("https://django-7u8g.onrender.com/api/products/list/");
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        
+        const data = await response.json();
+        const filtered = data.filter((item) => Number(item.vendor) === vendorId);
+        setProducts(filtered);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
       }
     };
-
-    getProducts()
-  }, [])
+    
+    if (vendorId) fetchProducts();
+  }, [vendorId]);
 
 
 

@@ -13,7 +13,7 @@ import calling from "../assets/Calling.png";
 import group from "../assets/Group.png";
 import { Link } from "react-router-dom";
 
-const HeroSideBar = () => {
+const HeroSideBar = ({ setFilterKeyword }) => {
   const [activePopup, setActivePopup] = useState(null);
   const popupRef = useRef(null);
 
@@ -191,12 +191,12 @@ const HeroSideBar = () => {
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Men Fashion
+                Food Items
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Pasta & Noodles
+                    Pasta & Noodles 
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
                     Breakfast Foods
@@ -224,7 +224,7 @@ const HeroSideBar = () => {
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Women's Fashion
+                Snacks
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
@@ -235,14 +235,23 @@ const HeroSideBar = () => {
                     Energy Drinks
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Bottled Drink
+                  Biscuits
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Cookies
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Chocolate,
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Candy
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Kids Fashion
+                Beverages
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
@@ -263,15 +272,24 @@ const HeroSideBar = () => {
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  All Fashion
+                Canned & Packaged Goods
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Baby Diapers
+                  Canned Tomatoes
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Bottle Feeding
+                  Sardines
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Corned Beef
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Packaged Soup
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                    Wipes & Refills
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
                     Wipes & Refills
@@ -286,90 +304,87 @@ const HeroSideBar = () => {
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Men Fashion
+                Kitchen Appliances
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Pasta & Noodles
+                  Refrigerator
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Breakfast Foods
+                  Freezer
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Coffee
+                  Microwave
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Juice
+                  Oven
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Water
+                  Blender
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Packaged Foods
+                  Food Processor
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Sugar, Sweeteners
+                  Electric Kettle
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Cooking oil
+                  Toaster
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Women's Fashion
+                Home Comfort Appliances
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Ice Cream and Milk
+                  Air Conditioner
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Energy Drinks
+                  Electric Fan
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Bottled Drink
+                  Water Heater
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Kids Fashion
+                Laundry Appliances
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Beers
+                  Washing Machine
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Red Wine
+                  Clothes Dryer
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Champagne
-                  </li>
-                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Vodka
+                  Steam Iron
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  All Fashion
+                Small Appliances
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Baby Diapers
+                  Vacuum Cleaner
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Bottle Feeding
+                  Hand Mixer
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Wipes & Refills
+                  Hand Mixer
                   </li>
                 </ul>
               </div>
@@ -382,72 +397,78 @@ const HeroSideBar = () => {
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Men Fashion
+                Cleaning Tools
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Pasta & Noodles
+                  Mops
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Breakfast Foods
+                  Brooms
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Coffee
+                  Brushes
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Juice
+                  Buckets
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Water
+                  Dustpans
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Packaged Foods
+                  Cleaning Cloths
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Sugar, Sweeteners
-                  </li>
-                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Cooking oil
+                  Sponges
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Women's Fashion
+                Cleaning Products
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Ice Cream and Milk
+                  Detergents
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Energy Drinks
+                  Dishwashing Liquid
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Bottled Drink
+                  Toilet Cleaner
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Bleach
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Disinfectant
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Glass Cleaner
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Kids Fashion
+                Air Fresheners & Pest Control:
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Beers
+                  Air Fresheners
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Red Wine
+                  Insecticides
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Champagne
+                  Mosquito Sprays
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Vodka
+                  Rodent Repellents
                   </li>
                 </ul>
               </div>
@@ -478,90 +499,87 @@ const HeroSideBar = () => {
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Men Fashion
+                Computing
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Pasta & Noodles
+                  Laptops
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Breakfast Foods
+                  Desktops
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Coffee
+                  Tablets
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Juice
+                  Printer
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Water
-                  </li>
-                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Packaged Foods
-                  </li>
-                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Sugar, Sweeteners
-                  </li>
-                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Cooking oil
+                  Scanner
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Women's Fashion
+                Phones & Accessories:
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Ice Cream and Milk
+                  Smartphones
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Energy Drinks
+                  Earphones
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Bottled Drink
+                  Headphones
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Phone Chargers
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Power Banks
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Kids Fashion
+                Television & Media:
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Beers
+                  Smart TV
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Red Wine
+                  LED TV
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Champagne
+                  Decoders
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Vodka
+                  Home Theater Systems
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  All Fashion
+                Cameras & Photography
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Baby Diapers
+                  Digital Cameras
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Bottle Feeding
+                  Security Cameras
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Wipes & Refills
+                  Drones
                   </li>
                 </ul>
               </div>
@@ -574,90 +592,151 @@ const HeroSideBar = () => {
             <div className="flex gap-[32px]">
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Men Fashion
+                Furniture
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Pasta & Noodles
+                  Sofas
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Breakfast Foods
+                  Chairs
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Coffee
+                  Tables
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Juice
+                  Beds
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Water
+                  Mattresses
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Packaged Foods
+                  Wardrobes
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Sugar, Sweeteners
-                  </li>
-                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Cooking oil
+                  Shelves
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Women's Fashion
+                Stationery & Office
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Ice Cream and Milk
+                  Notebooks
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Energy Drinks
+                  Pens
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Bottled Drink
+                  Staplers
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Punchers
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Files
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Paper
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Folders
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  Kids Fashion
+                Fashion
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Beers
+                    Shirt
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Red Wine
+                    Trouser
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Champagne
+                    Gown
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Vodka
+                    Polo
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                    Short
+                  </li>
+                  <li 
+                  className=" cursor-pointer text-[#828282] text-[16px] leading-normal font-[400] font-tekInter transition-colors duration-300 hover:bg-gray-200 focus:bg-gray-300" onClick={() =>{
+                    console.log('Clicked: bag');
+                    setFilterKeyword('bag');
+                  }}>
+                    Bag
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                    Watch
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                    Jewerlry
                   </li>
                 </ul>
               </div>
 
               <div className="flex flex-col items-start gap-[24px] text-nowrap">
                 <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
-                  All Fashion
+                Beauty & Personal Care
                 </p>
 
                 <ul className="flex flex-col gap-[12px]">
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Baby Diapers
+                  Shampoo
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Bottle Feeding
+                  Conditioner
                   </li>
                   <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
-                    Wipes & Refills
+                  Soap
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Perfume
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Deodorant
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Skincare
+                  </li>
+                </ul>
+              </div>
+
+              <div className="flex flex-col items-start gap-[24px] text-nowrap">
+                <p className="text-[#181818] text-[20px] font-tekInter font-[400] leading-[24px] border-b-[.5px] border-b-[#181818] ">
+                Toys & Baby Products
+                </p>
+
+                <ul className="flex flex-col gap-[12px]">
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Baby Diapers
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Wipes
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Baby Food
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Formula
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                  Toys
+                  </li>
+                  <li className="text-[#828282] text-[16px] leading-normal font-[400] font-tekInter">
+                 Games
                   </li>
                 </ul>
               </div>

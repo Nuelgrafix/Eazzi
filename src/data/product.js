@@ -1,6 +1,7 @@
 import bag from "../../public/Image/bag.svg";
 
 export const productdata = [
+
   {
     id: "1",
     title: "Product name",
@@ -717,40 +718,8 @@ export const dashboardproductdata = [
 ]
 
 
-export const aboutproductext = [
 
-  {
-    id:"1",
-    headingText:"Material",
-    title: "Exterior",
-    textOne: "Skin Leather: The handbag is made from high-quality skin leather, known for its smooth texture, durability, and luxurious appearance. The leather's natural finish gives it a sophisticated look, suitable for both casual and formal occasions.",
-  titleTwo:"Interior",
-  textTwo:"Lining: The interior is lined with a soft, durable fabric to protect your belongings and enhance the overall structure of the handbag."
-  },
-
-  
-  {
-    id:"2",
-    headingText:"Color",
-    title: "Pink",
-    textOne: " The handbag is made from high-quality skin leather, known for its smooth texture, durability, and luxurious appearance. The leather's natural finish gives it a sophisticated look, suitable for both casual and formal occasions.",
-  },
-
-  
-  {
-    id:"1",
-    headingText:"Design and Featurees",
-    title: "Size",
-    textOne: "The handbag is designed to be compact yet spacious enough to carry essential items. Its dimensions are optimized for daily use, ensuring convenience without compromising style",
-  textTwo:"An inner pocket is included to help organize smaller items such as keys, cards, or a smartphone. This pocket enhances functionality by providing easy access to essentials.",
-  titleThree: "Closure",
-  textThree:"The handbag features a secure closure mechanism, such as a zipper or magnetic snap, to keep your belongings safe and secure.",
-  titleFour:"Handles/Straps",
-  textFour: "The handbag is equipped with sturdy handles or an adjustable strap, allowing for comfortable carrying options. The handles/strap are also made from skin leather, ensuring consistency in quality and design.",
-
-  },
 
 
 
   
-]

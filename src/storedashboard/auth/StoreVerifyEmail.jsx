@@ -41,10 +41,12 @@ const StoreVerifyEmail = () => {
         });
       }
  
-      const id = localStorage.setItem("id", JSON.stringify(res.data.id));
-      const token = localStorage.setItem("token", JSON.stringify(res.data.token));
-     setId(id)
-     setToken(token);
+      //const id = localStorage.setItem("id", JSON.stringify(res.data.id));
+      //const token = localStorage.setItem("token", JSON.stringify(res.data.token));
+      localStorage.setItem("id", JSON.stringify(res.data.id));
+      localStorage.setItem("token", JSON.stringify(res.data.token))
+     setId(res.data.id)
+     setToken(res.data.token);
 
    
       navigate(`/store-createaccount/${res.data.id}`);

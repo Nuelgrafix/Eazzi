@@ -69,7 +69,7 @@ const {setAuthUser}  = useAuthContext();
         position: "top-center",
       });
       
-
+      
       navigate(`${isAdmin? '/admin-dashboard' : '/'}`)
     
     } catch (err) {

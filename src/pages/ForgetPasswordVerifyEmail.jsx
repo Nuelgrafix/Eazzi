@@ -1,6 +1,6 @@
 
 import sign from "../assets/signup.png";
-import logo from "../assets/eazzi_logo.svg";
+import logo from "/Image/logo.svg";
 
 const ForgetPasswordVerifyEmail = () => {
   return (

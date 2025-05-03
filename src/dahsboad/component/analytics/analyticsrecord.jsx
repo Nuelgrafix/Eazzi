@@ -1,50 +1,62 @@
-import { productrecorddata } from "../../data/analytics"
-
+import { useEffect, useState } from "react";
+import { productrecorddata } from "../../../dahsboad/data/analytics"
 
 const Analyticsrecord = () => {
+  const [products, setProducts] = useState([]);
+  const vendorId = Number(localStorage.getItem("storeId"));
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("https://django-7u8g.onrender.com/api/products/list/");
+        const data = await response.json();
+        
+        const filteredProducts = data.filter((item) => Number(item.vendor) === vendorId);
+        setProducts(filteredProducts);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, [vendorId]);
+
   return (
-<section className="flex md:flex-row flex-col gap-[24px] max-w-[1143px] w-full">
+    <section className="flex md:flex-row flex-col gap-[24px] max-w-[1143px] w-full">
+      {/* Product Record */}
+      <div className="flex flex-col max-w-[527px] w-full rounded-[16px] p-[20px] bg-[#ffffff]" style={{ boxShadow: "0px 8px 32px 0px #3326AE14" }}>
+        <h1 className="text-[20px] leading-[24px] text-[#4F4F4F] font-[700] font-tekInter py-[2rem]">Product record</h1>
 
-    {/* product record */}
-<div className="flex flex-col max-w-[527px] w-full rounded-[16px]   p-[20px] bg-[#ffffff]"
-style={{boxShadow: "0px 8px 32px 0px #3326AE14"}}>
-    <h1 className="text-[20px] leading-[24px] text-[#4F4F4F] font-[700] font-tekInter py-[2rem]">Product record</h1>
-
-
-    <div className=" w-full">
-        <table className="max-w-[463px] w-full">
-            <thead  >
-                <tr className="bg-[#FF8F21] rounded-[20px]  h-[48px]">
-                <th className="text-[#FFFFFF] text-[14px] leading-[22px] font-[600] font-tekInter text-start px-2 pl-[16px]">Product</th>
-                <th className="text-[#FFFFFF] text-[14px] leading-[22px] font-[600] font-tekInter text-start px-2 pl-[16px]">Qty. Upload</th>
-                <th className="text-[#FFFFFF] text-[14px] leading-[22px] font-[600] font-tekInter text-start px-2 pl-[16px]">Qty. in stock</th>
-                </tr>
+        <div className="w-full">
+          <table className="max-w-[463px] w-full">
+            <thead>
+              <tr className="bg-[#FF8F21] rounded-[20px] h-[48px]">
+                <th className="text-[#FFFFFF] text-[14px] leading-[22px] font-[600] text-start px-2 pl-[16px]">Product</th>
+                <th className="text-[#FFFFFF] text-[14px] leading-[22px] font-[600] text-start px-2 pl-[16px]">Qty. Upload</th>
+                <th className="text-[#FFFFFF] text-[14px] leading-[22px] font-[600] text-start px-2 pl-[16px]">Qty. in stock</th>
+              </tr>
             </thead>
-
             <tbody className="w-full">
-        {productrecorddata.map((l) => (
-            <tr key={l.id} className="border-b-[1px] border-t-[1px] border-[#828282] max-h-[64px]">
-                <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#828282] font-[400] font-tekInter py-2 pl-[16px]">
+              {products.map((product) => (
+                <tr key={product.id} className="border-b-[1px] border-t-[1px] border-[#828282] max-h-[64px]">
+                  <td className="text-[14px] text-[#828282] font-[400] py-2 pl-[16px]">
                     <div className="flex items-center">
-                        <img src={l.pics} alt="latest-pics" className="w-[44px] h-[44px] mr-2" />
-                        <h1>{l.title}</h1>
-                    </div> 
-                </td>
-                <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#555F7E] font-[400] font-tekInter py-2 pr-[30px] text-end">{l.quantity}</td>
-                <td className="border-r-0 border-l-0 text-[14px] leading-[16px] text-[#555F7E] font-[400] font-tekInter pr-[30px] text-end">{l.stock}</td>
-                
+                      <img src={product.image} alt={product.name} className="w-[44px] h-[44px] mr-2" />
+                      <h1>{product.name}</h1>
+                    </div>
+                  </td>
+                  <td className="text-[14px] text-[#555F7E] font-[400] py-2 pr-[30px] text-end">{product.quantity_uploaded}</td>
+                  <td className="text-[14px] text-[#555F7E] font-[400] pr-[30px] text-end">{product.stock}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       
-            </tr>
-        ))}
-    </tbody>
-        </table>
 
-    </div>
-
-</div>
-
-
-<div className="flex flex-col max-w-[597px] w-full rounded-[16px] p-[20px] bg-[#ffffff] "
+      <div className="flex flex-col max-w-[597px] w-full rounded-[16px] p-[20px] bg-[#ffffff] "
 style={{boxShadow: "0px 8px 32px 0px #3326AE14"}}>
 
 
@@ -82,9 +94,8 @@ style={{boxShadow: "0px 8px 32px 0px #3326AE14"}}>
 </div>
 
 </div>
+    </section>
+  );
+};
 
-</section>
-  )
-}
-
-export default Analyticsrecord
+export default Analyticsrecord;

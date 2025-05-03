@@ -15,11 +15,11 @@ const Otherstores = () => {
       <div className="overflow-x-hidden relative w-[100%]">
         <Hero />
         <Location />
-        <Accessories />
-        <ProductLayout />
         <SecondAds />
-        <Faq />
         <Newsletter />
+        {/*<Accessories />
+        <ProductLayout />
+        <Faq />*/}
       </div>
     </>
   );

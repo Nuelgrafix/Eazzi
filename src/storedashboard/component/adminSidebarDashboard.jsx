@@ -61,7 +61,7 @@ const sidebar_Link = [
   },
   {
     id: "6",
-    path: "/dashboard/profile",
+    path:  `/dashboard/profile/${storeId}`,
     display: "Profile",
     icon: <IC_Profile />,
     iconTwo: <IC_BlueProfile />,

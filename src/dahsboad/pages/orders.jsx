@@ -59,7 +59,7 @@ const Orders = () => {
 
 
     
-    <div  className="max-w-[204px] w-full  md:flex hidden  bg-[#1843E2]">
+    <div  className="max-w-[204px] w-52  md:flex hidden  bg-[#1843E2]">
 <SidebarDashboard />
  </div>
 
